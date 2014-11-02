@@ -39,15 +39,7 @@ if (Meteor.isClient) {
 
             var text = event.target.text.value;
 
-            Items.insert({
-                text: text,
-                actor: text,
-                action: text,
-                amount: text,
-                units: text,
-                date: text,
-                createdAt: new Date() // current time
-            });
+            Meteor.call("addItem", text);
 
             // Clear form
             event.target.text.value = "";
@@ -62,12 +54,45 @@ if (Meteor.isClient) {
     Template.item.events({
         "click .toggle-checked": function () {
             // Set the checked property to the opposite of its current value
-            Items.update(this._id, {$set: {checked: !this.checked}});
+            Meteor.call("setChecked", this._id, !this.checked);
         },
         "click .delete": function () {
-            Items.remove(this._id);
+            Meteor.call("deleteItem", this._id);
         }
     });
 
 
+    Accounts.ui.config({
+        passwordSignupFields: "USERNAME_ONLY"
+    });
+
+
 }
+
+
+Meteor.methods({
+    addItem: function (text) {
+        // Make sure the user is logged in before inserting
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        Items.insert({
+            text: text,
+            actor: text,
+            action: text,
+            amount: text,
+            units: text,
+            date: text,
+            createdAt: new Date(),
+            owner: Meteor.userId(),
+            username: Meteor.user().username
+        });
+    },
+    deleteItem: function (itemId) {
+        Items.remove(itemId);
+    },
+    setChecked: function (itemId, setChecked) {
+        Items.update(itemId, { $set: { checked: setChecked} });
+    }
+});

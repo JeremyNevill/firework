@@ -12,12 +12,14 @@
                 {{> loginButtons}}
             </p>
 
+            {{#if currentUser}}
             <p>
 
             <form class="new-item">
                 <input type="text" name="text" placeholder="Type to add new items"/>
             </form>
             </p>
+            {{/if}}
 
             <p>
                 <label class="hide-archived">
@@ -52,4 +54,5 @@
     <span class="text">{{amount}}</span>
     <span class="text">{{units}}</span>
     <span class="text">{{date}}</span>
+    <b>{{username}}</b>
 </template>
