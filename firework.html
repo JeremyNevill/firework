@@ -1,14 +1,46 @@
 <head>
-  <title>firework</title>
+    <title>firework</title>
 </head>
-
 <body>
-  <h1>Welcome to Meteor!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Firework</h1>
+            <hr/>
+            <div>
+                <form class="new-item">
+                    <input type="text" name="text" placeholder="Type to add new items"/>
 
-  {{> hello}}
+                </form>
+            </div>
+
+
+            <label class="hide-completed">
+                <input type="checkbox" checked="{{hideCompleted}}"/>
+                Hide Completed
+            </label>
+
+            <div>
+                <ul>
+                    {{#each items}}
+                    {{> item}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="item">
+    <li class="{{#if checked}}checked{{/if}}">
+        <button class="delete">&times;</button>
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+        <span class="text">{{text}}</span>
+        @<span class="text">{{actor}}</span>
+        <span class="text">{{action}}</span>
+        <span class="text">{{amount}}</span>
+        <span class="text">{{units}}</span>
+        <span class="text">{{date}}</span>
+    </li>
 </template>
