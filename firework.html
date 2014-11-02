@@ -7,25 +7,34 @@
         <div class="col-sm-12">
             <h1>Firework</h1>
             <hr/>
+
+            <p>
+                {{> loginButtons}}
+            </p>
+
+            <p>
+
+            <form class="new-item">
+                <input type="text" name="text" placeholder="Type to add new items"/>
+            </form>
+            </p>
+
+            <p>
+                <label class="hide-archived">
+                    <input type="checkbox" checked="{{hideArchived}}"/>
+                    Hide Archived
+                </label>
+            </p>
+
+            <p>
+                Active Items: {{itemCount}}, Archived Items: {{archivedItemCount}}
+            </p>
+
             <div>
-                <form class="new-item">
-                    <input type="text" name="text" placeholder="Type to add new items"/>
-
-                </form>
-            </div>
-
-
-            <label class="hide-completed">
-                <input type="checkbox" checked="{{hideCompleted}}"/>
-                Hide Completed
-            </label>
-
-            <div>
-                <ul>
-                    {{#each items}}
-                    {{> item}}
-                    {{/each}}
-                </ul>
+                {{#each items}}
+                {{> item}}
+                {{/each}}
+                <hr/>
             </div>
         </div>
     </div>
@@ -33,14 +42,14 @@
 </body>
 
 <template name="item">
-    <li class="{{#if checked}}checked{{/if}}">
-        <button class="delete">&times;</button>
-        <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-        <span class="text">{{text}}</span>
-        @<span class="text">{{actor}}</span>
-        <span class="text">{{action}}</span>
-        <span class="text">{{amount}}</span>
-        <span class="text">{{units}}</span>
-        <span class="text">{{date}}</span>
-    </li>
+    <hr/>
+    <!-- <li class="{{#if checked}}checked{{/if}}"> -->
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+    <span class="text">{{text}}</span>
+    @<span class="text">{{actor}}</span>
+    <span class="text">{{action}}</span>
+    <span class="text">{{amount}}</span>
+    <span class="text">{{units}}</span>
+    <span class="text">{{date}}</span>
 </template>

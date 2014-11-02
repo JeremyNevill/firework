@@ -1,22 +1,37 @@
 Items = new Mongo.Collection("items");
 
 if (Meteor.isClient) {
-    // This code only runs on the client
 
+
+    // Replace the existing Template.body.helpers
     Template.body.helpers({
         items: function () {
-            return Items.find({}, {sort: {text: -1}});
+            if (Session.get("hideArchived")) {
+                // If hide archived is checked, filter tasks
+                return Items.find({checked: {$ne: true}}, {sort: {createdAt: -1}});
+            } else {
+                // Otherwise, return all of the tasks
+                return Items.find({}, {sort: {createdAt: -1}});
+            }
+        },
+        hideArchived: function () {
+            return Session.get("hideArchived");
+        },
+        itemCount: function () {
+            return Items.find({checked: {$ne: true}}).count();
+        },
+        archivedItemCount: function () {
+            return Items.find({checked: {$ne: false}}).count();
         }
     });
-
 
 
     Template.body.events({
 
 
         // Add to Template.body.events
-        "change .hide-completed input": function (event) {
-            Session.set("hideCompleted", event.target.checked);
+        "change .hide-archived input": function (event) {
+            Session.set("hideArchived", event.target.checked);
         },
 
         "submit .new-item": function (event) {
@@ -42,6 +57,7 @@ if (Meteor.isClient) {
         }
     });
 
+
     // In the client code, below everything else
     Template.item.events({
         "click .toggle-checked": function () {
@@ -52,5 +68,6 @@ if (Meteor.isClient) {
             Items.remove(this._id);
         }
     });
+
 
 }
