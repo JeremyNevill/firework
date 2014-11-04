@@ -4,8 +4,5 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-nemo64:bootstrap
-less
 accounts-ui
 accounts-password

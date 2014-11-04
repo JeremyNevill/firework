@@ -2,8 +2,8 @@ Items = new Mongo.Collection("items");
 
 if (Meteor.isClient) {
 
+    Meteor.subscribe("items");
 
-    // Replace the existing Template.body.helpers
     Template.body.helpers({
         items: function () {
             if (Session.get("hideArchived")) {
@@ -25,32 +25,34 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.item.helpers({
+        isOwner: function () {
+            return this.owner === Meteor.userId();
+        }
+    });
 
     Template.body.events({
-
-
-        // Add to Template.body.events
         "change .hide-archived input": function (event) {
             Session.set("hideArchived", event.target.checked);
         },
-
         "submit .new-item": function (event) {
-            // This function is called when the new task form is submitted
+            var actor = event.target.actor.value;
+            var action = event.target.action.value;
+            var amount = event.target.amount.value;
+            var units = event.target.units.value;
+            var date = event.target.date.value;
 
-            var text = event.target.text.value;
-
-            Meteor.call("addItem", text);
+            Meteor.call("addItem", actor, action, amount, units, date);
 
             // Clear form
-            event.target.text.value = "";
+            //event.target.text.value = "";
+            //event.target.actor.value = "";
 
             // Prevent default form submit
             return false;
         }
     });
 
-
-    // In the client code, below everything else
     Template.item.events({
         "click .toggle-checked": function () {
             // Set the checked property to the opposite of its current value
@@ -58,41 +60,88 @@ if (Meteor.isClient) {
         },
         "click .delete": function () {
             Meteor.call("deleteItem", this._id);
+        },
+        "click .toggle-private": function () {
+            Meteor.call("setPrivate", this._id, !this.private);
         }
-    });
 
+    });
 
     Accounts.ui.config({
         passwordSignupFields: "USERNAME_ONLY"
     });
 
-
 }
 
 
 Meteor.methods({
-    addItem: function (text) {
+    addItem: function (actor, action, amount, units, date) {
         // Make sure the user is logged in before inserting
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
 
         Items.insert({
-            text: text,
-            actor: text,
-            action: text,
-            amount: text,
-            units: text,
-            date: text,
+            actor: actor,
+            action: action,
+            amount: amount,
+            units: units,
+            date: date,
             createdAt: new Date(),
             owner: Meteor.userId(),
             username: Meteor.user().username
         });
     },
     deleteItem: function (itemId) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var item = Items.findOne(itemId);
+        if (item.private && item.owner !== Meteor.userId()) {
+            // If the task is private, make sure only the owner can delete it
+            throw new Meteor.Error("not-authorized");
+        }
+
         Items.remove(itemId);
     },
     setChecked: function (itemId, setChecked) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var item = Items.findOne(itemId);
+        if (item.private && item.owner !== Meteor.userId()) {
+            // If the task is private, make sure only the owner can delete it
+            throw new Meteor.Error("not-authorized");
+        }
+
         Items.update(itemId, { $set: { checked: setChecked} });
+    },
+    setPrivate: function (itemId, setToPrivate) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var item = Items.findOne(itemId);
+
+        // Make sure only the task owner can make a task private
+        if (item.owner !== Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        Items.update(itemId, { $set: { private: setToPrivate } });
     }
 });
+
+
+if (Meteor.isServer) {
+    Meteor.publish("items", function () {
+        return Items.find({
+            $or: [
+                { private: {$ne: true} },
+                { owner: this.userId }
+            ]
+        });
+    });
+}

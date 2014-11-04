@@ -1,25 +1,70 @@
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>firework</title>
+
+
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
             <h1>Firework</h1>
+            {{> loginButtons}}
             <hr/>
+        </div>
+    </div>
 
-            <p>
-                {{> loginButtons}}
-            </p>
+    {{#if currentUser}}
+        <div class="row">
+            <div class="col-sm-4">
+                <p>
 
-            {{#if currentUser}}
-            <p>
+                <h2>Add</h2>
 
-            <form class="new-item">
-                <input type="text" name="text" placeholder="Type to add new items"/>
-            </form>
-            </p>
-            {{/if}}
+                <form class="new-item">
+                    <input type="text" name="actor" placeholder="actor"/>
+                    <input type="text" name="action" placeholder="action"/>
+                    <input type="text" name="amount" placeholder="amount"/>
+                    <input type="text" name="units" placeholder="units"/>
+                    <input type="text" name="date" placeholder="date"/>
+                    <button type="submit">Add Item</button>
+                </form>
+
+                <hr/>
+                </p>
+            </div>
+            <div class="col-sm-8">
+                Other Column
+            </div>
+        </div>
+    {{/if}}
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Timeline</h2>
+
+            <table class="table-striped">
+                <thead>
+                <tr>
+                    <td>Item</td>
+                    <td>Public/Private</td>
+                    <td>Del</td>
+                    <td>Arch</td>
+                </tr>
+                </thead>
+                {{#each items}}
+                    {{> item}}
+                {{/each}}
+            </table>
+            <hr/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Stats</h2>
 
             <p>
                 <label class="hide-archived">
@@ -31,28 +76,43 @@
             <p>
                 Active Items: {{itemCount}}, Archived Items: {{archivedItemCount}}
             </p>
-
-            <div>
-                {{#each items}}
-                {{> item}}
-                {{/each}}
-                <hr/>
-            </div>
+            <hr/>
         </div>
     </div>
+
+
 </div>
+
+
 </body>
 
 <template name="item">
-    <hr/>
-    <!-- <li class="{{#if checked}}checked{{/if}}"> -->
-    <button class="delete">&times;</button>
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-    <span class="text">{{text}}</span>
-    @<span class="text">{{actor}}</span>
-    <span class="text">{{action}}</span>
-    <span class="text">{{amount}}</span>
-    <span class="text">{{units}}</span>
-    <span class="text">{{date}}</span>
-    <b>{{username}}</b>
+    <tr>
+        <td>
+            <!-- <li class="{{#if checked}}checked{{/if}}"> -->
+
+            @{{actor}} {{action}} {{amount}}{{units}} {{date}} {{username}}
+
+        </td>
+        <td>
+            {{#if isOwner}}
+                <button class="toggle-private">
+                    {{#if private}}
+                        Private
+                    {{else}}
+                        Public
+                    {{/if}}
+                </button>
+            {{/if}}
+        </td>
+        <td>
+            <button class="delete">&times;</button>
+        </td>
+        <td>
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+        </td>
+    </tr>
 </template>
+
+
+
