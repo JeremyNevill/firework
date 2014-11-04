@@ -2,23 +2,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>firework</title>
-
-
+    <title>Firework Micrologging Framework</title>
 </head>
 <body>
+
+
+
+
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Firework</h1>
-            {{> loginButtons}}
-            <hr/>
-        </div>
-    </div>
+        <div class="col-sm-12">
 
-    {{#if currentUser}}
-        <div class="row">
-            <div class="col-sm-4">
+
+            <h1>Firework</h1>
+
+            {{> loginButtons}}
+
+            {{#if currentUser}}
                 <p>
 
                 <h2>Add</h2>
@@ -34,15 +34,8 @@
 
                 <hr/>
                 </p>
-            </div>
-            <div class="col-sm-8">
-                Other Column
-            </div>
-        </div>
-    {{/if}}
+            {{/if}}
 
-    <div class="row">
-        <div class="col-md-12">
             <h2>Timeline</h2>
 
             <table class="table-striped">
@@ -54,14 +47,19 @@
                     <td>Arch</td>
                 </tr>
                 </thead>
+
                 {{#each items}}
                     {{> item}}
                 {{/each}}
+
             </table>
             <hr/>
         </div>
     </div>
+</div>
 
+
+<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h2>Stats</h2>
@@ -79,8 +77,6 @@
             <hr/>
         </div>
     </div>
-
-
 </div>
 
 
@@ -91,7 +87,7 @@
         <td>
             <!-- <li class="{{#if checked}}checked{{/if}}"> -->
 
-            @{{actor}} {{action}} {{amount}}{{units}} {{date}} {{username}}
+            @{{actor}} {{action}} {{amount}}{{units}} {{date}}
 
         </td>
         <td>
@@ -113,6 +109,3 @@
         </td>
     </tr>
 </template>
-
-
-
