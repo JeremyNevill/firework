@@ -1,10 +1,38 @@
 Items = new Mongo.Collection("items");
 
+/*
+ Client Code
+ */
 if (Meteor.isClient) {
 
+    /*
+     Routes
+     */
+    Router.route('/', function () {
+        this.render('home');
+    });
+
+    Router.route('/stats', function () {
+        this.render('stats');
+    });
+
+    Router.route('/add', function () {
+        this.render('add');
+    });
+
+    Router.route('/timeline', function () {
+        this.render('timeline');
+    });
+
+    /*
+     Subscriptions
+     */
     Meteor.subscribe("items");
 
-    Template.body.helpers({
+    /*
+     Timeline Helpers
+     */
+    Template.timeline.helpers({
         items: function () {
             if (Session.get("hideArchived")) {
                 // If hide archived is checked, filter tasks
@@ -16,25 +44,52 @@ if (Meteor.isClient) {
         },
         hideArchived: function () {
             return Session.get("hideArchived");
-        },
+        }
+    });
+
+    Template.body.helpers({
+    });
+
+    /*
+     Stats Helpers
+     */
+    Template.stats.helpers({
         itemCount: function () {
             return Items.find({checked: {$ne: true}}).count();
         },
         archivedItemCount: function () {
             return Items.find({checked: {$ne: false}}).count();
+        },
+        publicCount: function () {
+            return Items.find({private: {$ne: false}}).count();
+        },
+        privateCount: function () {
+            return Items.find({private: {$ne: true}}).count();
         }
     });
 
+    /*
+     Item Helpers
+     */
     Template.item.helpers({
         isOwner: function () {
             return this.owner === Meteor.userId();
         }
     });
 
-    Template.body.events({
+    /*
+     Stat Events
+     */
+    Template.stats.events({
         "change .hide-archived input": function (event) {
             Session.set("hideArchived", event.target.checked);
-        },
+        }
+    });
+
+    /*
+     Add Events
+     */
+    Template.add.events({
         "submit .new-item": function (event) {
             var actor = event.target.actor.value;
             var action = event.target.action.value;
@@ -45,14 +100,25 @@ if (Meteor.isClient) {
             Meteor.call("addItem", actor, action, amount, units, date);
 
             // Clear form
-            //event.target.text.value = "";
-            //event.target.actor.value = "";
+            event.target.actor.value = "";
+            event.target.action.value = "";
+            event.target.amount.value = "";
+            event.target.units.value = "";
+            event.target.date.value = "";
 
             // Prevent default form submit
             return false;
         }
     });
 
+    /*
+     Body Events
+     */
+    Template.body.events({});
+
+    /*
+     Item Events
+     */
     Template.item.events({
         "click .toggle-checked": function () {
             // Set the checked property to the opposite of its current value
@@ -73,7 +139,9 @@ if (Meteor.isClient) {
 
 }
 
-
+/*
+ Meteor Methods
+ */
 Meteor.methods({
     addItem: function (actor, action, amount, units, date) {
         // Make sure the user is logged in before inserting
@@ -116,7 +184,7 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        Items.update(itemId, { $set: { checked: setChecked} });
+        Items.update(itemId, {$set: {checked: setChecked}});
     },
     setPrivate: function (itemId, setToPrivate) {
         if (!Meteor.userId()) {
@@ -130,17 +198,19 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        Items.update(itemId, { $set: { private: setToPrivate } });
+        Items.update(itemId, {$set: {private: setToPrivate}});
     }
 });
 
-
+/*
+ Server Code
+ */
 if (Meteor.isServer) {
     Meteor.publish("items", function () {
         return Items.find({
             $or: [
-                { private: {$ne: true} },
-                { owner: this.userId }
+                {private: {$ne: true}},
+                {owner: this.userId}
             ]
         });
     });

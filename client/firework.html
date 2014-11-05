@@ -6,80 +6,68 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">Left
-        </div>
-        <div class="col-sm-6">Right
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+<p>
+    <a href="{{pathFor route='home'}}">Home</a>
+    <a href="{{pathFor route='stats'}}">Stats</a>
+    <a href="{{pathFor route='timeline'}}">Timeline</a>
+    <a href="{{pathFor route='add'}}">Add</a>
+</p>
 
-
-            <h1>Firework</h1>
-
-            {{> loginButtons}}
-
-            {{#if currentUser}}
-                <p>
-
-                <h2>Add</h2>
-
-                <form class="new-item">
-                    <input type="text" name="actor" placeholder="actor"/>
-                    <input type="text" name="action" placeholder="action"/>
-                    <input type="text" name="amount" placeholder="amount"/>
-                    <input type="text" name="units" placeholder="units"/>
-                    <input type="text" name="date" placeholder="date"/>
-                    <button type="submit">Add Item</button>
-                </form>
-
-                <hr/>
-                </p>
-            {{/if}}
-
-            <h2>Timeline</h2>
-
-            <table class="table-striped">
-                <thead>
-                <tr>
-                    <td>Item</td>
-                    <td>Public/Private</td>
-                    <td>Del</td>
-                    <td>Arch</td>
-                </tr>
-                </thead>
-
-                {{#each items}}
-                    {{> item}}
-                {{/each}}
-
-            </table>
-            <hr/>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Stats</h2>
-
-            <p>
-                <label class="hide-archived">
-                    <input type="checkbox" checked="{{hideArchived}}"/>
-                    Hide Archived
-                </label>
-            </p>
-
-            <p>
-                Active Items: {{itemCount}}, Archived Items: {{archivedItemCount}}
-            </p>
-            <hr/>
-        </div>
-    </div>
-</div>
+{{> loginButtons}}
 
 </body>
+
+<template name="timeline">
+    <h2>Timeline</h2>
+
+    <table class="table">
+        {{#each items}}
+            {{> item}}
+        {{/each}}
+    </table>
+</template>
+
+<template name="add">
+    {{#if currentUser}}
+        <h2>Add</h2>
+
+        <form class="new-item">
+            <input type="text" name="actor" placeholder="actor"/>
+            <input type="text" name="action" placeholder="action"/>
+            <input type="text" name="amount" placeholder="amount"/>
+            <input type="text" name="units" placeholder="units"/>
+            <input type="text" name="date" placeholder="date"/>
+            <button type="submit">Add Item</button>
+        </form>
+        <hr/>
+    {{/if}}
+    <hr/>
+</template>
+
+<template name="home">
+    <div class="jumbotron"><h1>Home</h1>
+    </div>
+</template>
+
+<template name="stats">
+    <h2>Stats</h2>
+
+    <p>
+        <label class="hide-archived">
+            <input type="checkbox" checked="{{hideArchived}}"/>
+            Hide Archived
+        </label>
+    </p>
+
+    <p>
+        Active Items: {{itemCount}}, Archived Items: {{archivedItemCount}}
+    </p>
+
+    <p>
+        Public Items: {{publicCount}}, Private Items: {{privateCount}}
+    </p>
+    <hr/>
+</template>
 
 <template name="item">
     <tr>
@@ -91,7 +79,7 @@
         </td>
         <td>
             {{#if isOwner}}
-                <button class="toggle-private">
+                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}}">
                     {{#if private}}
                         Private
                     {{else}}
@@ -101,10 +89,12 @@
             {{/if}}
         </td>
         <td>
-            <button class="delete">&times;</button>
+            <button class="delete btn btn-danger">&times;</button>
         </td>
         <td>
-            <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked checkbox"/>
         </td>
     </tr>
 </template>
+
+ 
