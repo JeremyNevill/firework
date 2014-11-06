@@ -68,7 +68,7 @@
 <template name="timeline">
     <h2>Timeline</h2>
 
-    <table class="table">
+    <table class="table table-striped">
         {{#each items}}
             {{> item}}
         {{/each}}
@@ -125,7 +125,7 @@
         </td>
         <td>
             {{#if isOwner}}
-                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}}">
+                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-sm">
                     {{#if private}}
                         Private
                     {{else}}
@@ -135,7 +135,7 @@
             {{/if}}
         </td>
         <td>
-            <button class="delete btn btn-danger">&times;</button>
+            <button class="delete btn btn-danger btn-sm">&times;</button>
         </td>
         <td>
             <input type="checkbox" checked="{{checked}}" class="toggle-checked checkbox"/>
