@@ -1,9 +1,4 @@
 <template name="ApplicationLayout">
-    <header>
-        <h1>{{title}}</h1>
-    </header>
-
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,38 +7,60 @@
     </head>
     <body>
     <div class="container">
-        <div class="header">
-            <ul class="nav nav-pills pull-right" role="tablist">
-                <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
-                <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
-                <li role="presentation"><a href="{{pathFor route='stats'}}">Stats</a></li>
-            </ul>
-            <h3 class="text-muted">Firework</h3>
-        </div>
-
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{pathFor 'home'}}"><span class="glyphicon glyphicon-fire"></span>
+                        Firework</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
+                        <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
+                        <li role="presentation"><a href="{{pathFor route='stats'}}">Stats</a></li>
+                        {{> loginButtons}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="row">
             <div class="col-md-12">
-                <hr/>
-                {{> loginButtons}}
-
 
                 {{> yield}}
+
+                <hr/>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <hr/>
-                Copyright Jeremy Nevill (c) 2014
-            </div>
-            <div class="col-md-6">
-                <hr/>
-                Copyright Jeremy Nevill (c) 2014
+        <div class="footer">
+            <div class="row">
+                <div class="col-sm-4">
+                    <ul class="list-unstyled">
+                        <li><a href="http://nevill.net/privacy/">Privacy Statement</a></li>
+                        <li><a href="#/about">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="list-unstyled">
+                        <li>Powered by <a href="https://github.com/JeremyNevill/firework">Firework</a></li>
+                        <li>Using <a href="https://github.com/JeremyNevill/shortee">Shortee</a> syntax</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="list-unstyled">
+                        <li>Copyright (c) 2012-2014</li>
+                        <li><a href="http://nevill.net">Jeremy Nevill</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
     </div>
-
     </body>
 </template>
 
@@ -77,9 +94,7 @@
 
 <template name="home">
     <div class="jumbotron">
-        <h1>Firework</h1>
-
-        <h3>Micrologging Platform</h3>
+        <h1><span class="glyphicon glyphicon-fire"></span> Firework</h1>
     </div>
 </template>
 
@@ -106,10 +121,7 @@
 <template name="item">
     <tr>
         <td>
-            <!-- <li class="{{#if checked}}checked{{/if}}"> -->
-
             @{{actor}} {{action}} {{amount}}{{units}} {{date}}
-
         </td>
         <td>
             {{#if isOwner}}
@@ -129,6 +141,14 @@
             <input type="checkbox" checked="{{checked}}" class="toggle-checked checkbox"/>
         </td>
     </tr>
+</template>
+
+<template name="notFound">
+    <div class="not-found jumbotron">
+        <h2>404</h2>
+
+        <p>Sorry, we couldn't find a page at this address.</p>
+    </div>
 </template>
 
  

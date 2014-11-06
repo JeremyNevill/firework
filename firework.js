@@ -1,7 +1,8 @@
 Items = new Mongo.Collection("items");
 
 Router.configure({
-    layoutTemplate: 'ApplicationLayout'
+    layoutTemplate: 'ApplicationLayout',
+    notFoundTemplate: 'notFound'
 });
 
 /*
