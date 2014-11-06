@@ -1,5 +1,9 @@
 Items = new Mongo.Collection("items");
 
+Router.configure({
+    layoutTemplate: 'ApplicationLayout'
+});
+
 /*
  Client Code
  */
@@ -47,8 +51,7 @@ if (Meteor.isClient) {
         }
     });
 
-    Template.body.helpers({
-    });
+    Template.body.helpers({});
 
     /*
      Stats Helpers

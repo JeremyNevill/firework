@@ -1,21 +1,52 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Firework Micrologging Framework</title>
-</head>
-<body>
+<template name="ApplicationLayout">
+    <header>
+        <h1>{{title}}</h1>
+    </header>
 
-<p>
-    <a href="{{pathFor route='home'}}">Home</a>
-    <a href="{{pathFor route='stats'}}">Stats</a>
-    <a href="{{pathFor route='timeline'}}">Timeline</a>
-    <a href="{{pathFor route='add'}}">Add</a>
-</p>
 
-{{> loginButtons}}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Firework Micrologging Framework</title>
+    </head>
+    <body>
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right" role="tablist">
+                <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
+                <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
+                <li role="presentation"><a href="{{pathFor route='stats'}}">Stats</a></li>
+            </ul>
+            <h3 class="text-muted">Firework</h3>
+        </div>
 
-</body>
+        <div class="row">
+            <div class="col-md-12">
+                <hr/>
+                {{> loginButtons}}
+
+
+                {{> yield}}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <hr/>
+                Copyright Jeremy Nevill (c) 2014
+            </div>
+            <div class="col-md-6">
+                <hr/>
+                Copyright Jeremy Nevill (c) 2014
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+</template>
+
 
 <template name="timeline">
     <h2>Timeline</h2>
@@ -45,7 +76,10 @@
 </template>
 
 <template name="home">
-    <div class="jumbotron"><h1>Home</h1>
+    <div class="jumbotron">
+        <h1>Firework</h1>
+
+        <h3>Micrologging Platform</h3>
     </div>
 </template>
 
