@@ -161,6 +161,7 @@ Meteor.methods({
             date: date,
             createdAt: new Date(),
             owner: Meteor.userId(),
+            private: true,
             username: Meteor.user().username
         });
     },
