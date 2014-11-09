@@ -21,10 +21,6 @@ if (Meteor.isClient) {
         this.render('stats');
     });
 
-    Router.route('/add', function () {
-        this.render('add');
-    });
-
     Router.route('/timeline', function () {
         this.render('timeline');
     });
@@ -99,7 +95,7 @@ if (Meteor.isClient) {
             var action = event.target.action.value;
             var amount = event.target.amount.value;
             var units = event.target.units.value;
-            var date = event.target.date.value;
+            var date = new Date(event.target.date.value);
 
             Meteor.call("addItem", actor, action, amount, units, date);
 
@@ -220,3 +216,35 @@ if (Meteor.isServer) {
         });
     });
 }
+
+/*
+ Items.attachSchema(new SimpleSchema({
+ title: {
+ type: String,
+ label: "actor",
+ max: 256,
+ optional: false
+ },
+ author: {
+ type: String,
+ label: "action",
+ max: 256, optional: false
+ },
+ copies: {
+ type: Number,
+ label: "amount",
+ optional: false
+ },
+ summary: {
+ type: String,
+ label: "units",
+ optional: false,
+ max: 256
+ },
+ lastCheckedOut: {
+ type: Date,
+ label: "date",
+ optional: false
+ }
+ }));
+ */

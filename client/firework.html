@@ -18,7 +18,6 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
                         {{#if currentUser}}
-                            <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
                             <li role="presentation"><a href="{{pathFor route='stats'}}">Stats</a></li>
                         {{/if}}
                         {{> loginButtons}}
@@ -27,7 +26,13 @@
             </div>
         </nav>
         <div class="row">
-            <div class="col-md-12">
+
+            <div class="col-md-3">
+                {{> add}}
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-8">
 
                 {{> yield}}
 
@@ -36,19 +41,19 @@
         </div>
         <div class="footer">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <ul class="list-unstyled">
                         <li><a href="http://nevill.net/privacy/">Privacy Statement</a></li>
                         <li><a href="#/about">About</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <ul class="list-unstyled">
                         <li>Powered by <a href="https://github.com/JeremyNevill/firework">Firework</a></li>
                         <li>Using <a href="https://github.com/JeremyNevill/shortee">Shortee</a> syntax</li>
                     </ul>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <ul class="list-unstyled">
                         <li>Copyright (c) 2012-2014</li>
                         <li><a href="http://nevill.net">Jeremy Nevill</a></li>
@@ -57,6 +62,34 @@
             </div>
         </div>
     </div>
+</template>
+
+
+<template name="add">
+    {{#if currentUser}}
+        <h2>Add</h2>
+
+        <form role="form" class="new-item">
+            <div class="form-group">
+                <input type="text" class="form-control" id="actor" name="actor" placeholder="Actor">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="action" name="action" placeholder="Action">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="units" name="units" placeholder="Units">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+        <hr/>
+    {{/if}}
 </template>
 
 
@@ -70,28 +103,13 @@
     </table>
 </template>
 
-<template name="add">
-    {{#if currentUser}}
-        <h2>Add</h2>
-
-        <form class="new-item">
-            <input type="text" name="actor" placeholder="actor"/>
-            <input type="text" name="action" placeholder="action"/>
-            <input type="text" name="amount" placeholder="amount"/>
-            <input type="text" name="units" placeholder="units"/>
-            <input type="text" name="date" placeholder="date"/>
-            <button type="submit">Add Item</button>
-        </form>
-        <hr/>
-    {{/if}}
-    <hr/>
-</template>
 
 <template name="home">
     <div class="jumbotron">
         <h1><span class="glyphicon glyphicon-fire"></span> Firework</h1>
     </div>
 </template>
+
 
 <template name="stats">
     <h2>Stats</h2>
@@ -112,6 +130,7 @@
     </p>
     <hr/>
 </template>
+
 
 <template name="item">
     <tr>
@@ -141,6 +160,7 @@
     </tr>
 </template>
 
+
 <template name="notFound">
     <div class="not-found jumbotron">
         <h2>404</h2>
@@ -148,5 +168,3 @@
         <p>Sorry, we couldn't find a page at this address.</p>
     </div>
 </template>
-
- 
