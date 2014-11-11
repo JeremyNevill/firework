@@ -25,6 +25,11 @@ if (Meteor.isClient) {
         this.render('timeline');
     });
 
+    Router.route('/add', function() {
+        this.render('/add');
+    });
+
+
     /*
      Subscriptions
      */
@@ -105,6 +110,8 @@ if (Meteor.isClient) {
             event.target.amount.value = "";
             event.target.units.value = "";
             event.target.date.value = "";
+ 
+            Router.go('add');
 
             // Prevent default form submit
             return false;
