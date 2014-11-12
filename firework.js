@@ -25,7 +25,7 @@ if (Meteor.isClient) {
         this.render('timeline');
     });
 
-    Router.route('/add', function() {
+    Router.route('/add', function () {
         this.render('/add');
     });
 
@@ -105,13 +105,13 @@ if (Meteor.isClient) {
             Meteor.call("addItem", actor, action, amount, units, date);
 
             // Clear form
-            event.target.actor.value = "";
-            event.target.action.value = "";
-            event.target.amount.value = "";
-            event.target.units.value = "";
-            event.target.date.value = "";
- 
-            Router.go('add');
+            /*
+             event.target.actor.value = "";
+             event.target.action.value = "";
+             event.target.amount.value = "";
+             event.target.units.value = "";
+             event.target.date.value = "";
+             */
 
             // Prevent default form submit
             return false;
@@ -142,6 +142,12 @@ if (Meteor.isClient) {
 
     Accounts.ui.config({
         passwordSignupFields: "USERNAME_ONLY"
+    });
+
+    Template.item.helpers({
+        dateFormatted: function () {
+            return moment(this.date).format('MM/DD/YYYY HH:MM');
+        }
     });
 
 }
@@ -216,11 +222,12 @@ Meteor.methods({
 if (Meteor.isServer) {
     Meteor.publish("items", function () {
         return Items.find({
-            $or: [
-                {private: {$ne: true}},
-                {owner: this.userId}
-            ]
-        });
+                $or: [
+                    {private: {$ne: true}},
+                    {owner: this.userId}
+                ]
+            }, {sort: {"date": -1}}
+        );
     });
 }
 
