@@ -146,7 +146,9 @@ if (Meteor.isClient) {
 
     Template.item.helpers({
         dateFormatted: function () {
+          
             return moment(this.date).format('MM/DD/YYYY HH:MM');
+
         }
     });
 
@@ -230,35 +232,4 @@ if (Meteor.isServer) {
         );
     });
 }
-
-/*
- Items.attachSchema(new SimpleSchema({
- title: {
- type: String,
- label: "actor",
- max: 256,
- optional: false
- },
- author: {
- type: String,
- label: "action",
- max: 256, optional: false
- },
- copies: {
- type: Number,
- label: "amount",
- optional: false
- },
- summary: {
- type: String,
- label: "units",
- optional: false,
- max: 256
- },
- lastCheckedOut: {
- type: Date,
- label: "date",
- optional: false
- }
- }));
- */
+ 
