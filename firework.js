@@ -1,5 +1,7 @@
 Items = new Mongo.Collection("items");
 Actors = new Mongo.Collection("actors");
+Actions = new Mongo.Collection("actions");
+
 
 Router.configure({
     layoutTemplate: 'ApplicationLayout',
@@ -29,15 +31,19 @@ if (Meteor.isClient) {
     Router.route('/add', function () {
         this.render('add');
     });
-  
-  Router.route('/actors',function(){
-    this.render('actors');
-  });
-  
-  Router.route('/actors/:_id', function () {
-  var actor = Actors.findOne({_id: this.params._id});
-  this.render('ShowActor', {data: item});
-  });
+
+    Router.route('/actors', function () {
+        this.render('actors');
+    });
+
+    Router.route('/actors/:_id', function () {
+        var actor = Actors.findOne({_id: this.params._id});
+        this.render('ShowActor', {data: item});
+    });
+
+    Router.route('/actions', function () {
+        this.render('actions');
+    });
 
 
     /*
@@ -45,6 +51,8 @@ if (Meteor.isClient) {
      */
     Meteor.subscribe("items");
     Meteor.subscribe("actors");
+    Meteor.subscribe("actions");
+
 
     /*
      Timeline Helpers
@@ -63,17 +71,36 @@ if (Meteor.isClient) {
             return Session.get("hideArchived");
         }
     });
-  
+
     /* 
-    Actors Helpers 
-    */
+     Actors Helpers
+     */
     Template.actors.helpers({
-      actors: function(){
-        return Actors.find();
-      }
-    }); 
-  
-  
+        actors: function () {
+            return Actors.find();
+        }
+    });
+
+    Template.actors_menu.helpers({
+        actors: function () {
+            return Actors.find();
+        }
+    });
+
+    /*
+     Actions Helpers
+     */
+    Template.actions.helpers({
+        actions: function () {
+            return Actions.find();
+        }
+    });
+
+    Template.actions_menu.helpers({
+        actions: function () {
+            return Actions.find();
+        }
+    });
 
     Template.body.helpers({});
 
@@ -168,7 +195,7 @@ if (Meteor.isClient) {
 
     Template.item.helpers({
         dateFormatted: function () {
-          
+
             return moment(this.date).format('MM/DD/YYYY HH:MM');
 
         }
@@ -244,7 +271,7 @@ Meteor.methods({
  Server Code
  */
 if (Meteor.isServer) {
-  
+
     Meteor.publish("items", function () {
         return Items.find({
                 $or: [
@@ -254,10 +281,14 @@ if (Meteor.isServer) {
             }, {sort: {"date": -1}}
         );
     });
-  
-  Meteor.publish("actors", function () {
-        return Actors.find();
+
+    Meteor.publish("actors", function () {
+        return Actors.find({}, {sort: {"actor": 1}});
     });
-  
+
+    Meteor.publish("actions", function () {
+        return Actions.find({}, {sort: {"action": 1}});
+    });
+
 }
  
