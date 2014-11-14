@@ -19,17 +19,58 @@ questions such as 'how many miles have I ran this year?' or 'when did I last hav
 
 ## Getting Started
 
-### Setup Meteor
+### [Nitrous.io](http://nitrous.io)
 
-* [Install Meteor](https://www.meteor.com/install)
+#### Setup a Meteor Box
 
-### Fork and Clone
+* Create a new box
+  * Choose Meteor as the template
+
+#### Fork and Clone
 
 Fork and clone the repo to your development machine/vm
 
 ```
 git clone git@github.com:YourGithubAccount/firework.git
 ```
+
+#### Run Meteor
+
+Run meteor
+
+```
+meteor
+```
+
+Browse to the Nitrous url by clicking on:
+* Preview
+  * Port 3000
+
+#### Connect to Mongo Database
+
+```
+mongo localhost:3001       
+show dbs
+use meteor
+db.items.find()
+```
+
+
+### Linux
+
+#### Setup Meteor
+
+* [Install Meteor](https://www.meteor.com/install)
+
+#### Fork and Clone
+
+Fork and clone the repo to your development machine/vm
+
+```
+git clone git@github.com:YourGithubAccount/firework.git
+```
+
+#### Run Meteor
 
 Run meteor
 
@@ -45,6 +86,7 @@ Browse to [localhost:3000](http://localhost:3000)
 
 Please get in contact via twitter [JeremyNevill](https://twitter.com/JeremyNevill) or
 email [jeremy@nevill.net](mailto:jeremy@nevill.net)
+
 
 
 

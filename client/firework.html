@@ -1,5 +1,6 @@
 <template name="ApplicationLayout">
     <div class="container">
+      
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -18,45 +19,49 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
                         {{#if currentUser}}
+                            <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
                             <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
-                            <li role="presentation"><a href="{{pathFor route='stats'}}">Stats</a></li>
+                            <li role="presentation"><a href="{{pathFor route='account'}}">Account</a></li>
                         {{/if}}
                         {{> loginButtons}}
                     </ul>
                 </div>
             </div>
         </nav>
+      
         <div class="row">
-
-            <div class="col-sm-12">
+             <div class="col-sm-3">
+              {{> actors}}  
+            </div>
+            <div class="col-sm-9">
 
                 {{> yield}}
 
                 <hr/>
             </div>
         </div>
-        <div class="footer">
+         
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <ul class="list-unstyled">
                         <li><a href="http://nevill.net/privacy/">Privacy Statement</a></li>
                         <li><a href="#/about">About</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <ul class="list-unstyled">
                         <li>Powered by <a href="https://github.com/JeremyNevill/firework">Firework</a></li>
                         <li>Using <a href="https://github.com/JeremyNevill/shortee">Shortee</a> syntax</li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <ul class="list-unstyled">
                         <li>Copyright (c) 2012-2014</li>
                         <li><a href="http://nevill.net">Jeremy Nevill</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+      
     </div>
 </template>
 
@@ -100,6 +105,8 @@
 </template>
 
 
+
+
 <template name="home">
     <div class="jumbotron">
         <h1><span class="glyphicon glyphicon-fire"></span> Firework</h1>
@@ -107,8 +114,8 @@
 </template>
 
 
-<template name="stats">
-    <h2>Stats</h2>
+<template name="account">
+    <h2>Account</h2>
 
     <p>
         <label class="hide-archived">
@@ -131,12 +138,12 @@
 <template name="item">
     <tr>
         <td>
-            <h3>
+            <h4>
                 @{{actor}}
                 {{action}}
                 {{amount}}{{units}}
                 {{dateFormatted}}
-            </h3>
+            </h4>
         </td>
         <td>
             {{#if isOwner}}
@@ -164,4 +171,10 @@
     </div>
 </template>
 
-
+<template name="actors">
+    <h3><a href="{{pathFor route='actors'}}">Actors</a></h3>
+        
+        {{#each actors}}
+          <h4>{{actor}}</h4>
+        {{/each}}    
+</template>

@@ -1,4 +1,5 @@
 Items = new Mongo.Collection("items");
+Actors = new Mongo.Collection("actors");
 
 Router.configure({
     layoutTemplate: 'ApplicationLayout',
@@ -17,8 +18,8 @@ if (Meteor.isClient) {
         this.render('home');
     });
 
-    Router.route('/stats', function () {
-        this.render('stats');
+    Router.route('/account', function () {
+        this.render('account');
     });
 
     Router.route('/timeline', function () {
@@ -26,14 +27,24 @@ if (Meteor.isClient) {
     });
 
     Router.route('/add', function () {
-        this.render('/add');
+        this.render('add');
     });
+  
+  Router.route('/actors',function(){
+    this.render('actors');
+  });
+  
+  Router.route('/actors/:_id', function () {
+  var actor = Actors.findOne({_id: this.params._id});
+  this.render('ShowActor', {data: item});
+  });
 
 
     /*
      Subscriptions
      */
     Meteor.subscribe("items");
+    Meteor.subscribe("actors");
 
     /*
      Timeline Helpers
@@ -52,13 +63,24 @@ if (Meteor.isClient) {
             return Session.get("hideArchived");
         }
     });
+  
+    /* 
+    Actors Helpers 
+    */
+    Template.actors.helpers({
+      actors: function(){
+        return Actors.find();
+      }
+    }); 
+  
+  
 
     Template.body.helpers({});
 
     /*
-     Stats Helpers
+     Account Helpers
      */
-    Template.stats.helpers({
+    Template.account.helpers({
         itemCount: function () {
             return Items.find({checked: {$ne: true}}).count();
         },
@@ -85,7 +107,7 @@ if (Meteor.isClient) {
     /*
      Stat Events
      */
-    Template.stats.events({
+    Template.account.events({
         "change .hide-archived input": function (event) {
             Session.set("hideArchived", event.target.checked);
         }
@@ -222,6 +244,7 @@ Meteor.methods({
  Server Code
  */
 if (Meteor.isServer) {
+  
     Meteor.publish("items", function () {
         return Items.find({
                 $or: [
@@ -231,5 +254,10 @@ if (Meteor.isServer) {
             }, {sort: {"date": -1}}
         );
     });
+  
+  Meteor.publish("actors", function () {
+        return Actors.find();
+    });
+  
 }
  
