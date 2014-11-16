@@ -33,19 +33,31 @@
         <div class="row">
             <div class="col-sm-3">
 
+                <div class="panel panel-default">
+                    <div class="panel-heading">Activities</div>
+                    <div class="panel-body">
+                        {{> actors_menu}}
+                    </div>
+                </div>
 
-                {{> actors_menu}}
-
-                <hr/>
-
-                {{> actions_menu}}
-
+                <div class="panel panel-default">
+                    <div class="panel-heading">Actions</div>
+                    <div class="panel-body">
+                        {{> actions_menu}}
+                    </div>
+                </div>
 
             </div>
             <div class="col-sm-9">
 
                 {{> yield}}
 
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
                 <hr/>
             </div>
         </div>
@@ -71,6 +83,7 @@
             </div>
         </div>
     </div>
+
 </template>
 
 
@@ -198,8 +211,6 @@
 </template>
 
 <template name="actions">
-    <h2>Actions</h2>
-
     {{#each actions}}
         <h3>
             <a href="{{pathFor route='actions'}}">{{action}}</a>
@@ -208,8 +219,6 @@
 </template>
 
 <template name="actions_menu">
-    <h3><a href="{{pathFor route='actions'}}">Actions</a></h3>
-
     {{#each actions}}
         <h4>
             <a href="{{pathFor route='action'}}">{{action}}</a>
