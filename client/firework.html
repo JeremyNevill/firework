@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{pathFor route='home'}}"><span
+                <a class="navbar-brand" href="/"><span
                         class="glyphicon glyphicon-fire"></span>
                     Firework</a>
             </div>
@@ -19,8 +19,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
                     {{#if currentUser}}
-                        <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
                         <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
+                        <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
                         <li role="presentation"><a href="{{pathFor route='account'}}">Account</a></li>
                     {{/if}}
                     {{> loginButtons}}
@@ -33,26 +33,57 @@
         <div class="row">
             <div class="col-sm-3">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">Activities</div>
-                    <div class="panel-body">
-                        {{> actors_menu}}
-                    </div>
-                </div>
+                {{#if currentUser}}
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">Actions</div>
-                    <div class="panel-body">
-                        {{> actions_menu}}
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><span
+                                class="glyphicon glyphicon-user"></span> Actors
+                        </div>
+                        <div class="panel-body">
+                            {{> actors_menu}}
+                        </div>
                     </div>
-                </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><span
+                                class="glyphicon glyphicon-play"></span> Actions
+                        </div>
+                        <div class="panel-body">
+                            {{> actions_menu}}
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><span
+                                class="glyphicon glyphicon-stats"></span> Stats
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                Active Items: {{itemCount}}
+                            </p>
+
+                            <p>
+                                Archived Items: {{archivedItemCount}}
+                            </p>
+
+                            <p>
+                                Public Items: {{publicCount}}
+                            </p>
+
+                            <p>
+                                Private Items: {{privateCount}}
+                            </p>
+                        </div>
+                    </div>
+                {{/if}}
 
             </div>
             <div class="col-sm-9">
-
-                {{> yield}}
-
-
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{> yield}}
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -90,6 +121,7 @@
 <template name="add">
     {{#if currentUser}}
         <h2>Add</h2>
+        <hr/>
 
         <form role="form" class="new-item">
             <div class="form-group">
@@ -117,6 +149,7 @@
 
 <template name="timeline">
     <h2>Timeline</h2>
+    <hr/>
 
     <table class="table table-striped">
         {{#each items}}
@@ -135,6 +168,7 @@
 
 <template name="account">
     <h2>Account</h2>
+    <hr/>
 
     <p>
         <label class="hide-archived">
@@ -143,14 +177,6 @@
         </label>
     </p>
 
-    <p>
-        Active Items: {{itemCount}}, Archived Items: {{archivedItemCount}}
-    </p>
-
-    <p>
-        Public Items: {{publicCount}}, Private Items: {{privateCount}}
-    </p>
-    <hr/>
 </template>
 
 
@@ -158,8 +184,8 @@
     <tr>
         <td>
             <h4>
-                @{{actor}}
-                {{action}}
+                <a href="{{pathFor route='actors'}}">@{{actor}}</a>
+                <a href="{{pathFor route='actions'}}">{{action}}</a>
                 {{amount}}{{units}}
                 {{dateFormatted}}
             </h4>
@@ -192,6 +218,7 @@
 
 <template name="actors">
     <h2>Actors</h2>
+    <hr/>
 
     {{#each actors}}
         <h3>
@@ -201,8 +228,6 @@
 </template>
 
 <template name="actors_menu">
-    <h3><a href="{{pathFor route='actors'}}">Actors</a></h3>
-
     {{#each actors}}
         <h4>
             <a href="{{pathFor route='actors'}}">{{actor}}</a>
@@ -211,6 +236,9 @@
 </template>
 
 <template name="actions">
+    <h2>Actions</h2>
+    <hr/>
+
     {{#each actions}}
         <h3>
             <a href="{{pathFor route='actions'}}">{{action}}</a>
@@ -221,7 +249,7 @@
 <template name="actions_menu">
     {{#each actions}}
         <h4>
-            <a href="{{pathFor route='action'}}">{{action}}</a>
+            <a href="{{pathFor route='actions'}}">{{action}}</a>
         </h4>
     {{/each}}
 </template>

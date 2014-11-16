@@ -107,7 +107,7 @@ if (Meteor.isClient) {
     /*
      Account Helpers
      */
-    Template.account.helpers({
+    Template.ApplicationLayout.helpers({
         itemCount: function () {
             return Items.find({checked: {$ne: true}}).count();
         },
@@ -115,10 +115,10 @@ if (Meteor.isClient) {
             return Items.find({checked: {$ne: false}}).count();
         },
         publicCount: function () {
-            return Items.find({private: {$ne: false}}).count();
+            return Items.find({private: {$ne: true}}).count();
         },
         privateCount: function () {
-            return Items.find({private: {$ne: true}}).count();
+            return Items.find({private: {$ne: false}}).count();
         }
     });
 
@@ -154,13 +154,12 @@ if (Meteor.isClient) {
             Meteor.call("addItem", actor, action, amount, units, date);
 
             // Clear form
-            /*
-             event.target.actor.value = "";
-             event.target.action.value = "";
-             event.target.amount.value = "";
-             event.target.units.value = "";
-             event.target.date.value = "";
-             */
+            event.target.actor.value = "";
+            event.target.action.value = "";
+            event.target.amount.value = "";
+            event.target.units.value = "";
+            event.target.date.value = "";
+
 
             // Prevent default form submit
             return false;
