@@ -211,7 +211,31 @@ Meteor.methods({
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
-
+      
+       // Add actor if not existing already      
+      var existingActor=Actors.findOne({"actor": actor });
+      if(typeof existingActor === 'undefined'){
+           Actors.insert({
+             actor: actor,
+             createdAt: new Date(),
+             owner: Meteor.userId(),
+             username: Meteor.user().username
+         });
+      }
+       
+     // Add action if not existing already      
+      var existingAction=Actions.findOne({"action": action });
+      if(typeof existingAction === 'undefined'){
+           Actions.insert({
+             action: action,
+             createdAt: new Date(),
+             owner: Meteor.userId(),
+             username: Meteor.user().username
+         });
+      }
+                  
+      
+        // Add the item
         Items.insert({
             actor: actor,
             action: action,

@@ -1,6 +1,13 @@
 <template name="ApplicationLayout">
-
-
+<head>
+    <meta charset="utf-8">
+    <title>Firework</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+ <body>
+  
+   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
     <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -21,6 +28,7 @@
                     {{#if currentUser}}
                         <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
                         <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
+                   <li role="presentation"><a href="{{pathFor route='actions'}}">Actions</a></li>
                         <li role="presentation"><a href="{{pathFor route='account'}}">Account</a></li>
                     {{/if}}
                     {{> loginButtons}}
@@ -28,14 +36,23 @@
             </div>
         </div>
     </nav>
+  </header>
+ 
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3">
+          <div class="col-md-9">
+            <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{> yield}}  
+                    </div>
+              </div>
+          </div>
+            <div class="col-md-3">
 
                 {{#if currentUser}}
 
-                    <div class="panel panel-default">
+                    <div class="panel panel-default hidden-xs">
                         <div class="panel-heading"><span
                                 class="glyphicon glyphicon-user"></span> Actors
                         </div>
@@ -44,7 +61,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default">
+                    <div class="panel panel-default hidden-xs">
                         <div class="panel-heading"><span
                                 class="glyphicon glyphicon-play"></span> Actions
                         </div>
@@ -53,7 +70,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default">
+                    <div class="panel panel-default hidden-sm">
                         <div class="panel-heading"><span
                                 class="glyphicon glyphicon-stats"></span> Stats
                         </div>
@@ -78,35 +95,29 @@
                 {{/if}}
 
             </div>
-            <div class="col-sm-9">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        {{> yield}}
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-md-12">
                 <hr/>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <ul class="list-unstyled">
                     <li><a href="http://nevill.net/privacy/">Privacy Statement</a></li>
                     <li><a href="#/about">About</a></li>
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <ul class="list-unstyled">
                     <li>Powered by <a href="https://github.com/JeremyNevill/firework">Firework</a></li>
                     <li>Using <a href="https://github.com/JeremyNevill/shortee">Shortee</a> syntax</li>
                 </ul>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <ul class="list-unstyled">
                     <li>Copyright (c) 2012-2014</li>
                     <li><a href="http://nevill.net">Jeremy Nevill</a></li>
@@ -114,7 +125,7 @@
             </div>
         </div>
     </div>
-
+  </body>
 </template>
 
 
@@ -151,11 +162,11 @@
     <h2>Timeline</h2>
     <hr/>
 
-    <table class="table table-striped">
+     
         {{#each items}}
             {{> item}}
         {{/each}}
-    </table>
+    
 </template>
 
 
@@ -181,16 +192,14 @@
 
 
 <template name="item">
-    <tr>
-        <td>
+     <div>
             <h4>
-                <a href="{{pathFor route='actors'}}">@{{actor}}</a>
+                <a href="{{pathFor route='actorShow'}}">@{{actor}}</a>
                 <a href="{{pathFor route='actions'}}">{{action}}</a>
                 {{amount}}{{units}}
                 {{dateFormatted}}
             </h4>
-        </td>
-        <td>
+        
             {{#if isOwner}}
                 <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-sm">
                     {{#if private}}
@@ -200,11 +209,10 @@
                     {{/if}}
                 </button>
             {{/if}}
-        </td>
-        <td>
+        
             <button class="delete btn btn-danger btn-sm">&times;</button>
-        </td>
-    </tr>
+        </div>
+ 
 </template>
 
 
