@@ -9,7 +9,7 @@
 
     <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
         <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#navigation">
@@ -24,12 +24,12 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
+                        <li role="presentation"><a href="{{pathFor route='timeline'}}"><span class="glyphicon glyphicon-time"></span> Timeline</a></li>
                         {{#if currentUser}}
                             <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
-                            <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
-                            <li role="presentation"><a href="{{pathFor route='actions'}}">Actions</a></li>
-                            <li role="presentation"><a href="{{pathFor route='account'}}">Account</a></li>
+                            <li role="presentation"><a href="{{pathFor route='actors'}}"><span class="glyphicon glyphicon-user"></span> Actors</a></li>
+                            <li role="presentation"><a href="{{pathFor route='actions'}}"><span class="glyphicon glyphicon-play"></span> Actions</a></li>
+                      <li role="presentation"><a href="{{pathFor route='account'}}"><span class="glyphicon glyphicon-qrcode"></span> Account</a></li>
                         {{/if}}
                         {{> loginButtons}}
                     </ul>
@@ -39,9 +39,9 @@
     </header>
 
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-9">
+    <div class="container">
+        <div class="row">    
+          <div class="col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         {{> yield}}
@@ -49,7 +49,6 @@
                 </div>
             </div>
             <div class="col-md-3">
-
                 {{#if currentUser}}
 
                     <div class="panel panel-default hidden-xs">
@@ -93,8 +92,8 @@
                         </div>
                     </div>
                 {{/if}}
-
             </div>
+            
 
         </div>
 
@@ -159,9 +158,8 @@
 
 
 <template name="timeline">
-    <h2>Timeline</h2>
+    <h2><span class="glyphicon glyphicon-time"></span> Timeline</h2>
     <hr/>
-
 
     {{#each items}}
         {{> item}}
@@ -226,7 +224,7 @@
 </template>
 
 <template name="actors">
-    <h2>Actors</h2>
+    <h2><span class="glyphicon glyphicon-user"></span> Actors</h2>
     <hr/>
 
     {{#each actors}}
@@ -237,7 +235,7 @@
 </template>
 
 <template name="actorsShow">
-    <h2>{{ actor }}</h2>
+    <h2><span class="glyphicon glyphicon-user"></span> {{ actor }}</h2>
     <hr/>
     Id: {{ _id }}
 </template>
@@ -251,7 +249,7 @@
 </template>
 
 <template name="actions">
-    <h2>Actions</h2>
+    <h2><span class="glyphicon glyphicon-play"></span> Actions</h2>
     <hr/>
 
     {{#each actions}}
@@ -262,7 +260,7 @@
 </template>
 
 <template name="actionsShow">
-    <h2>{{ action }}</h2>
+    <h2><span class="glyphicon glyphicon-play"></span> {{ action }}</h2>
     <hr/>
     Id: {{ _id }}
 </template>

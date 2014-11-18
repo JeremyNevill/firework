@@ -12,54 +12,6 @@ Router.configure({
  Client Code
  */
 if (Meteor.isClient) {
-
-    /*
-     Routes
-     */
-    Router.route('/', function () {
-        this.render('home');
-    });
-
-    Router.route('/account', function () {
-        this.render('account');
-    });
-
-    Router.route('/timeline', function () {
-        this.render('timeline');
-    });
-
-    Router.route('/add', function () {
-        this.render('add');
-    });
-
-    Router.route('/actors', function () {
-        this.render('actors');
-    });
-
-    Router.route('/actors/:actor', function () {
-        this.render('actorsShow',
-            {
-                data: function () {
-                    var actor = Actors.findOne({"actor": this.params.actor});
-                    return actor;
-                }
-            });
-    }, {name: 'actors.show'});
-
-    Router.route('/actions', function () {
-        this.render('actions');
-    });
-
-    Router.route('/actions/:action', function () {
-        this.render('actionsShow',
-            {
-                data: function () {
-                    var action = Actions.findOne({"action": this.params.action});
-                    return action;
-                }
-            });
-    }, {name: 'actions.show'});
-
     /*
      Subscriptions
      */
@@ -311,7 +263,7 @@ if (Meteor.isServer) {
     Meteor.publish("items", function () {
         return Items.find({
                 $or: [
-                    {private: {$ne: true}},
+                    // {private: {$ne: true}},
                     {owner: this.userId}
                 ]
             }, {sort: {"date": -1}}
@@ -319,11 +271,11 @@ if (Meteor.isServer) {
     });
 
     Meteor.publish("actors", function () {
-        return Actors.find({}, {sort: {"actor": 1}});
+        return Actors.find({owner: this.userId}, {sort: {"actor": 1}});
     });
 
     Meteor.publish("actions", function () {
-        return Actions.find({}, {sort: {"action": 1}});
+        return Actions.find({owner: this.userId}, {sort: {"action": 1}});
     });
 
 }
