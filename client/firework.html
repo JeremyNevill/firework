@@ -1,53 +1,53 @@
 <template name="ApplicationLayout">
-<head>
-    <meta charset="utf-8">
-    <title>Firework</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
- <body>
-  
-   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/"><span
-                        class="glyphicon glyphicon-fire"></span>
-                    Firework</a>
+    <head>
+        <meta charset="utf-8">
+        <title>Firework</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><span
+                            class="glyphicon glyphicon-fire"></span>
+                        Firework</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
+                        {{#if currentUser}}
+                            <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
+                            <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
+                            <li role="presentation"><a href="{{pathFor route='actions'}}">Actions</a></li>
+                            <li role="presentation"><a href="{{pathFor route='account'}}">Account</a></li>
+                        {{/if}}
+                        {{> loginButtons}}
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="navigation">
-                <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><a href="{{pathFor route='timeline'}}">Timeline</a></li>
-                    {{#if currentUser}}
-                        <li role="presentation"><a href="{{pathFor route='add'}}">Add</a></li>
-                        <li role="presentation"><a href="{{pathFor route='actors'}}">Actors</a></li>
-                   <li role="presentation"><a href="{{pathFor route='actions'}}">Actions</a></li>
-                        <li role="presentation"><a href="{{pathFor route='account'}}">Account</a></li>
-                    {{/if}}
-                    {{> loginButtons}}
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </header>
- 
+        </nav>
+    </header>
+
 
     <div class="container-fluid">
         <div class="row">
-          <div class="col-md-9">
-            <div class="panel panel-default">
+            <div class="col-md-9">
+                <div class="panel panel-default">
                     <div class="panel-body">
-                        {{> yield}}  
+                        {{> yield}}
                     </div>
-              </div>
-          </div>
+                </div>
+            </div>
             <div class="col-md-3">
 
                 {{#if currentUser}}
@@ -95,7 +95,7 @@
                 {{/if}}
 
             </div>
-            
+
         </div>
 
         <div class="row">
@@ -125,7 +125,7 @@
             </div>
         </div>
     </div>
-  </body>
+    </body>
 </template>
 
 
@@ -162,11 +162,11 @@
     <h2>Timeline</h2>
     <hr/>
 
-     
-        {{#each items}}
-            {{> item}}
-        {{/each}}
-    
+
+    {{#each items}}
+        {{> item}}
+    {{/each}}
+
 </template>
 
 
@@ -192,16 +192,16 @@
 
 
 <template name="item">
-     <div>
-            <h4>
-                <a href="{{pathFor route='actorShow'}}">@{{actor}}</a>
-                <a href="{{pathFor route='actions'}}">{{action}}</a>
-                {{amount}}{{units}}
-                {{dateFormatted}}
-            </h4>
-        
+    <div>
+        <h4>
+            <a href="{{pathFor route='actorsShow'}}">@{{actor}}</a>
+            <a href="{{pathFor route='actionsShow'}}">{{action}}</a>
+            {{amount}}{{units}}
+            {{dateFormatted}}
+
+
             {{#if isOwner}}
-                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-sm">
+                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-xs">
                     {{#if private}}
                         Private
                     {{else}}
@@ -209,10 +209,11 @@
                     {{/if}}
                 </button>
             {{/if}}
-        
-            <button class="delete btn btn-danger btn-sm">&times;</button>
-        </div>
- 
+
+            <button class="delete btn btn-danger btn-xs">&times;</button>
+        </h4>
+    </div>
+
 </template>
 
 
