@@ -231,15 +231,21 @@
 
     {{#each actors}}
         <h3>
-            <a href="{{pathFor route='actors'}}">{{actor}}</a>
+            <a href="{{pathFor route='actors.show'}}">{{actor}}</a>
         </h3>
     {{/each}}
+</template>
+
+<template name="actorsShow">
+    <h2>{{ actor }}</h2>
+    <hr/>
+    Id: {{ _id }}
 </template>
 
 <template name="actors_menu">
     {{#each actors}}
         <h4>
-            <a href="{{pathFor route='actors'}}">{{actor}}</a>
+            <a href="{{pathFor route='actors.show'}}">{{actor}}</a>
         </h4>
     {{/each}}
 </template>
@@ -250,15 +256,21 @@
 
     {{#each actions}}
         <h3>
-            <a href="{{pathFor route='actions'}}">{{action}}</a>
+            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
         </h3>
     {{/each}}
+</template>
+
+<template name="actionsShow">
+    <h2>{{ action }}</h2>
+    <hr/>
+    Id: {{ _id }}
 </template>
 
 <template name="actions_menu">
     {{#each actions}}
         <h4>
-            <a href="{{pathFor route='actions'}}">{{action}}</a>
+            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
         </h4>
     {{/each}}
 </template>

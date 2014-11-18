@@ -36,15 +36,29 @@ if (Meteor.isClient) {
         this.render('actors');
     });
 
-    Router.route('/actors/:_id', function () {
-        var actor = Actors.findOne({_id: this.params._id});
-        this.render('ShowActor', {data: item});
-    });
+    Router.route('/actors/:actor', function () {
+        this.render('actorsShow',
+            {
+                data: function () {
+                    var actor = Actors.findOne({"actor": this.params.actor});
+                    return actor;
+                }
+            });
+    }, {name: 'actors.show'});
 
     Router.route('/actions', function () {
         this.render('actions');
     });
 
+    Router.route('/actions/:action', function () {
+        this.render('actionsShow',
+            {
+                data: function () {
+                    var action = Actions.findOne({"action": this.params.action});
+                    return action;
+                }
+            });
+    }, {name: 'actions.show'});
 
     /*
      Subscriptions
@@ -52,7 +66,6 @@ if (Meteor.isClient) {
     Meteor.subscribe("items");
     Meteor.subscribe("actors");
     Meteor.subscribe("actions");
-
 
     /*
      Timeline Helpers
