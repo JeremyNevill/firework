@@ -197,11 +197,10 @@
 <template name="item">
     <div>
         <h4>
-            <a href="{{pathFor route='actorsShow'}}">@{{actor}}</a>
-            <a href="{{pathFor route='actionsShow'}}">{{action}}</a>
+            <a href="/actors/{{actor}}">@{{actor}}</a>
+            <a href="/actions/{{action}}">{{action}}</a>
             {{amount}}{{units}}
             {{dateFormatted}}
-
 
             {{#if isOwner}}
                 <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-xs">
@@ -242,8 +241,6 @@
 <template name="actorsShow">
     <h2><span class="glyphicon glyphicon-user"></span> {{ actor }}</h2>
     <hr/>
-
-
 </template>
 
 <template name="actors_menu">
