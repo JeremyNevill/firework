@@ -1,6 +1,6 @@
 /*
-     Routes
-     */
+ Routes
+ */
 if (Meteor.isClient) {
 
 
