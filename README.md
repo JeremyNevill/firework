@@ -1,17 +1,23 @@
 Firework
 ========
 
-Firework is a [Meteor](https://www.meteor.com) version of the Firework Micrologging Platform.
+Firework is a Realtime Micrologging Platform and is written using the javascript platform [Meteor](https://www.meteor.com).
+
 
 Micrologging is what we're calling..
 
-'concise log items that mean something, can be can be read by humans, and parsed by computers.'
+> 'concise log items that have real meaning, are readable by humans, and parsable by computers.'
 
 Firework enables you to record the things you have done, like a to-done list,
 from any device that can handle a modern Meteor web interface.
 
-Log items that you have added include such attributes as
-actor(who), action(what), amount, units, date and time.
+Log items include attributes such as:
+
+* actor(who)
+* action(what)
+* amount
+* units
+* date and time.
 
 Once you start adding items you can browse your timeline by attribute and answer
 questions such as 'how many miles have I ran this year?' or 'when did I last have a burrito?'
