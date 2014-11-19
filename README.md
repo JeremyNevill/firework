@@ -39,6 +39,7 @@ git clone git@github.com:JeremyNevill/firework.git
 
 Run meteor
 ```
+cd firework
 meteor
 ```
 
@@ -64,6 +65,7 @@ git clone git@github.com:JeremyNevill/firework.git
 
 Run meteor
 ```
+cd firework
 meteor
 ```
 
