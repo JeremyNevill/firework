@@ -23,69 +23,63 @@ Once you start adding items you can browse your timeline by attribute and answer
 questions such as 'how many miles have I ran this year?' or 'when did I last have a burrito?'
 
 
-## Getting Started
+## Get Started
 
 ### [Nitrous.io](http://nitrous.io)
 
-#### Setup a Meteor Box
+Get a [Nitrious.io account](http://nitrous.io)
 
-* Create a new box
-  * Choose Meteor as the template
+Setup a Meteor Box, choose Meteor as the template
 
-#### Fork and Clone
-
-Fork and clone the repo to your development machine/vm
+Clone the repo to your development machine/vm
 
 ```
-git clone git@github.com:YourGithubAccount/firework.git
+git clone git@github.com:JeremyNevill/firework.git
 ```
-
-#### Run Meteor
 
 Run meteor
-
 ```
 meteor
 ```
 
-Browse to the Nitrous url by clicking on:
+In Nitrous browse to the dev url by clicking on:
 * Preview
   * Port 3000
 
-#### Connect to Mongo Database
+Note: If you may want contribute back fork your own version, then clone from that.
 
-```
-mongo localhost:3001       
-show dbs
-use meteor
-db.items.find()
-```
+
 
 
 ### Linux
 
-#### Setup Meteor
+Setup Meteor
 
-* [Install Meteor](https://www.meteor.com/install)
-
-#### Fork and Clone
+[Install Meteor](https://www.meteor.com/install)
 
 Fork and clone the repo to your development machine/vm
-
 ```
-git clone git@github.com:YourGithubAccount/firework.git
+git clone git@github.com:JeremyNevill/firework.git
 ```
-
-#### Run Meteor
 
 Run meteor
-
 ```
 meteor
 ```
 
 Browse to [localhost:3000](http://localhost:3000)
 
+
+### Connecting to Mongo Database
+
+Meteor uses mongodb as the database layer, connect to the local meteor db as follows:
+
+```
+mongo localhost:3001
+show dbs
+use meteor
+db.items.find()
+```
 
 
 ## Get in Contact
