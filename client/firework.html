@@ -239,8 +239,13 @@
 </template>
 
 <template name="actorsShow">
-    <h2><span class="glyphicon glyphicon-user"></span> {{ actor }}</h2>
+    <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}}</h2>
     <hr/>
+
+    {{#each items }}
+        {{> item}}
+    {{/each}}
+
 </template>
 
 <template name="actors_menu">
@@ -263,9 +268,12 @@
 </template>
 
 <template name="actionsShow">
-    <h2><span class="glyphicon glyphicon-play"></span> {{ action }}</h2>
+    <h2><span class="glyphicon glyphicon-play"></span> {{ action.action }}</h2>
     <hr/>
-    Id: {{ _id }}
+
+    {{#each items }}
+        {{> item}}
+    {{/each}}
 </template>
 
 <template name="actions_menu">
@@ -275,3 +283,5 @@
         </h4>
     {{/each}}
 </template>
+
+

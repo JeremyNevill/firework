@@ -28,8 +28,12 @@ if (Meteor.isClient) {
         this.render('actorsShow',
             {
                 data: function () {
-                    var actor = Actors.findOne({"actor": this.params.actor});
-                    return actor;
+                    var templateData =
+                    {
+                        actor: Actors.findOne({"actor": this.params.actor}),
+                        items: Items.find({"actor": this.params.actor})
+                    };
+                    return templateData;
                 }
             });
     }, {name: 'actors.show'});
@@ -42,8 +46,12 @@ if (Meteor.isClient) {
         this.render('actionsShow',
             {
                 data: function () {
-                    var action = Actions.findOne({"action": this.params.action});
-                    return action;
+                    var templateData =
+                    {
+                        action: Actions.findOne({"action": this.params.action}),
+                        items: Items.find({"action": this.params.action})
+                    };
+                    return templateData;
                 }
             });
     }, {name: 'actions.show'});

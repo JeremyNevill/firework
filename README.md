@@ -25,7 +25,7 @@ questions such as 'how many miles have I ran this year?' or 'when did I last hav
 
 ## Get Started
 
-### [Nitrous.io](http://nitrous.io)
+### Nitrous.io
 
 Get a [Nitrious.io account](http://nitrous.io)
 
