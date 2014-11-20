@@ -27,6 +27,10 @@ questions such as 'how many miles have I ran this year?' or 'when did I last hav
 
 ### Nitrous.io
 
+[![Hack JeremyNevill/firework on Nitrous](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-d464cf470a5da050619f6f247a1017ec.png)](https://www.nitrous.io/hack_button?source=embed&runtime=meteor&repo=JeremyNevill%2Ffirework)
+
+or
+
 Get a [Nitrious.io account](http://nitrous.io)
 
 Setup a Meteor Box, choose Meteor as the template
