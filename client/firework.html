@@ -203,7 +203,7 @@
         <h4>
             <a href="/actors/{{actor}}">@{{actor}}</a>
             <a href="/actions/{{action}}">{{action}}</a>
-            {{amount}}{{units}}
+            {{amount}}<a href="/units/{{unit}}">{{units}}</a>
             {{dateFormatted}}
 
             {{#if isOwner}}
@@ -231,6 +231,8 @@
     </div>
 </template>
 
+
+<!-- Actors -->
 <template name="actors">
     <h2><span class="glyphicon glyphicon-user"></span> Actors</h2>
     <hr/> {{#each actors}}
@@ -239,7 +241,7 @@
         </h3> {{/each}}
 </template>
 
-<template name="actorsShow">
+<template name="actors_show">
     <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}}</h2>
     <hr/> {{#each items }} {{> item}} {{/each}}
 
@@ -252,6 +254,8 @@
         </h4> {{/each}}
 </template>
 
+
+<!-- Actions -->
 <template name="actions">
     <h2><span class="glyphicon glyphicon-play"></span> Actions</h2>
     <hr/> {{#each actions}}
@@ -260,7 +264,7 @@
         </h3> {{/each}}
 </template>
 
-<template name="actionsShow">
+<template name="actions_show">
     <h2><span class="glyphicon glyphicon-play"></span> {{ action.action }}</h2>
     <hr/> {{#each items }} {{> item}} {{/each}}
 </template>
@@ -272,6 +276,8 @@
         </h4> {{/each}}
 </template>
 
+
+<!-- Units -->
 <template name="units_menu">
     {{#each units}}
     <h4>       
@@ -285,4 +291,9 @@
     <h3>
             <a href="{{pathFor route='units.show'}}">{{unit}}</a>
         </h3> {{/each}}
+</template>
+
+<template name="units_show">
+     <h2><span class="glyphicon glyphicon-cog"></span> {{ unit.unit }}</h2>
+    <hr/> {{#each items }} {{> item}} {{/each}}
 </template>

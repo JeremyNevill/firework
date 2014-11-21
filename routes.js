@@ -24,7 +24,7 @@ if (Meteor.isClient) {
     });
 
     Router.route('/actors/:actor', function() {
-        this.render('actorsShow', {
+        this.render('actors_show', {
             data: function() {
                 var templateData = {
                     actor: Actors.findOne({
@@ -46,7 +46,7 @@ if (Meteor.isClient) {
     });
 
     Router.route('/actions/:action', function() {
-        this.render('actionsShow', {
+        this.render('actions_show', {
             data: function() {
                 var templateData = {
                     action: Actions.findOne({
@@ -67,15 +67,15 @@ if (Meteor.isClient) {
         this.render('units');
     });
 
-    Router.route('/units/:action', function() {
-        this.render('unitsShow', {
+    Router.route('/units/:unit', function() {
+        this.render('units_show', {
             data: function() {
                 var templateData = {
                     unit: Units.findOne({
                         "unit": this.params.unit
                     }),
                     items: Items.find({
-                        "unit": this.params.unit
+                        "units": this.params.unit
                     })
                 };
                 return templateData;
