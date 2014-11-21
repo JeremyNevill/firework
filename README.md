@@ -40,7 +40,7 @@ Clone the repo to your development machine/vm
 ```
 git clone git@github.com:JeremyNevill/firework.git
 ```
-
+    
 Run meteor
 ```
 cd firework
@@ -61,6 +61,10 @@ Note: If you may want contribute back fork your own version, then clone from tha
 Setup Meteor
 
 [Install Meteor](https://www.meteor.com/install)
+
+```
+curl https://install.meteor.com/ | sh
+```
 
 Fork and clone the repo to your development machine/vm
 ```
