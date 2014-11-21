@@ -38,6 +38,10 @@
                             <li role="presentation"><a href="{{pathFor route='actions'}}"><span
                                     class="glyphicon glyphicon-play"></span> Actions</a>
                             </li>
+                            <li role="presentation">
+                                <a href="{{pathFor route='units'}}">
+                                    <span class="glyphicon glyphicon-th-large"></span> Units</a>
+                            </li>
                             <li role="presentation"><a href="{{pathFor route='account'}}"><span
                                     class="glyphicon glyphicon-cog"></span> Account</a>
                             </li>
@@ -74,6 +78,14 @@
                         </div>
                         <div class="panel-body">
                             {{> actions_menu}}
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default hidden-xs">
+                        <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> Units
+                        </div>
+                        <div class="panel-body">
+                            {{> units_menu}}
                         </div>
                     </div>
 
@@ -258,4 +270,19 @@
     <h4>
             <a href="{{pathFor route='actions.show'}}">{{action}}</a>
         </h4> {{/each}}
+</template>
+
+<template name="units_menu">
+    {{#each units}}
+    <h4>       
+    <a href="{{pathFor route='units.show'}}">{{unit}}</a>
+        </h4> {{/each}}
+</template>
+
+<template name="units">
+    <h2><span class="glyphicon glyphicon-large"></span> Units</h2>
+    <hr/> {{#each units}}
+    <h3>
+            <a href="{{pathFor route='units.show'}}">{{unit}}</a>
+        </h3> {{/each}}
 </template>

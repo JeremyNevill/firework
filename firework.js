@@ -1,6 +1,7 @@
 Items = new Mongo.Collection("items");
 Actors = new Mongo.Collection("actors");
 Actions = new Mongo.Collection("actions");
+Units = new Mongo.Collection("units");
 
 
 Router.configure({
@@ -18,21 +19,35 @@ if (Meteor.isClient) {
     Meteor.subscribe("items");
     Meteor.subscribe("actors");
     Meteor.subscribe("actions");
+    Meteor.subscribe("units");
 
     /*
      Timeline Helpers
      */
     Template.timeline.helpers({
-        items: function () {
+        items: function() {
             if (Session.get("hideArchived")) {
                 // If hide archived is checked, filter tasks
-                return Items.find({checked: {$ne: true}}, {sort: {createdAt: -1}});
-            } else {
+                return Items.find({
+                    checked: {
+                        $ne: true
+                    }
+                }, {
+                    sort: {
+                        createdAt: -1
+                    }
+                });
+            }
+            else {
                 // Otherwise, return all of the tasks
-                return Items.find({}, {sort: {createdAt: -1}});
+                return Items.find({}, {
+                    sort: {
+                        createdAt: -1
+                    }
+                });
             }
         },
-        hideArchived: function () {
+        hideArchived: function() {
             return Session.get("hideArchived");
         }
     });
@@ -41,13 +56,13 @@ if (Meteor.isClient) {
      Actors Helpers
      */
     Template.actors.helpers({
-        actors: function () {
+        actors: function() {
             return Actors.find();
         }
     });
 
     Template.actors_menu.helpers({
-        actors: function () {
+        actors: function() {
             return Actors.find();
         }
     });
@@ -56,14 +71,29 @@ if (Meteor.isClient) {
      Actions Helpers
      */
     Template.actions.helpers({
-        actions: function () {
+        actions: function() {
             return Actions.find();
         }
     });
 
     Template.actions_menu.helpers({
-        actions: function () {
+        actions: function() {
             return Actions.find();
+        }
+    });
+
+    /*
+     Units Helpers
+     */
+    Template.units.helpers({
+        units: function() {
+            return Units.find();
+        }
+    });
+
+    Template.units_menu.helpers({
+        units: function() {
+            return Units.find();
         }
     });
 
@@ -73,29 +103,29 @@ if (Meteor.isClient) {
      Account Helpers
      */
     Template.ApplicationLayout.helpers({
-        
-        /*
-        itemCount: function () {
-            return Items.find({checked: {$ne: true}}).count();
+
+        publicCount: function() {
+            return Items.find({
+                private: {
+                    $ne: true
+                }
+            }).count();
         },
-        archivedItemCount: function () {
-            return Items.find({checked: {$ne: false}}).count();
-        },
-        */
-        publicCount: function () {
-            return Items.find({private: {$ne: true}}).count();
-        },
-        privateCount: function () {
-            return Items.find({private: {$ne: false}}).count();
+        privateCount: function() {
+            return Items.find({
+                private: {
+                    $ne: false
+                }
+            }).count();
         }
-        
+
     });
 
     /*
      Item Helpers
      */
     Template.item.helpers({
-        isOwner: function () {
+        isOwner: function() {
             return this.owner === Meteor.userId();
         }
     });
@@ -104,7 +134,7 @@ if (Meteor.isClient) {
      Stat Events
      */
     Template.account.events({
-        "change .hide-archived input": function (event) {
+        "change .hide-archived input": function(event) {
             Session.set("hideArchived", event.target.checked);
         }
     });
@@ -113,7 +143,7 @@ if (Meteor.isClient) {
      Add Events
      */
     Template.add.events({
-        "submit .new-item": function (event) {
+        "submit .new-item": function(event) {
             var actor = event.target.actor.value;
             var action = event.target.action.value;
             var amount = event.target.amount.value;
@@ -144,14 +174,14 @@ if (Meteor.isClient) {
      Item Events
      */
     Template.item.events({
-        "click .toggle-checked": function () {
+        "click .toggle-checked": function() {
             // Set the checked property to the opposite of its current value
             Meteor.call("setChecked", this._id, !this.checked);
         },
-        "click .delete": function () {
+        "click .delete": function() {
             Meteor.call("deleteItem", this._id);
         },
-        "click .toggle-private": function () {
+        "click .toggle-private": function() {
             Meteor.call("setPrivate", this._id, !this.private);
         }
 
@@ -162,7 +192,7 @@ if (Meteor.isClient) {
     });
 
     Template.item.helpers({
-        dateFormatted: function () {
+        dateFormatted: function() {
 
             return moment(this.date).format('MM/DD/YYYY HH:MM');
 
@@ -175,14 +205,16 @@ if (Meteor.isClient) {
  Meteor Methods
  */
 Meteor.methods({
-    addItem: function (actor, action, amount, units, date) {
+    addItem: function(actor, action, amount, units, date) {
         // Make sure the user is logged in before inserting
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
 
         // Add actor if not existing already
-        var existingActor = Actors.findOne({"actor": actor});
+        var existingActor = Actors.findOne({
+            "actor": actor
+        });
         if (typeof existingActor === 'undefined') {
             Actors.insert({
                 actor: actor,
@@ -193,7 +225,9 @@ Meteor.methods({
         }
 
         // Add action if not existing already
-        var existingAction = Actions.findOne({"action": action});
+        var existingAction = Actions.findOne({
+            "action": action
+        });
         if (typeof existingAction === 'undefined') {
             Actions.insert({
                 action: action,
@@ -203,6 +237,18 @@ Meteor.methods({
             });
         }
 
+        // Add unit if not existing already
+        var existingUnit = Units.findOne({
+            "unit": units
+        });
+        if (typeof existingUnit === 'undefined') {
+            Units.insert({
+                unit: units,
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username
+            });
+        }
 
         // Add the item
         Items.insert({
@@ -217,7 +263,7 @@ Meteor.methods({
             username: Meteor.user().username
         });
     },
-    deleteItem: function (itemId) {
+    deleteItem: function(itemId) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
@@ -230,7 +276,7 @@ Meteor.methods({
 
         Items.remove(itemId);
     },
-    setChecked: function (itemId, setChecked) {
+    setChecked: function(itemId, setChecked) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
@@ -241,9 +287,13 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        Items.update(itemId, {$set: {checked: setChecked}});
+        Items.update(itemId, {
+            $set: {
+                checked: setChecked
+            }
+        });
     },
-    setPrivate: function (itemId, setToPrivate) {
+    setPrivate: function(itemId, setToPrivate) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
@@ -255,9 +305,10 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        Items.update(itemId, {$set: {private: setToPrivate}});
+        Items.update(itemId, {
+            $set: {
+                private: setToPrivate
+            }
+        });
     }
 });
-
-
-
