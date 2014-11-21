@@ -39,7 +39,7 @@ if (Meteor.isServer) {
     });
 
     Meteor.publish("units", function() {
-        return Actions.find({
+        return Units.find({
             owner: this.userId
         }, {
             sort: {
