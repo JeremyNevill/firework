@@ -73,18 +73,22 @@ if (Meteor.isClient) {
      Account Helpers
      */
     Template.ApplicationLayout.helpers({
+        
+        /*
         itemCount: function () {
             return Items.find({checked: {$ne: true}}).count();
         },
         archivedItemCount: function () {
             return Items.find({checked: {$ne: false}}).count();
         },
+        */
         publicCount: function () {
             return Items.find({private: {$ne: true}}).count();
         },
         privateCount: function () {
             return Items.find({private: {$ne: false}}).count();
         }
+        
     });
 
     /*

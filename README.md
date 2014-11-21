@@ -54,8 +54,6 @@ In Nitrous browse to the dev url by clicking on:
 Note: If you may want contribute back fork your own version, then clone from that.
 
 
-
-
 ### Linux
 
 Setup Meteor
@@ -78,6 +76,28 @@ meteor
 ```
 
 Browse to [localhost:3000](http://localhost:3000)
+
+
+### Cloud9
+
+[Install Meteor](https://www.meteor.com/install)
+
+```
+curl https://install.meteor.com/ | sh
+```
+
+Start Meteor on special port and ip that Cloud9 use:
+
+```
+meteor --port $IP:$PORT
+```
+
+Browse to the secure workspace url, click on the link that appears in the green 'Gloud9 Help' box, e.g.
+```
+https://firework-jeremynevill.c9.io/
+```
+
+Note: Official page on [Meteor on Cloud9](https://docs.c9.io/frameworks_meteor.html)
 
 
 ### Connecting to Mongo Database
