@@ -3,7 +3,6 @@ Actors = new Mongo.Collection("actors");
 Actions = new Mongo.Collection("actions");
 Units = new Mongo.Collection("units");
 
-
 Router.configure({
     layoutTemplate: 'ApplicationLayout',
     notFoundTemplate: 'notFound'
