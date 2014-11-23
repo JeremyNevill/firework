@@ -8,9 +8,9 @@ if (Meteor.isServer) {
             // $or: [
             // {private: {$ne: true}},
             //{
-                owner: this.userId
-            //}
-            // ]
+            owner: this.userId
+                //}
+                // ]
         }, {
             sort: {
                 "date": -1
