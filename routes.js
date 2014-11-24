@@ -19,6 +19,9 @@ if (Meteor.isClient) {
         this.render('add');
     });
 
+    /*
+    Actor Routes
+    */
     Router.route('/actors', function() {
         this.render('actors');
     });
@@ -41,6 +44,10 @@ if (Meteor.isClient) {
         name: 'actors.show'
     });
 
+
+    /*
+    Action Routes
+    */
     Router.route('/actions', function() {
         this.render('actions');
     });
@@ -63,6 +70,10 @@ if (Meteor.isClient) {
         name: 'actions.show'
     });
 
+
+    /*
+    Units Routes
+    */
     Router.route('/units', function() {
         this.render('units');
     });
