@@ -20,6 +20,28 @@ if (Meteor.isClient) {
     });
 
     /*
+    Items Routes
+    */
+    Router.route('/items', function() {
+        this.render('items');
+    });
+    Router.route('/items/:id', function() {
+        this.render('items_show', {
+            data: function() {
+                var templateData = {
+                    item: Items.findOne({
+                        "_id": this.params.id
+                    })
+                };
+                return templateData;
+            }
+        });
+    }, {
+        name: 'items.show'
+    });
+
+
+    /*
     Actor Routes
     */
     Router.route('/actors', function() {

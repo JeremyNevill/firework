@@ -195,13 +195,18 @@
                         Public
                     {{/if}}
                 </button>
-            {{/if}}
             
-            <a href="/items/{{id}}">
+            
+            <a href="/items/{{_id}}">
+                <button class="edit btn btn-warning btn-xs">Show</button>
+            </a>
+            <a href="/items/{{_id}}/edit">
                 <button class="edit btn btn-warning btn-xs">Edit</button>
             </a>
-
             <button class="delete btn btn-danger btn-xs">Delete</button>
+            
+            {{/if}}
+            
         </h4>
     </div>
 
@@ -270,6 +275,13 @@
 
         <p>Sorry, we couldn't find a page at this address.</p>
     </div>
+</template>
+
+<!-- Items -->
+<template name="items_show">
+    <h2><span class="glyphicon glyphicon-user"></span> 
+    {{item.actor}} {{item.action}} {{item.amount}} {{item.units}} {{item.date}}
+    </h2>
 </template>
 
 
