@@ -100,6 +100,8 @@
     </body>
 </template>
 
+
+<!-- Navbar -->
 <template name="navbartemplate">
     <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
         <nav class="navbar navbar-default" role="navigation">
@@ -146,6 +148,65 @@
 </template>
 
 
+<!-- Timeline -->
+<template name="timeline">
+    <h2><span class="glyphicon glyphicon-time"></span> Timeline</h2>
+    <hr/> {{#each items}} {{> item}} {{/each}}
+
+</template>
+
+
+<!-- Home -->
+<template name="home">
+    <div class="jumbotron">
+        <h1><span class="glyphicon glyphicon-fire"></span> Firework</h1>
+    </div>
+</template>
+
+
+<!-- Account -->
+<template name="account">
+    <h2><span class="glyphicon glyphicon-cog"></span> Account</h2>
+    <hr/>
+
+    <p>
+        <label class="hide-archived">
+            <input type="checkbox" checked="{{hideArchived}}" /> Hide Archived
+        </label>
+    </p>
+
+</template>
+
+
+<!-- Item -->
+<template name="item">
+    <div>
+        <h4>
+            <a href="/actors/{{actor}}">@{{actor}}</a>
+            <a href="/actions/{{action}}">{{action}}</a>
+            {{amount}} <a href="/units/{{units}}">{{units}}</a>
+            {{dateFormatted}}
+
+            {{#if isOwner}}
+                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-xs">
+                    {{#if private}}
+                        Private
+                    {{else}}
+                        Public
+                    {{/if}}
+                </button>
+            {{/if}}
+            
+            <a href="/items/{{id}}">
+                <button class="edit btn btn-warning btn-xs">Edit</button>
+            </a>
+
+            <button class="delete btn btn-danger btn-xs">Delete</button>
+        </h4>
+    </div>
+
+</template>
+
 <template name="add">
     {{#if currentUser}}
     <h2><span class="glyphicon glyphicon-plus"></span> Add</h2>
@@ -173,59 +234,36 @@
     <hr/> {{/if}}
 </template>
 
-
-<template name="timeline">
-    <h2><span class="glyphicon glyphicon-time"></span> Timeline</h2>
-    <hr/> {{#each items}} {{> item}} {{/each}}
-
-</template>
-
-
-<template name="home">
-    <div class="jumbotron">
-        <h1><span class="glyphicon glyphicon-fire"></span> Firework</h1>
-    </div>
-</template>
-
-
-<template name="account">
-    <h2><span class="glyphicon glyphicon-cog"></span> Account</h2>
+<template name="edit">
+    {{#with post}}
+    <h2><span class="glyphicon glyphicon-plus"></span> Add</h2>
     <hr/>
 
-    <p>
-        <label class="hide-archived">
-            <input type="checkbox" checked="{{hideArchived}}" /> Hide Archived
-        </label>
-    </p>
+    <form role="form" class="new-item">
+        <div class="form-group">
+            <input type="text" class="form-control" id="actor" name="actor" placeholder="Actor" value="{{actor}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="action" name="action" placeholder="Action">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="units" name="units" placeholder="Units">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 
+    <hr/> {{/with}}
 </template>
 
 
-<template name="item">
-    <div>
-        <h4>
-            <a href="/actors/{{actor}}">@{{actor}}</a>
-            <a href="/actions/{{action}}">{{action}}</a>
-            {{amount}} <a href="/units/{{units}}">{{units}}</a>
-            {{dateFormatted}}
 
-            {{#if isOwner}}
-                <button class="toggle-private {{#if private}}btn btn-primary{{else}}btn btn-success{{/if}} btn-xs">
-                    {{#if private}}
-                        Private
-                    {{else}}
-                        Public
-                    {{/if}}
-                </button>
-            {{/if}}
-
-            <button class="delete btn btn-danger btn-xs">&times;</button>
-        </h4>
-    </div>
-
-</template>
-
-
+<!-- 404 -->
 <template name="notFound">
     <div class="not-found jumbotron">
         <h2>404</h2>
@@ -234,15 +272,16 @@
     </div>
 </template>
 
+
 <!-- Actors -->
 <template name="actors">
     <h2><span class="glyphicon glyphicon-user"></span> Actors</h2>
     <hr/> {{#each actors}}
     <h3>
-
-            <a href="{{pathFor route='actors.show'}}">{{actor}}</a> 
+        <a href="{{pathFor route='actors.show'}}">{{actor}}</a> 
         </h3> {{/each}}
 </template>
+
 
 <template name="actors_show">
     <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}}</h2>

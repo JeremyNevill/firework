@@ -33,7 +33,7 @@ if (Meteor.isClient) {
                     }
                 }, {
                     sort: {
-                        createdAt: -1
+                        date: -1
                     }
                 });
             }
@@ -41,7 +41,7 @@ if (Meteor.isClient) {
                 // Otherwise, return all of the tasks
                 return Items.find({}, {
                     sort: {
-                        createdAt: -1
+                        date: -1
                     }
                 });
             }
@@ -106,7 +106,10 @@ if (Meteor.isClient) {
         publicCount: function() {
             return Items.find({
                 private: {
+
                     $ne: true
+
+
                 }
             }).count();
         },
@@ -128,6 +131,12 @@ if (Meteor.isClient) {
             return this.owner === Meteor.userId();
         }
     });
+    Template.edit.helpers({
+        post: function() {
+            return Items.findOne(Session.get('selectedPostId'));
+        }
+    });
+
 
     /*
      Stat Events
@@ -182,8 +191,10 @@ if (Meteor.isClient) {
         },
         "click .toggle-private": function() {
             Meteor.call("setPrivate", this._id, !this.private);
+        },
+        "click .edit": function() {
+            Meteor.call("editItem", this._id);
         }
-
     });
 
     Accounts.ui.config({
@@ -281,6 +292,7 @@ Meteor.methods({
 
         Items.remove(itemId);
     },
+
     setChecked: function(itemId, setChecked) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");

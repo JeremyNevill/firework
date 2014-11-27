@@ -99,6 +99,17 @@ https://firework-jeremynevill.c9.io/
 
 Note: Official page on [Meteor on Cloud9](https://docs.c9.io/frameworks_meteor.html)
 
+If you suffer from used port issues on c9 then work out whether apache or some other process has hogged port 8080:
+```
+lsof -i tcp:$PORT
+
+```
+
+and then kill the process.
+```
+kill -9 $(lsof -i:$PORT -t)
+```
+
 
 ### Connecting to Mongo Database
 
