@@ -152,6 +152,7 @@ if (Meteor.isClient) {
      */
     Template.add.events({
         "submit .new-item": function(event) {
+                     
             var actor = event.target.actor.value;
             var action = event.target.action.value;
             var amount = event.target.amount.value;
@@ -166,10 +167,11 @@ if (Meteor.isClient) {
             event.target.amount.value = "";
             event.target.units.value = "";
             event.target.date.value = "";
+            
+            Router.go('/timeline');
 
-
-            // Prevent default form submit
-            return false;
+           return false;
+                              
         }
     });
 
