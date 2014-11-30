@@ -1,0 +1,20 @@
+<!-- Actors -->
+<template name="actors">
+    <h2><span class="glyphicon glyphicon-user"></span> Actors</h2>
+    <hr/> {{#each actors}}
+    <h3>
+        <a href="{{pathFor route='actors.show'}}">{{actor}}</a> 
+        </h3> {{/each}}
+</template>
+
+<template name="actors_show">
+    <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}}</h2>
+    <hr/> {{#each items }} {{> item}} {{/each}}
+</template>
+
+<template name="actors_menu">
+    {{#each actors}}
+    <h4>
+            <a href="{{pathFor route='actors.show'}}">{{actor}}</a>
+</h4> {{/each}}
+</template>

@@ -1,0 +1,20 @@
+<!-- Actions -->
+<template name="actions">
+    <h2><span class="glyphicon glyphicon-play"></span> Actions</h2>
+    <hr/> {{#each actions}}
+    <h3>
+            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
+        </h3> {{/each}}
+</template>
+
+<template name="actions_show">
+    <h2><span class="glyphicon glyphicon-play"></span> {{ action.action }}</h2>
+    <hr/> {{#each items }} {{> item}} {{/each}}
+</template>
+
+<template name="actions_menu">
+    {{#each actions}}
+    <h4>
+            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
+        </h4> {{/each}}
+</template>

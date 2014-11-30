@@ -62,8 +62,6 @@
                     </div>
                     {{/if}}
                 </div>
-
-
             </div>
 
             <div class="row">
@@ -99,7 +97,6 @@
         </div>
     </body>
 </template>
-
 
 <!-- Navbar -->
 <template name="navbartemplate">
@@ -147,7 +144,6 @@
     </header>
 </template>
 
-
 <!-- Timeline -->
 <template name="timeline">
     <h2><span class="glyphicon glyphicon-time"></span> Timeline</h2>
@@ -155,14 +151,12 @@
 
 </template>
 
-
 <!-- Home -->
 <template name="home">
     <div class="jumbotron">
         <h1><span class="glyphicon glyphicon-fire"></span> Firework</h1>
     </div>
 </template>
-
 
 <!-- Account -->
 <template name="account">
@@ -176,7 +170,6 @@
     </p>
 
 </template>
-
 
 <!-- Item -->
 <template name="item">
@@ -209,7 +202,6 @@
             
         </h4>
     </div>
-
 </template>
 
 <template name="add">
@@ -266,8 +258,6 @@
     <hr/> {{/with}}
 </template>
 
-
-
 <!-- 404 -->
 <template name="notFound">
     <div class="not-found jumbotron">
@@ -275,78 +265,4 @@
 
         <p>Sorry, we couldn't find a page at this address.</p>
     </div>
-</template>
-
-<!-- Items -->
-<template name="items_show">
-    <h2><span class="glyphicon glyphicon-user"></span> 
-    {{item.actor}} {{item.action}} {{item.amount}} {{item.units}} {{item.date}}
-    </h2>
-</template>
-
-
-<!-- Actors -->
-<template name="actors">
-    <h2><span class="glyphicon glyphicon-user"></span> Actors</h2>
-    <hr/> {{#each actors}}
-    <h3>
-        <a href="{{pathFor route='actors.show'}}">{{actor}}</a> 
-        </h3> {{/each}}
-</template>
-
-
-<template name="actors_show">
-    <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}}</h2>
-    <hr/> {{#each items }} {{> item}} {{/each}}
-</template>
-
-<template name="actors_menu">
-    {{#each actors}}
-    <h4>
-            <a href="{{pathFor route='actors.show'}}">{{actor}}</a>
-</h4> {{/each}}
-</template>
-
-
-<!-- Actions -->
-<template name="actions">
-    <h2><span class="glyphicon glyphicon-play"></span> Actions</h2>
-    <hr/> {{#each actions}}
-    <h3>
-            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
-        </h3> {{/each}}
-</template>
-
-<template name="actions_show">
-    <h2><span class="glyphicon glyphicon-play"></span> {{ action.action }}</h2>
-    <hr/> {{#each items }} {{> item}} {{/each}}
-</template>
-
-<template name="actions_menu">
-    {{#each actions}}
-    <h4>
-            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
-        </h4> {{/each}}
-</template>
-
-
-<!-- Units -->
-<template name="units_menu">
-    {{#each units}}
-    <h4>       
-    <a href="{{pathFor route='units.show'}}">{{unit}}</a>
-        </h4> {{/each}}
-</template>
-
-<template name="units">
-    <h2><span class="glyphicon glyphicon-large"></span> Units</h2>
-    <hr/> {{#each units}}
-    <h3>
-            <a href="{{pathFor route='units.show'}}">{{unit}}</a>
-        </h3> {{/each}}
-</template>
-
-<template name="units_show">
-    <h2><span class="glyphicon glyphicon-cog"></span> {{ unit.unit }}</h2>
-    <hr/> {{#each items }} {{> item}} {{/each}}
 </template>

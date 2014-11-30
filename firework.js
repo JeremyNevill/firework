@@ -152,7 +152,7 @@ if (Meteor.isClient) {
      */
     Template.add.events({
         "submit .new-item": function(event) {
-                     
+
             var actor = event.target.actor.value;
             var action = event.target.action.value;
             var amount = event.target.amount.value;
@@ -167,18 +167,14 @@ if (Meteor.isClient) {
             event.target.amount.value = "";
             event.target.units.value = "";
             event.target.date.value = "";
-            
+
             Router.go('/timeline');
 
-           return false;
-                              
+            toastr.success("Add Item", "Item added");
+
+            return false;
         }
     });
-
-    /*
-     Body Events
-     */
-    Template.body.events({});
 
     /*
      Item Events
@@ -190,6 +186,7 @@ if (Meteor.isClient) {
         },
         "click .delete": function() {
             Meteor.call("deleteItem", this._id);
+            toastr.success("Delete Item", "Item deleted");
         },
         "click .toggle-private": function() {
             Meteor.call("setPrivate", this._id, !this.private);
