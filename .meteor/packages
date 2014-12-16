@@ -5,10 +5,10 @@
 
 meteor-platform
 accounts-password
-nemo64:bootstrap
-less
 iron:router
 ian:accounts-ui-bootstrap-3
 mrt:moment
 chrismbeckett:toastr
+nemo64:bootstrap
+less
 

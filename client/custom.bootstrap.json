@@ -27,6 +27,7 @@
   "media":                true,
   "list-group":           true,
   "panels":               true,
+  "responsive-embed":     true,
   "wells":                true,
   "close":                true,
 
