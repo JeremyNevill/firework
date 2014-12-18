@@ -137,8 +137,17 @@ Router.map(function() {
                 'Content-Type': 'text/html'
             });
 
+            if (this.request.method == 'POST') {
+                // todo: Implement token based auth for posts
+                Meteor.call("addApiItem");
+            }
+
+            var test = {
+                test: "true"
+            };
             this.response.end(JSON.stringify(
-                Items.find().fetch()
+                // Items.find().fetch()
+                test
             ));
         }
     });

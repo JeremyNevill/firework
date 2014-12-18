@@ -220,6 +220,10 @@ if (Meteor.isClient) {
  Meteor Methods
  */
 Meteor.methods({
+    addApiItem: function() {
+        // todo: Implement token based auth and post here
+
+    },
     addItem: function(actor, action, amount, units, date) {
         // Make sure the user is logged in before inserting
         if (!Meteor.userId()) {
