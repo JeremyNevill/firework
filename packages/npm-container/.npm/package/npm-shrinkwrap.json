@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "jwt-simple": {
+      "version": "0.2.0"
+    }
+  }
+}

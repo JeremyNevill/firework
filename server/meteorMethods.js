@@ -5,26 +5,46 @@ Meteor.methods({
 
     createToken: function() {
 
+        // Create new secret
+        var newSecret = "";
+        var potentialValues = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 16; i++) {
+            newSecret += potentialValues.charAt(Math.floor(Math.random() * potentialValues.length));
+        }
+
+        // Create new token using secret and the user id as payload
+        var jwt = Meteor.npmRequire('jwt-simple');
+        var payload = {
+            userid: Meteor.user()._id
+        };
+        var newToken =  jwt.encode(payload, newSecret);
+
+        // Update Profile with secret and token
         Meteor.users.update({
             _id: Meteor.user()._id
         }, {
             $set: {
-                "profile.apiKey": "MyApiKey"
+                "profile.apiSecret": newSecret
             }
         })
-
         Meteor.users.update({
             _id: Meteor.user()._id
         }, {
             $set: {
-                "profile.apiToken": "ThisIsMyToken"
+                "profile.apiToken": newToken
             }
         })
-
     },
 
     addApiItem: function() {
+
         // todo: Implement token based auth and post here
+
+        // todo: Get the token from the header
+
+        // todo: Extract the userid from the token, verify validity of the token
+
+        // todo: Add item using the correct user id
 
     },
 

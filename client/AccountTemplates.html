@@ -4,11 +4,17 @@
     <hr/>
 
     <p>
-        Api Key: {{ currentUser.profile.apiKey }}
+        User Id:
     </p>
+    <pre>{{ currentUser._id }}</pre>
     <p>
-        Api Token: {{ currentUser.profile.apiToken }}
+        Api Secret:
     </p>
+    <pre>{{ currentUser.profile.apiSecret }}</pre>
+    <p>
+        Api Token:
+    </p>
+    <pre>{{ currentUser.profile.apiToken }}</pre>
 
     <form role="form" class="new-tokens">
         <button type="submit" class="btn btn-default">Create New Token</button>
