@@ -17,7 +17,7 @@ Meteor.methods({
         var payload = {
             userid: Meteor.user()._id
         };
-        var newToken =  jwt.encode(payload, newSecret);
+        var newToken = jwt.encode(payload, newSecret);
 
         // Update Profile with secret and token
         Meteor.users.update({
@@ -39,12 +39,22 @@ Meteor.methods({
     addApiItem: function() {
 
         // todo: Implement token based auth and post here
-
         // todo: Get the token from the header
-
         // todo: Extract the userid from the token, verify validity of the token
-
         // todo: Add item using the correct user id
+
+        // Add the item
+        Items.insert({
+            actor: 'test',
+            action: 'tested',
+            amount: 3,
+            units: 'things',
+            date: new Date(),
+            createdAt: new Date(),
+            owner: '6HHS66rwrMArBZQd5',
+            private: true,
+            username: 'jnevill'
+        });
 
     },
 
