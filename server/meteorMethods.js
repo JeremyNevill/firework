@@ -36,26 +36,27 @@ Meteor.methods({
         })
     },
 
-    addApiItem: function() {
+    addApiItem: function(token, userid, actor, action, amount, units, date) {
+        
+        var user = Meteor.users.findOne(userid);
+        var secretKey = user.profile.apiSecret;
 
-        // todo: Implement token based auth and post here
-        // todo: Get the token from the header
-        // todo: Extract the userid from the token, verify validity of the token
-        // todo: Add item using the correct user id
+        var jwt = Meteor.npmRequire('jwt-simple');
+        var decoded = jwt.decode(token, secretKey);
+        console.log(decoded);
 
         // Add the item
         Items.insert({
-            actor: 'test',
-            action: 'tested',
-            amount: 3,
-            units: 'things',
-            date: new Date(),
+            actor: actor,
+            action: action,
+            amount: amount,
+            units: units,
+            date: date,
             createdAt: new Date(),
-            owner: '6HHS66rwrMArBZQd5',
+            owner: user._id,
             private: true,
-            username: 'jnevill'
+            username: user.username
         });
-
     },
 
     addItem: function(actor, action, amount, units, date) {

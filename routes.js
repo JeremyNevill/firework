@@ -138,13 +138,22 @@ Router.map(function() {
             });
 
             if (this.request.method == 'POST') {
-                // todo: Implement token based auth for posts
-                Meteor.call("addApiItem");
+
+                var userid = this.request.headers['user-id'];
+                var token = this.request.headers['api-token'];
+                var actor = this.request.body.actor;
+                var action = this.request.body.action;
+                var amount = this.request.body.amount;
+                var units = this.request.body.units;
+                var date = this.request.body.date;
+
+                Meteor.call("addApiItem", token, userid, actor, action, amount, units, date);
             }
 
             var test = {
                 test: "true"
             };
+
             this.response.end(JSON.stringify(
                 // Items.find().fetch()
                 test
