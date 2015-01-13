@@ -31,6 +31,12 @@ Integration to services such as Zapier enable realtime logging of hundreds of up
 
 ## Get Started
 
+To host a brand new version private version of Firework follow the instructions below:
+
+For development Nitrous.io and Cloud9 provide great web ides backed by linux servers.  
+If you wish to host a production or test version follow the vanilla Linux instructions.
+
+
 ### Nitrous.io
 
 [![Hack JeremyNevill/firework on Nitrous](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-d464cf470a5da050619f6f247a1017ec.png)](https://www.nitrous.io/hack_button?source=embed&runtime=meteor&repo=JeremyNevill%2Ffirework)
