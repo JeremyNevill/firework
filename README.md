@@ -1,7 +1,7 @@
 Firework
 ========
 
-Firework is a Realtime Micrologging Platform and is written using [Meteor](https://www.meteor.com).
+Firework is a Realtime Micrologging Platform written using [Meteor](https://www.meteor.com).
 
 The platform consists of 2 main parts:
 
@@ -16,14 +16,17 @@ Micrologging is what we're calling..
 
 Log items include attributes such as:
 
-* actor(who)
-* action(what)
+* actor (who)
+* action (what)
 * amount
 * units
 * date and time.
 
-Once you start adding items you can browse your realtime timeline by attribute and answer
-questions such as 'how many miles have I ran this year?' or 'when did I last have a burrito?'
+Once you have added log items you can browse your realtime timeline to see who did what when.
+
+Items can be added manually or automatically via the inbound API.  
+Integration to services such as Zapier enable realtime logging of hundreds of upstream applications.
+
 
 
 ## Get Started
@@ -126,13 +129,9 @@ db.items.find()
 ```
 
 
+
 ## Get in Contact
 
 Please get in contact via twitter [JeremyNevill](https://twitter.com/JeremyNevill) or
 email [jeremy@nevill.net](mailto:jeremy@nevill.net)
-
-
-
-
-
 
