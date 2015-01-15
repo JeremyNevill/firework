@@ -44,8 +44,11 @@ Meteor.methods({
         var jwt = Meteor.npmRequire('jwt-simple');
         var decoded = jwt.decode(token, secretKey);
         console.log(decoded);
-
-        // Add the item
+      
+        if(decoded.userid===userid){
+ 
+          // If the user matches the encoded JWT version 
+          // Add the item
         Items.insert({
             actor: actor,
             action: action,
@@ -57,6 +60,8 @@ Meteor.methods({
             private: true,
             username: user.username
         });
+        }
+ 
     },
 
     addItem: function(actor, action, amount, units, date) {
