@@ -1,6 +1,91 @@
-<!-- Items -->
+<!-- Item -->
+<template name="item">
+    <div>
+        <h4>
+            <a href="/items/{{_id}}">
+            @{{actor}}
+            {{action}}
+            {{amount}} 
+            {{units}}
+            {{dateFormatted}}
+            </a>
+        </h4>
+    </div>
+</template>
+
+
+<!-- Show Item -->
 <template name="items_show">
-    <h2><span class="glyphicon glyphicon-user"></span> 
-    {{item.actor}} {{item.action}} {{item.amount}} {{item.units}} {{dateFormatted}}
-    </h2>
+    <div>
+        <h3>
+            <a href="/actors/{{ item.actor }}">@{{ item.actor }}</a>
+            <a href="/actions/{{ item.action }}">{{ item.action }}</a>
+            {{ item.amount }} <a href="/units/{{item.units}}">{{ item.units }}</a>
+            {{ dateFormatted }}
+        {{#if isOwner}}
+        <a href="/items/{{ item._id }}/edit">
+            <button class="edit btn btn-warning btn-sm">Edit</button>
+        </a>
+        <button class="delete btn btn-danger btn-sm">Delete</button>
+        {{/if}}
+        </h3>
+    </div>
+</template>
+
+
+<!-- Item Add -->
+<template name="add">
+    {{#if currentUser}}
+    <h2><span class="glyphicon glyphicon-plus"></span> Add</h2>
+    <hr/>
+
+    <form role="form" class="new-item">
+        <div class="form-group">
+            <input type="text" class="form-control" id="actor" name="actor" placeholder="Actor">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="action" name="action" placeholder="Action">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="units" name="units" placeholder="Units">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <hr/> {{/if}}
+</template>
+
+
+<!-- Item Edit -->
+<template name="items_edit">
+    {{#with item}}
+    <h2><span class="glyphicon glyphicon-plus"></span> Edit</h2>
+    <hr/>
+
+    <form role="form" class="new-item">
+        <div class="form-group">
+            <input type="text" class="form-control" id="actor" name="actor" placeholder="Actor" value="{{actor}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="action" name="action" placeholder="Action" value="{{action}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" value="{{amount}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="units" name="units" placeholder="Units" value="{{units}}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="date" name="date" placeholder="Date" value="{{date}}">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <hr/> {{/with}}
 </template>

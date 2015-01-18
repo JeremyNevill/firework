@@ -131,9 +131,14 @@ if (Meteor.isClient) {
             return this.owner === Meteor.userId();
         }
     });
-    Template.edit.helpers({
-        post: function() {
-            return Items.findOne(Session.get('selectedPostId'));
+    Template.items_show.helpers({
+        isOwner: function() {
+            return this.item.owner === Meteor.userId();
+        }
+    });
+    Template.items_edit.helpers({
+        isOwner: function() {
+            return this.item.owner === Meteor.userId();
         }
     });
 
@@ -209,16 +214,24 @@ if (Meteor.isClient) {
 
     Template.item.helpers({
         dateFormatted: function() {
-
             return moment(this.date).format('MM/DD/YYYY HH:MM');
+        }
+    });
 
+    Template.items_show.helpers({
+        dateFormatted: function() {
+            return moment(this.date).format('MM/DD/YYYY HH:MM');
         }
     });
 
     Template.ApplicationLayout.rendered = function() {
-        $('.navbar-collapse a').click(function() {
-            $(".navbar-collapse").collapse('hide');
-        });
+        //$('.navbar-collapse a').click(function() {
+        //    $(".navbar-collapse").collapse('hide');
+        //});
     };
+
+    Template.add.rendered = function() {
+        //    $('#date').datepicker();
+    }
 
 }

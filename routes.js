@@ -42,6 +42,21 @@ if (Meteor.isClient) {
     }, {
         name: 'items.show'
     });
+    Router.route('/items/:id/edit', function() {
+        this.render('items_edit', {
+            data: function() {
+                var templateData = {
+                    item: Items.findOne({
+                        "_id": this.params.id
+                    })
+                };
+                return templateData;
+            }
+        });
+    }, {
+        name: 'items.edit'
+    });
+    
 
 
     /*

@@ -1,0 +1,45 @@
+<!-- Navbar -->
+<template name="navbartemplate">
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><span
+                            class="glyphicon glyphicon-fire"></span>
+                        Firework</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        {{#if currentUser}}
+                        <li role="presentation"><a href="{{pathFor route='timeline'}}"><span
+                                class="glyphicon glyphicon-time"></span> Timeline</a>
+                        </li>
+                        <li role="presentation"><a href="{{pathFor route='add'}}"><span
+                                    class="glyphicon glyphicon-plus"></span> Add</a>
+                        </li>
+                        <li role="presentation"><a href="{{pathFor route='actors'}}"><span
+                                    class="glyphicon glyphicon-user"></span> Actors</a>
+                        </li>
+                        <li role="presentation"><a href="{{pathFor route='actions'}}"><span
+                                    class="glyphicon glyphicon-play"></span> Actions</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="{{pathFor route='units'}}">
+                                <span class="glyphicon glyphicon-th-large"></span> Units</a>
+                        </li>
+                        <li role="presentation"><a href="{{pathFor route='account'}}"><span
+                                    class="glyphicon glyphicon-cog"></span> Account</a>
+                        </li>
+                        {{/if}} {{> loginButtons}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</template>
