@@ -37,31 +37,31 @@ Meteor.methods({
     },
 
     addApiItem: function(token, userid, actor, action, amount, units, date) {
-        
+
         var user = Meteor.users.findOne(userid);
         var secretKey = user.profile.apiSecret;
 
         var jwt = Meteor.npmRequire('jwt-simple');
         var decoded = jwt.decode(token, secretKey);
         console.log(decoded);
-      
-        if(decoded.userid===userid){
- 
-          // If the user matches the encoded JWT version 
-          // Add the item
-        Items.insert({
-            actor: actor,
-            action: action,
-            amount: amount,
-            units: units,
-            date: date,
-            createdAt: new Date(),
-            owner: user._id,
-            private: true,
-            username: user.username
-        });
+
+        if (decoded.userid === userid) {
+
+            // If the user matches the encoded JWT version 
+            // Add the item
+            Items.insert({
+                actor: actor,
+                action: action,
+                amount: amount,
+                units: units,
+                date: date,
+                createdAt: new Date(),
+                owner: user._id,
+                private: true,
+                username: user.username
+            });
         }
- 
+
     },
 
     addItem: function(actor, action, amount, units, date) {
@@ -122,6 +122,63 @@ Meteor.methods({
             username: Meteor.user().username
         });
     },
+
+    updateItem: function(id, actor, action, amount, units, date) {
+        // Make sure the user is logged in before inserting
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        // Add actor if not existing already
+        var existingActor = Actors.findOne({
+            "actor": actor
+        });
+        if (typeof existingActor === 'undefined') {
+            Actors.insert({
+                actor: actor,
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username
+            });
+        }
+
+        // Add action if not existing already
+        var existingAction = Actions.findOne({
+            "action": action
+        });
+        if (typeof existingAction === 'undefined') {
+            Actions.insert({
+                action: action,
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username
+            });
+        }
+
+        // Add unit if not existing already
+        var existingUnit = Units.findOne({
+            "unit": units
+        });
+        if (typeof existingUnit === 'undefined') {
+            Units.insert({
+                unit: units,
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username
+            });
+        }
+
+        // Update the item
+        Items.update({
+            id: id,
+            actor: actor,
+            action: action,
+            amount: amount,
+            units: units,
+            date: date
+        });
+    },
+
 
     deleteItem: function(itemId) {
         if (!Meteor.userId()) {

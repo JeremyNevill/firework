@@ -51,6 +51,7 @@ if (Meteor.isClient) {
         }
     });
 
+
     /* 
      Actors Helpers
      */
@@ -59,12 +60,12 @@ if (Meteor.isClient) {
             return Actors.find();
         }
     });
-
     Template.actors_menu.helpers({
         actors: function() {
             return Actors.find();
         }
     });
+
 
     /*
      Actions Helpers
@@ -74,12 +75,12 @@ if (Meteor.isClient) {
             return Actions.find();
         }
     });
-
     Template.actions_menu.helpers({
         actions: function() {
             return Actions.find();
         }
     });
+
 
     /*
      Units Helpers
@@ -89,14 +90,12 @@ if (Meteor.isClient) {
             return Units.find();
         }
     });
-
     Template.units_menu.helpers({
         units: function() {
             return Units.find();
         }
     });
 
-    Template.body.helpers({});
 
     /*
      Account Helpers
@@ -106,10 +105,7 @@ if (Meteor.isClient) {
         publicCount: function() {
             return Items.find({
                 private: {
-
                     $ne: true
-
-
                 }
             }).count();
         },
@@ -120,8 +116,8 @@ if (Meteor.isClient) {
                 }
             }).count();
         }
-
     });
+
 
     /*
      Item Helpers
@@ -147,20 +143,17 @@ if (Meteor.isClient) {
      Account Events
      */
     Template.account.events({
-
         "change .hide-archived input": function(event) {
             Session.set("hideArchived", event.target.checked);
         },
-
         "submit .new-tokens": function(event) {
             Meteor.call("createToken");
             return false;
         }
-
     });
 
     /*
-     Add Events
+     Item Add Events
      */
     Template.add.events({
         "submit .new-item": function(event) {
@@ -188,6 +181,27 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.items_edit.events({
+        "submit .edit-item": function(event) {
+
+            var id = event.target._id;
+            var actor = event.target.actor.value;
+            var action = event.target.action.value;
+            var amount = event.target.amount.value;
+            var units = event.target.units.value;
+            var date = new Date(event.target.date.value);
+            
+            console.log(event.target.actor.value);
+            
+            // Meteor.call("updateItem", id, actor, action, amount, units, date);
+            Router.go('/timeline');
+            
+            toastr.success("Update Item", "Item Updated");
+
+            return false;
+        }
+    });
+
     /*
      Item Events
      */
@@ -195,16 +209,14 @@ if (Meteor.isClient) {
         "click .toggle-checked": function() {
             // Set the checked property to the opposite of its current value
             Meteor.call("setChecked", this._id, !this.checked);
-        },
+        }
+    });
+
+    Template.items_show.events({
         "click .delete": function() {
-            Meteor.call("deleteItem", this._id);
+            Meteor.call("deleteItem", this.item._id);
+            Router.go('/timeline');
             toastr.success("Delete Item", "Item deleted");
-        },
-        "click .toggle-private": function() {
-            Meteor.call("setPrivate", this._id, !this.private);
-        },
-        "click .edit": function() {
-            Meteor.call("editItem", this._id);
         }
     });
 
@@ -230,8 +242,6 @@ if (Meteor.isClient) {
         //});
     };
 
-    Template.add.rendered = function() {
-        //    $('#date').datepicker();
-    }
+    Template.add.rendered = function() {}
 
 }

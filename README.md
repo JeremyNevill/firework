@@ -1,20 +1,14 @@
 Firework
 ========
 
-Firework is a Realtime Micrologging Platform written using [Meteor](https://www.meteor.com).
+Firework is a Realtime Logging and Analytics Platform written using [Meteor](https://www.meteor.com) and MongoDb.
 
 The platform consists of 2 main parts:
 
 * Realtime Dashboard
-* Rest API
+* Logging API
 
-
-Micrologging is what we're calling..
-
-> 'concise log items that have real meaning, are readable by humans, and parsable by computers.'
-
-
-Log items include attributes such as:
+Log items include properties such as:
 
 * actor (who)
 * action (what)
@@ -22,22 +16,48 @@ Log items include attributes such as:
 * units
 * date and time.
 
-Once you have added log items you can browse your realtime timeline to see who did what when.
+Once you have added log items you can browse your realtime timeline to see what happened when.
 
-Items can be added manually or automatically via the inbound API.  
+Items can be added manually or automatically via the inbound API.
+
 Integration to services such as Zapier enable realtime logging of hundreds of upstream applications.
 
 
 
-## Get Started
+## Host Firework
 
-To host a brand new version private version of Firework follow the instructions below:
+To host a test or production version of Firework follow the instructions below:
 
-For development Nitrous.io and Cloud9 provide great web ides backed by linux servers.  
-If you wish to host a production or test version follow the vanilla Linux instructions.
+### Linux Hosting
+
+Setup Meteor
+
+[Install Meteor](https://www.meteor.com/install)
+
+```
+curl https://install.meteor.com/ | sh
+```
+
+Clone the repo to your development machine/vm
+```
+git clone git@github.com:JeremyNevill/firework.git
+```
+
+Run meteor
+```
+cd firework
+meteor
+```
+
+Browse to [localhost:3000](http://localhost:3000)
 
 
-### Nitrous.io
+
+## Develop Firework
+
+Nitrous.io and Cloud9 provide great web development environments backed by linux servers:
+
+### Nitrous.io Web IDE
 
 [![Hack JeremyNevill/firework on Nitrous](https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-d464cf470a5da050619f6f247a1017ec.png)](https://www.nitrous.io/hack_button?source=embed&runtime=meteor&repo=JeremyNevill%2Ffirework)
 
@@ -66,31 +86,7 @@ In Nitrous browse to the dev url by clicking on:
 Note: If you may want contribute back fork your own version, then clone from that.
 
 
-### Linux
-
-Setup Meteor
-
-[Install Meteor](https://www.meteor.com/install)
-
-```
-curl https://install.meteor.com/ | sh
-```
-
-Fork and clone the repo to your development machine/vm
-```
-git clone git@github.com:JeremyNevill/firework.git
-```
-
-Run meteor
-```
-cd firework
-meteor
-```
-
-Browse to [localhost:3000](http://localhost:3000)
-
-
-### Cloud9
+### Cloud9 Web IDE
 
 [Install Meteor](https://www.meteor.com/install)
 
@@ -123,7 +119,7 @@ kill -9 $(lsof -i:$PORT -t)
 ```
 
 
-### Connecting to Mongo Database
+## Connecting to Mongo Database
 
 Meteor uses mongodb as the database layer, connect to the local meteor db as follows:
 
