@@ -3,6 +3,8 @@
  */
 Meteor.methods({
 
+
+    // Create Secret Key and API Token
     createToken: function() {
 
         // Create new secret
@@ -36,6 +38,8 @@ Meteor.methods({
         })
     },
 
+
+    // Add Item Via the API
     addApiItem: function(token, userid, actor, action, amount, units, date) {
 
         var user = Meteor.users.findOne(userid);
@@ -64,6 +68,8 @@ Meteor.methods({
 
     },
 
+
+    // Add Item
     addItem: function(actor, action, amount, units, date) {
         // Make sure the user is logged in before inserting
         if (!Meteor.userId()) {
@@ -123,77 +129,51 @@ Meteor.methods({
         });
     },
 
+
+    // Update Item
     updateItem: function(id, actor, action, amount, units, date) {
-        // Make sure the user is logged in before inserting
+
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
 
-        // Add actor if not existing already
-        var existingActor = Actors.findOne({
-            "actor": actor
-        });
-        if (typeof existingActor === 'undefined') {
-            Actors.insert({
-                actor: actor,
-                createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
-            });
+        var item = Items.findOne(id);
+        if (item.owner !== Meteor.userId()) {
+            // make sure only the owner can modify
+            throw new Meteor.Error("not-authorized");
         }
 
-        // Add action if not existing already
-        var existingAction = Actions.findOne({
-            "action": action
-        });
-        if (typeof existingAction === 'undefined') {
-            Actions.insert({
-                action: action,
-                createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
-            });
-        }
-
-        // Add unit if not existing already
-        var existingUnit = Units.findOne({
-            "unit": units
-        });
-        if (typeof existingUnit === 'undefined') {
-            Units.insert({
-                unit: units,
-                createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
-            });
-        }
-
-        // Update the item
         Items.update({
-            id: id,
-            actor: actor,
-            action: action,
-            amount: amount,
-            units: units,
-            date: date
+            "_id": id
+        }, {
+            $set: {
+                "actor": actor,
+                "action": action,
+                "amount": amount,
+                "units": units,
+                "date": date
+            }
         });
     },
 
 
+    // Delete Item
     deleteItem: function(itemId) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
 
         var item = Items.findOne(itemId);
-        if (item.private && item.owner !== Meteor.userId()) {
-            // If the task is private, make sure only the owner can delete it
+        if (item.owner !== Meteor.userId()) {
+            // make sure only the owner can delete it
             throw new Meteor.Error("not-authorized");
         }
 
         Items.remove(itemId);
     },
 
+
+    // Set Checked
     setChecked: function(itemId, setChecked) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
@@ -212,6 +192,8 @@ Meteor.methods({
         });
     },
 
+
+    // Set Private
     setPrivate: function(itemId, setToPrivate) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");

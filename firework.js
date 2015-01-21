@@ -166,13 +166,6 @@ if (Meteor.isClient) {
 
             Meteor.call("addItem", actor, action, amount, units, date);
 
-            // Clear form
-            event.target.actor.value = "";
-            event.target.action.value = "";
-            event.target.amount.value = "";
-            event.target.units.value = "";
-            event.target.date.value = "";
-
             Router.go('/timeline');
 
             toastr.success("Add Item", "Item added");
@@ -181,21 +174,23 @@ if (Meteor.isClient) {
         }
     });
 
+    /* 
+    Item Edit Events 
+    */
     Template.items_edit.events({
         "submit .edit-item": function(event) {
 
-            var id = event.target._id;
+            var id = event.target.id.value;
             var actor = event.target.actor.value;
             var action = event.target.action.value;
             var amount = event.target.amount.value;
             var units = event.target.units.value;
             var date = new Date(event.target.date.value);
-            
-            console.log(event.target.actor.value);
-            
-            // Meteor.call("updateItem", id, actor, action, amount, units, date);
+
+            Meteor.call("updateItem", id, actor, action, amount, units, date);
+
             Router.go('/timeline');
-            
+
             toastr.success("Update Item", "Item Updated");
 
             return false;

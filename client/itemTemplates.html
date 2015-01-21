@@ -14,7 +14,7 @@
 </template>
 
 
-<!-- Show Item -->
+<!-- Item Show -->
 <template name="items_show">
     <div>
         <h3>
@@ -69,6 +69,7 @@
     <hr/>
 
     <form role="form" class="edit-item">
+        <input type="hidden" id="id" value="{{_id}}">
         <div class="form-group">
             <input type="text" class="form-control" id="actor" name="actor" placeholder="Actor" value="{{actor}}">
         </div>
