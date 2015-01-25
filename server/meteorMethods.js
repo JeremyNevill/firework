@@ -51,6 +51,11 @@ Meteor.methods({
 
         if (decoded.userid === userid) {
 
+            // Upsert actor, action, units
+            Meteor.call("upsertActor", actor);
+            Meteor.call("upsertAction", action);
+            Meteor.call("upsertUnits", units);
+
             // If the user matches the encoded JWT version 
             // Add the item
             Items.insert({
@@ -65,7 +70,6 @@ Meteor.methods({
                 username: user.username
             });
         }
-
     },
 
 
@@ -76,44 +80,10 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        // Add actor if not existing already
-        var existingActor = Actors.findOne({
-            "actor": actor
-        });
-        if (typeof existingActor === 'undefined') {
-            Actors.insert({
-                actor: actor,
-                createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
-            });
-        }
-
-        // Add action if not existing already
-        var existingAction = Actions.findOne({
-            "action": action
-        });
-        if (typeof existingAction === 'undefined') {
-            Actions.insert({
-                action: action,
-                createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
-            });
-        }
-
-        // Add unit if not existing already
-        var existingUnit = Units.findOne({
-            "unit": units
-        });
-        if (typeof existingUnit === 'undefined') {
-            Units.insert({
-                unit: units,
-                createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
-            });
-        }
+        // Upsert actor, action, units
+        Meteor.call("upsertActor", actor);
+        Meteor.call("upsertAction", action);
+        Meteor.call("upsertUnits", units);
 
         // Add the item
         Items.insert({
@@ -142,6 +112,11 @@ Meteor.methods({
             // make sure only the owner can modify
             throw new Meteor.Error("not-authorized");
         }
+
+        // Upsert actor, action, units
+        Meteor.call("upsertActor", actor);
+        Meteor.call("upsertAction", action);
+        Meteor.call("upsertUnits", units);
 
         Items.update({
             "_id": id
@@ -172,6 +147,48 @@ Meteor.methods({
         Items.remove(itemId);
     },
 
+    // Add actor if not existing already
+    upsertActor: function(actor) {
+        var existingActor = Actors.findOne({
+            "actor": actor
+        });
+        if (typeof existingActor === 'undefined') {
+            Actors.insert({
+                actor: actor,
+                createdAt: new Date(),
+                owner: Meteor.userId()
+            });
+        }
+    },
+
+    // Add action if not existing already
+    upsertAction: function(action) {
+        var existingAction = Actions.findOne({
+            "action": action
+        });
+        if (typeof existingAction === 'undefined') {
+            Actions.insert({
+                action: action,
+                createdAt: new Date(),
+                owner: Meteor.userId()
+            });
+        }
+    },
+
+    // Add unit if not existing already
+    upsertUnits: function(units) {
+        var existingUnit = Units.findOne({
+            "unit": units
+        });
+        if (typeof existingUnit === 'undefined') {
+            Units.insert({
+                unit: units,
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                username: Meteor.user().username
+            });
+        }
+    },
 
     // Set Checked
     setChecked: function(itemId, setChecked) {

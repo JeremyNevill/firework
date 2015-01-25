@@ -2,13 +2,14 @@
 <template name="item">
     <div>
         <h4>
-            <a href="/items/{{_id}}">
-            @{{actor}}
-            {{action}}
-            {{amount}} 
-            {{units}}
-            {{dateFormatted}}
+           <a href="/actors/{{actor}}">@{{actor}}</a>
+            <a href="/actions/{{action}}">{{action}}</a>
+            {{amount}} <a href="/units/{{units}}">{{units}}</a>
+            {{ dateFormatted }}
+            <a href="/items/{{_id}}/edit">
+                <button class="edit btn btn-warning btn-xs">Edit</button>
             </a>
+            <button class="delete btn btn-danger btn-xs">Delete</button>
         </h4>
     </div>
 </template>
@@ -34,7 +35,7 @@
 
 
 <!-- Item Add -->
-<template name="add">
+<template name="items_add">
     {{#if currentUser}}
     <h2><span class="glyphicon glyphicon-plus"></span> Add</h2>
     <hr/>

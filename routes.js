@@ -7,7 +7,16 @@ if (Meteor.isClient) {
     Simple Routes
     */
     Router.route('/', function() {
-        this.render('home');
+        this.render('timeline');
+    });
+
+    Router.onBeforeAction(function() {
+        if (!Meteor.userId()) {
+            this.render('home');
+        }
+        else {
+            this.next();
+        }
     });
 
     Router.route('/account', function() {
@@ -19,7 +28,7 @@ if (Meteor.isClient) {
     });
 
     Router.route('/add', function() {
-        this.render('add');
+        this.render('items_add');
     });
 
     /*
@@ -56,7 +65,7 @@ if (Meteor.isClient) {
     }, {
         name: 'items.edit'
     });
-    
+
 
 
     /*

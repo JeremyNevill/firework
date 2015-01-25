@@ -155,7 +155,7 @@ if (Meteor.isClient) {
     /*
      Item Add Events
      */
-    Template.add.events({
+    Template.items_add.events({
         "submit .new-item": function(event) {
 
             var actor = event.target.actor.value;
@@ -204,6 +204,11 @@ if (Meteor.isClient) {
         "click .toggle-checked": function() {
             // Set the checked property to the opposite of its current value
             Meteor.call("setChecked", this._id, !this.checked);
+        },
+        "click .delete": function() {
+            Meteor.call("deleteItem", this._id);
+            Router.go('/timeline');
+            toastr.success("Delete Item", "Item deleted");
         }
     });
 
@@ -230,13 +235,5 @@ if (Meteor.isClient) {
             return moment(this.date).format('MM/DD/YYYY HH:MM');
         }
     });
-
-    Template.ApplicationLayout.rendered = function() {
-        //$('.navbar-collapse a').click(function() {
-        //    $(".navbar-collapse").collapse('hide');
-        //});
-    };
-
-    Template.add.rendered = function() {}
 
 }
