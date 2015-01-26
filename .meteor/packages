@@ -13,3 +13,4 @@ nemo64:bootstrap
 less
 meteorhacks:npm
 npm-container
+tsega:bootstrap3-datetimepicker

@@ -54,9 +54,15 @@
             <input type="text" class="form-control" id="units" name="units" placeholder="Units">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="date" name="date" placeholder="Date">
+            <div class='input-group date' id='datetimepicker'>
+                <input type='text' class="form-control" id="date" name="date" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
         </div>
+
         <button type="submit" class="btn btn-default">Submit</button>
+
     </form>
 
     <hr/> {{/if}}
@@ -83,9 +89,15 @@
         <div class="form-group">
             <input type="text" class="form-control" id="units" name="units" placeholder="Units" value="{{units}}">
         </div>
+
         <div class="form-group">
-            <input type="text" class="form-control" id="date" name="date" placeholder="Date" value="{{date}}">
+            <div class='input-group date' id='datetimepicker'>
+                <input type='text' class="form-control" id="date" name="date" value="{{formatDate date}}" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
         </div>
+
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 

@@ -236,4 +236,16 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.registerHelper('formatDate', function(date) {
+        return moment(date).format('MM/DD/YYYY HH:MM');
+    });
+
+    Template.items_add.rendered = function() {
+        $('#datetimepicker').datetimepicker();
+    };
+
+    Template.items_edit.rendered = function() {
+        $('#datetimepicker').datetimepicker();
+    };
+
 }
