@@ -1,7 +1,11 @@
 Firework
 ========
 
-Firework is a Realtime Logging and Analytics Platform written using [Meteor](https://www.meteor.com) and MongoDb.
+Firework is a Realtime Logging and Analytics Platform written using [Meteor](https://www.meteor.com) and [MongoDb](http://www.mongodb.com).
+
+The official hosted saas version is available at [Firework.com](http://firework.com), the open source versions available to clone/fork on [Github](https://github.com/JeremyNevill/firework).  
+
+This is the README document for the open source version.
 
 The platform consists of 2 main parts:
 
@@ -16,12 +20,11 @@ Log items include properties such as:
 * units
 * date and time.
 
-Once you have added log items you can browse your realtime timeline to see what happened when.
+Once log items have been added you can browse the real-time timeline to see what happened when.
 
 Items can be added manually or automatically via the inbound API.
 
 Integration to services such as Zapier enable realtime logging of hundreds of upstream applications.
-
 
 
 ## Host Firework
@@ -55,7 +58,7 @@ Browse to [localhost:3000](http://localhost:3000)
 
 ## Develop Firework
 
-Nitrous.io and Cloud9 provide great web development environments backed by linux servers:
+We use Nitrous.io and Cloud9 to develop Firework, they provide great web development environments backed by linux servers:
 
 ### Nitrous.io Web IDE
 
