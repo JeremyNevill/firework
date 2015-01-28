@@ -45,16 +45,16 @@ Meteor.methods({
         var user = Meteor.users.findOne(userid);
         var secretKey = user.profile.apiSecret;
 
+        // decode the jwt
         var jwt = Meteor.npmRequire('jwt-simple');
         var decoded = jwt.decode(token, secretKey);
-        console.log(decoded);
 
         if (decoded.userid === userid) {
 
             // Upsert actor, action, units
-            Meteor.call("upsertActor", actor);
-            Meteor.call("upsertAction", action);
-            Meteor.call("upsertUnits", units);
+            Meteor.call("upsertActor", actor, user._id);
+            Meteor.call("upsertAction", action, user._id);
+            Meteor.call("upsertUnits", units, user._id);
 
             // If the user matches the encoded JWT version 
             // Add the item
@@ -81,9 +81,9 @@ Meteor.methods({
         }
 
         // Upsert actor, action, units
-        Meteor.call("upsertActor", actor);
-        Meteor.call("upsertAction", action);
-        Meteor.call("upsertUnits", units);
+        Meteor.call("upsertActor", actor, Meteor.userId());
+        Meteor.call("upsertAction", action, Meteor.userId());
+        Meteor.call("upsertUnits", units, Meteor.userId());
 
         // Add the item
         Items.insert({
@@ -94,8 +94,7 @@ Meteor.methods({
             date: date,
             createdAt: new Date(),
             owner: Meteor.userId(),
-            private: true,
-            username: Meteor.user().username
+            private: true
         });
     },
 
@@ -114,9 +113,9 @@ Meteor.methods({
         }
 
         // Upsert actor, action, units
-        Meteor.call("upsertActor", actor);
-        Meteor.call("upsertAction", action);
-        Meteor.call("upsertUnits", units);
+        Meteor.call("upsertActor", actor, Meteor.userId());
+        Meteor.call("upsertAction", action, Meteor.userId());
+        Meteor.call("upsertUnits", units, Meteor.userId());
 
         Items.update({
             "_id": id
@@ -147,86 +146,53 @@ Meteor.methods({
         Items.remove(itemId);
     },
 
+
     // Add actor if not existing already
-    upsertActor: function(actor) {
+    upsertActor: function(actor, userId) {
+        // console.log('upsertActor:' + actor + " by " + userId);
         var existingActor = Actors.findOne({
-            "actor": actor
+            "actor": actor,
+            "owner": userId
         });
         if (typeof existingActor === 'undefined') {
             Actors.insert({
                 actor: actor,
                 createdAt: new Date(),
-                owner: Meteor.userId()
+                owner: userId
             });
         }
     },
 
+
     // Add action if not existing already
-    upsertAction: function(action) {
+    upsertAction: function(action, userId) {
         var existingAction = Actions.findOne({
-            "action": action
+            "action": action,
+            "owner": userId
+
         });
         if (typeof existingAction === 'undefined') {
             Actions.insert({
                 action: action,
                 createdAt: new Date(),
-                owner: Meteor.userId()
+                owner: userId
             });
         }
     },
 
+
     // Add unit if not existing already
-    upsertUnits: function(units) {
+    upsertUnits: function(units, userId) {
         var existingUnit = Units.findOne({
-            "unit": units
+            "unit": units,
+            "owner": userId
         });
         if (typeof existingUnit === 'undefined') {
             Units.insert({
                 unit: units,
                 createdAt: new Date(),
-                owner: Meteor.userId(),
-                username: Meteor.user().username
+                owner: userId,
             });
         }
-    },
-
-    // Set Checked
-    setChecked: function(itemId, setChecked) {
-        if (!Meteor.userId()) {
-            throw new Meteor.Error("not-authorized");
-        }
-
-        var item = Items.findOne(itemId);
-        if (item.private && item.owner !== Meteor.userId()) {
-            // If the task is private, make sure only the owner can delete it
-            throw new Meteor.Error("not-authorized");
-        }
-
-        Items.update(itemId, {
-            $set: {
-                checked: setChecked
-            }
-        });
-    },
-
-
-    // Set Private
-    setPrivate: function(itemId, setToPrivate) {
-        if (!Meteor.userId()) {
-            throw new Meteor.Error("not-authorized");
-        }
-
-        var item = Items.findOne(itemId);
-
-        // Make sure only the task owner can make a task private
-        if (item.owner !== Meteor.userId()) {
-            throw new Meteor.Error("not-authorized");
-        }
-
-        Items.update(itemId, {
-            $set: {
-                private: setToPrivate
-            }
-        });
     }
 });

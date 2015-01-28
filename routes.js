@@ -7,16 +7,7 @@ if (Meteor.isClient) {
     Simple Routes
     */
     Router.route('/', function() {
-        this.render('timeline');
-    });
-
-    Router.onBeforeAction(function() {
-        if (!Meteor.userId()) {
-            this.render('home');
-        }
-        else {
-            this.next();
-        }
+        this.render('home');
     });
 
     Router.route('/account', function() {
@@ -30,6 +21,7 @@ if (Meteor.isClient) {
     Router.route('/add', function() {
         this.render('items_add');
     });
+
 
     /*
     Items Routes
@@ -65,7 +57,6 @@ if (Meteor.isClient) {
     }, {
         name: 'items.edit'
     });
-
 
 
     /*
@@ -147,8 +138,9 @@ if (Meteor.isClient) {
 
 }
 
+
 /*
-Rest ITEM Api
+Rest ITEM Api Routes
 */
 Router.map(function() {
     this.route('methodExample', {
@@ -156,12 +148,18 @@ Router.map(function() {
         where: 'server',
         action: function() {
 
+            console.log(this.request.method);
+
             var requestMethod = this.request.method;
             this.response.writeHead(200, {
                 'Content-Type': 'text/html'
             });
 
             if (this.request.method == 'POST') {
+
+                //console.log("=======================================");
+                //console.log(this.request.body);
+                //console.log("=======================================");
 
                 var userid = this.request.headers['user-id'];
                 var token = this.request.headers['api-token'];
@@ -179,7 +177,6 @@ Router.map(function() {
             };
 
             this.response.end(JSON.stringify(
-                // Items.find().fetch()
                 test
             ));
         }
