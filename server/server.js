@@ -5,12 +5,7 @@ if (Meteor.isServer) {
 
     Meteor.publish("items", function() {
         return Items.find({
-            // $or: [
-            // {private: {$ne: true}},
-            //{
             owner: this.userId
-                //}
-                // ]
         }, {
             sort: {
                 "date": -1
@@ -48,9 +43,3 @@ if (Meteor.isServer) {
         });
     });
 }
-
-
-
-
-
- 

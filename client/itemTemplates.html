@@ -17,6 +17,7 @@
 
 <!-- Item Show -->
 <template name="items_show">
+    {{#if currentUser}}
     <div>
         <h3>
             <a href="/actors/{{ item.actor }}">@{{ item.actor }}</a>
@@ -31,6 +32,7 @@
         {{/if}}
         </h3>
     </div>
+    {{/if}}
 </template>
 
 
@@ -71,7 +73,7 @@
 
 <!-- Item Edit -->
 <template name="items_edit">
-    {{#with item}}
+    {{#if currentUser}} {{#with item}}
     <h2><span class="glyphicon glyphicon-plus"></span> Edit</h2>
     <hr/>
 
@@ -101,5 +103,5 @@
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 
-    <hr/> {{/with}}
+    <hr/> {{/with}} {{/if}}
 </template>

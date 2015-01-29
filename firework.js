@@ -241,11 +241,13 @@ if (Meteor.isClient) {
     });
 
     Template.items_add.rendered = function() {
-        $('#datetimepicker').datetimepicker();
+        $('#datetimepicker').datetimepicker({format:"MM/DD/YYYY HH:MM"});
+        var newDate = new Date();
+        $('input[id="date"]').val(moment(newDate).format('MM/DD/YYYY HH:MM'));
     };
 
     Template.items_edit.rendered = function() {
-        $('#datetimepicker').datetimepicker();
+        $('#datetimepicker').datetimepicker({format:"MM/DD/YYYY HH:MM"});
     };
 
 }
