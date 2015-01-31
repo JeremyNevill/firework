@@ -3,7 +3,7 @@ Firework
 
 Firework is a Realtime Logging and Analytics Platform written using [Meteor](https://www.meteor.com) and [MongoDb](http://www.mongodb.com).
 
-The official hosted saas version is available at [Firework.com](http://firework.com), the open source versions available to clone/fork on [Github](https://github.com/JeremyNevill/firework).  
+The official hosted saas version is available at [Firework.com](http://firework.com), the open source version available to clone/fork on [Github](https://github.com/JeremyNevill/firework).  
 
 This is the README document for the open source version.
 
@@ -22,14 +22,14 @@ Log items include properties such as:
 
 Once log items have been added you can browse the real-time timeline to see what happened when.
 
-Items can be added manually or automatically via the inbound API.
+Items can be added manually or automatically via the inbound rest API.
 
-Integration to services such as Zapier enable realtime logging of hundreds of upstream applications.
+Integration to services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream applications.
 
 
-## Host Firework
+## Run a Firework Server
 
-To host a test or production version of Firework follow the instructions below:
+To host a test or production version of the Firework server follow the instructions below:
 
 ### Linux Hosting
 
