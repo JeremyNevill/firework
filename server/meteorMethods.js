@@ -194,5 +194,51 @@ Meteor.methods({
                 owner: userId,
             });
         }
+    },
+
+    // Delete Actor
+    deleteActor: function(actorId) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var actor = Actors.findOne(actorId);
+        if (actor.owner !== Meteor.userId()) {
+            // make sure only the owner can delete it
+            throw new Meteor.Error("not-authorized");
+        }
+
+        Actors.remove(actorId);
+    },
+
+    // Delete Action
+    deleteAction: function(actionId) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var action = Actions.findOne(actionId);
+        if (action.owner !== Meteor.userId()) {
+            // make sure only the owner can delete it
+            throw new Meteor.Error("not-authorized");
+        }
+
+        Actions.remove(actionId);
+    },
+
+    // Delete Units
+    deleteUnits: function(unitId) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var unit = Units.findOne(unitId);
+        if (unit.owner !== Meteor.userId()) {
+            // make sure only the owner can delete it
+            throw new Meteor.Error("not-authorized");
+        }
+
+        Units.remove(unitId);
     }
+
 });

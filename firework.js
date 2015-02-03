@@ -220,6 +220,27 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.actors.events({
+        "click .delete": function() {
+            Meteor.call("deleteActor", this._id);
+            toastr.success("Delete Actor", "Actor deleted");
+        }
+    });
+
+    Template.actions.events({
+        "click .delete": function() {
+            Meteor.call("deleteAction", this._id);
+            toastr.success("Delete Action", "Action deleted");
+        }
+    });
+
+    Template.units.events({
+        "click .delete": function() {
+            Meteor.call("deleteUnits", this._id);
+            toastr.success("Delete Units", "Units deleted");
+        }
+    });
+
     Accounts.ui.config({
         passwordSignupFields: "USERNAME_AND_EMAIL"
     });
@@ -241,13 +262,17 @@ if (Meteor.isClient) {
     });
 
     Template.items_add.rendered = function() {
-        $('#datetimepicker').datetimepicker({format:"MM/DD/YYYY HH:MM"});
+        $('#datetimepicker').datetimepicker({
+            format: "MM/DD/YYYY HH:MM"
+        });
         var newDate = new Date();
         $('input[id="date"]').val(moment(newDate).format('MM/DD/YYYY HH:MM'));
     };
 
     Template.items_edit.rendered = function() {
-        $('#datetimepicker').datetimepicker({format:"MM/DD/YYYY HH:MM"});
+        $('#datetimepicker').datetimepicker({
+            format: "MM/DD/YYYY HH:MM"
+        });
     };
 
 }

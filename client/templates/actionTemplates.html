@@ -3,8 +3,9 @@
     <h2><span class="glyphicon glyphicon-play"></span> Actions</h2>
     <hr/> {{#each actions}}
     <h3>
-            <a href="{{pathFor route='actions.show'}}">{{action}}</a>
-        </h3> {{/each}}
+        <a href="{{pathFor route='actions.show'}}">{{action}}</a>
+        <button class="delete btn btn-danger btn-xs">Delete</button>
+    </h3> {{/each}}
 </template>
 
 <template name="actions_show">

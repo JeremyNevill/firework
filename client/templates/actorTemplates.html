@@ -4,7 +4,9 @@
     <hr/> {{#each actors}}
     <h3>
         <a href="{{pathFor route='actors.show'}}">{{actor}}</a> 
-        </h3> {{/each}}
+        <button class="delete btn btn-danger btn-xs">Delete</button>
+        </h3> 
+        {{/each}}
 </template>
 
 <template name="actors_show">

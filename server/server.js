@@ -9,8 +9,7 @@ if (Meteor.isServer) {
         }, {
             sort: {
                 "date": 1
-            },
-            limit: 50
+            }
         });
     });
 
