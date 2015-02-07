@@ -20,6 +20,11 @@ if (Meteor.isClient) {
     Meteor.subscribe("actions");
     Meteor.subscribe("units");
 
+    toastr.options = {
+        "positionClass": "toast-bottom-right"
+    };
+
+
     /*
      Timeline Helpers
      */
@@ -101,19 +106,11 @@ if (Meteor.isClient) {
      Account Helpers
      */
     Template.ApplicationLayout.helpers({
-
-        publicCount: function() {
+        totalCount: function() {
             return Items.find({
-                private: {
-                    $ne: true
-                }
-            }).count();
-        },
-        privateCount: function() {
-            return Items.find({
-                private: {
-                    $ne: false
-                }
+                //private: {
+                //    $ne: false
+                //}
             }).count();
         }
     });
@@ -165,9 +162,7 @@ if (Meteor.isClient) {
             var date = new Date(event.target.date.value);
 
             Meteor.call("addItem", actor, action, amount, units, date);
-
             Router.go('/timeline');
-
             toastr.success("Add Item", "Item added");
 
             return false;
@@ -188,9 +183,7 @@ if (Meteor.isClient) {
             var date = new Date(event.target.date.value);
 
             Meteor.call("updateItem", id, actor, action, amount, units, date);
-
             Router.go('/timeline');
-
             toastr.success("Update Item", "Item Updated");
 
             return false;
