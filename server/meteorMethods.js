@@ -96,6 +96,10 @@ Meteor.methods({
             owner: Meteor.userId(),
             private: true
         });
+
+        // Increment item counts
+        Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
+
     },
 
 
@@ -149,7 +153,6 @@ Meteor.methods({
 
     // Add actor if not existing already
     upsertActor: function(actor, userId) {
-        // console.log('upsertActor:' + actor + " by " + userId);
         var existingActor = Actors.findOne({
             "actor": actor,
             "owner": userId
@@ -160,6 +163,9 @@ Meteor.methods({
                 createdAt: new Date(),
                 owner: userId
             });
+        }
+        else {
+            console.log("Actor already exists");
         }
     },
 
@@ -194,6 +200,38 @@ Meteor.methods({
                 owner: userId,
             });
         }
+    },
+
+    // Increment the item counts
+    incrementItemCounts: function(actor, action, units, userId) {
+        Actors.update({
+            "actor": actor,
+            "owner": userId
+        }, {
+            $inc: {
+                "itemCount": 1
+            }
+        });
+
+        Actions.update({
+            "action": action,
+            "owner": userId
+        }, {
+            $inc: {
+                "itemCount": 1
+            }
+        });
+
+        Units.update({
+            "units": units,
+            "owner": userId
+        }, {
+            $inc: {
+                "itemCount": 1
+            }
+        });
+
+
     },
 
     // Delete Actor

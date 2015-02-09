@@ -30,29 +30,11 @@ if (Meteor.isClient) {
      */
     Template.timeline.helpers({
         items: function() {
-            if (Session.get("hideArchived")) {
-                // If hide archived is checked, filter tasks
-                return Items.find({
-                    checked: {
-                        $ne: true
-                    }
-                }, {
-                    sort: {
-                        date: -1
-                    }
-                });
-            }
-            else {
-                // Otherwise, return all of the tasks
-                return Items.find({}, {
-                    sort: {
-                        date: -1
-                    }
-                });
-            }
-        },
-        hideArchived: function() {
-            return Session.get("hideArchived");
+            return Items.find({}, {
+                sort: {
+                    date: -1
+                }
+            });
         }
     });
 
@@ -107,11 +89,7 @@ if (Meteor.isClient) {
      */
     Template.ApplicationLayout.helpers({
         totalCount: function() {
-            return Items.find({
-                //private: {
-                //    $ne: false
-                //}
-            }).count();
+            return Items.find({}).count();
         }
     });
 
