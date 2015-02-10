@@ -69,6 +69,10 @@ Meteor.methods({
                 private: true,
                 username: user.username
             });
+
+            // Increment item counts
+            Meteor.call("incrementItemCounts", actor, action, units, user._id);
+
         }
     },
 
@@ -147,7 +151,14 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
+        var actor = item.actor;
+        var action = item.action;
+        var units = item.units;
+
         Items.remove(itemId);
+
+        // Decrement item counts
+        Meteor.call("decrementItemCounts", actor, action, units, Meteor.userId());
     },
 
 
@@ -230,8 +241,36 @@ Meteor.methods({
                 "itemCount": 1
             }
         });
+    },
 
+    // Decrement the item counts
+    decrementItemCounts: function(actor, action, units, userId) {
+        Actors.update({
+            "actor": actor,
+            "owner": userId
+        }, {
+            $inc: {
+                "itemCount": -1
+            }
+        });
 
+        Actions.update({
+            "action": action,
+            "owner": userId
+        }, {
+            $inc: {
+                "itemCount": -1
+            }
+        });
+
+        Units.update({
+            "units": units,
+            "owner": userId
+        }, {
+            $inc: {
+                "itemCount": -1
+            }
+        });
     },
 
     // Delete Actor
