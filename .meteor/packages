@@ -14,4 +14,3 @@ less
 meteorhacks:npm
 npm-container
 tsega:bootstrap3-datetimepicker
-mike:mocha

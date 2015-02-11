@@ -120,6 +120,10 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
+        var oldActor = item.actor;
+        var oldAction = item.action;
+        var oldUnits = item.units;
+
         // Upsert actor, action, units
         Meteor.call("upsertActor", actor, Meteor.userId());
         Meteor.call("upsertAction", action, Meteor.userId());
@@ -136,6 +140,13 @@ Meteor.methods({
                 "date": date
             }
         });
+
+        // Decrement item counts
+        Meteor.call("decrementItemCounts", oldActor, oldAction, oldUnits, Meteor.userId());
+        // Increment item counts
+        Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
+
+
     },
 
 
@@ -234,7 +245,7 @@ Meteor.methods({
         });
 
         Units.update({
-            "units": units,
+            "unit": units,
             "owner": userId
         }, {
             $inc: {
@@ -264,7 +275,7 @@ Meteor.methods({
         });
 
         Units.update({
-            "units": units,
+            "unit": units,
             "owner": userId
         }, {
             $inc: {
