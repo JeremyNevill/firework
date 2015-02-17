@@ -178,7 +178,6 @@ if (Meteor.isClient) {
         },
         "click .delete": function() {
             Meteor.call("deleteItem", this._id);
-            Router.go('/timeline');
             toastr.success("Delete Item", "Item deleted");
         }
     });
@@ -186,7 +185,6 @@ if (Meteor.isClient) {
     Template.items_show.events({
         "click .delete": function() {
             Meteor.call("deleteItem", this.item._id);
-            Router.go('/timeline');
             toastr.success("Delete Item", "Item deleted");
         }
     });
