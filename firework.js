@@ -33,7 +33,8 @@ if (Meteor.isClient) {
             return Items.find({}, {
                 sort: {
                     date: -1
-                }
+                },
+                limit: 50
             });
         }
     });
@@ -44,12 +45,22 @@ if (Meteor.isClient) {
      */
     Template.actors.helpers({
         actors: function() {
-            return Actors.find();
+            return Actors.find({}, {
+                sort: {
+                    itemCount: -1
+                },
+                limit: 50
+            });
         }
     });
     Template.actors_menu.helpers({
         actors: function() {
-            return Actors.find();
+            return Actors.find({}, {
+                sort: {
+                    itemCount: -1
+                },
+                limit: 20
+            });
         }
     });
 
@@ -59,12 +70,22 @@ if (Meteor.isClient) {
      */
     Template.actions.helpers({
         actions: function() {
-            return Actions.find();
+            return Actions.find({}, {
+                sort: {
+                    itemCount: -1
+                },
+                limit: 50
+            });
         }
     });
     Template.actions_menu.helpers({
         actions: function() {
-            return Actions.find();
+            return Actions.find({}, {
+                sort: {
+                    itemCount: -1
+                },
+                limit: 50
+            });
         }
     });
 
@@ -74,12 +95,22 @@ if (Meteor.isClient) {
      */
     Template.units.helpers({
         units: function() {
-            return Units.find();
+            return Units.find({}, {
+                sort: {
+                    itemCount: -1
+                },
+                limit: 50
+            });
         }
     });
     Template.units_menu.helpers({
         units: function() {
-            return Units.find();
+            return Units.find({}, {
+                sort: {
+                    itemCount: -1
+                },
+                limit: 50
+            });
         }
     });
 

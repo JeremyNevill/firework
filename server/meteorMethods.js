@@ -327,6 +327,24 @@ Meteor.methods({
         }
 
         Units.remove(unitId);
+    },
+
+    // Set the User Statistics to the correct amount
+    setUserStats: function() {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+        
+        // Update the... 
+        
+        // Actors
+        
+        // Actions
+        
+        // Units
+        
+        
+        
     }
 
 });
