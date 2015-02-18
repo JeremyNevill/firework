@@ -34,7 +34,7 @@ if (Meteor.isClient) {
                 sort: {
                     date: -1
                 },
-                limit: 50
+                limit: 25
             });
         }
     });
@@ -56,10 +56,10 @@ if (Meteor.isClient) {
     Template.actors_menu.helpers({
         actors: function() {
             return Actors.find({}, {
-                sort: {
-                    itemCount: -1
-                },
-                limit: 20
+                //sort: {
+                //    itemCount: -1
+                //},
+                //limit: 20
             });
         }
     });
@@ -81,10 +81,10 @@ if (Meteor.isClient) {
     Template.actions_menu.helpers({
         actions: function() {
             return Actions.find({}, {
-                sort: {
-                    itemCount: -1
-                },
-                limit: 50
+                //sort: {
+                //    itemCount: -1
+                //},
+                //limit: 50
             });
         }
     });
@@ -106,10 +106,10 @@ if (Meteor.isClient) {
     Template.units_menu.helpers({
         units: function() {
             return Units.find({}, {
-                sort: {
-                    itemCount: -1
-                },
-                limit: 50
+                //sort: {
+                //    itemCount: -1
+                //},
+                //limit: 50
             });
         }
     });

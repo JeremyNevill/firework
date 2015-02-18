@@ -22,6 +22,9 @@ if (Meteor.isClient) {
         this.render('items_add');
     });
 
+    Router.route('/stats',function(){
+       this.render('stats');
+    });
 
     /*
     Items Routes
