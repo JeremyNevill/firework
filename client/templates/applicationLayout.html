@@ -13,11 +13,9 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-9" id="main">
-                    {{> yield}}
-                </div>
-                <div class="col-md-3">
-                    {{#if currentUser}}
+                {{#if currentUser}}
+
+                <div class="col-md-3 hidden-xs hidden-sm">
 
                     <div class="panel panel-default">
                         <div class="panel-heading"><span class="glyphicon glyphicon-user"></span> Actors
@@ -52,8 +50,17 @@
                             </p>
                         </div>
                     </div>
-                    {{/if}}
+
                 </div>
+
+                <div class="col-md-9" id="main">
+                    {{> yield}}
+                </div>
+                {{else}}
+                <div class="col-md-12" id="main">
+                    {{> yield}}
+                </div>
+                {{/if}}
             </div>
 
             <div class="row">
@@ -67,7 +74,7 @@
                     <ul class="list-unstyled">
                         <li><a href="http://nevill.net/privacy/">Privacy Statement</a>
                         </li>
-                        <li><a href="#/about">About</a>
+                        <li><a href="/">About</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +82,6 @@
                     <ul class="list-unstyled">
                         <li>Powered by <a href="https://github.com/JeremyNevill/firework">Firework</a>
                         </li>
-                        <li>Using <a href="https://github.com/JeremyNevill/shortee">Shortee</a> syntax</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
