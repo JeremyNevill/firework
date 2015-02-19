@@ -38,6 +38,25 @@ Meteor.methods({
         })
     },
 
+    statsReset: function() {
+        console.log("Stats Reset");
+
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        var userActors = Actors.find({
+            owner: Meteor.userId
+        }, {
+            sort: {
+                "actor": 1
+            }
+        }).fetch();
+
+        console.log("Actors count:" + userActors);
+
+    },
+
 
     // Add Item Via the API
     addApiItem: function(token, userid, actor, action, amount, units, date) {
@@ -334,17 +353,17 @@ Meteor.methods({
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
-        
+
         // Update the... 
-        
+
         // Actors
-        
+
         // Actions
-        
+
         // Units
-        
-        
-        
+
+
+
     }
 
 });

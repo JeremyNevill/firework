@@ -155,6 +155,10 @@ if (Meteor.isClient) {
         "submit .new-tokens": function(event) {
             Meteor.call("createToken");
             return false;
+        },
+        "submit .stats-reset": function(event) {
+            Meteor.call("statsReset");
+            return false;
         }
     });
 
