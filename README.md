@@ -1,9 +1,9 @@
 Firework
 ========
 
-Firework is a Realtime Logging and Analytics Platform written using [Meteor](https://www.meteor.com) and [MongoDb](http://www.mongodb.com).
+Firework is a Real-time Logging and Analytics Platform written using [Meteor](https://www.meteor.com) and [MongoDb](http://www.mongodb.com).
 
-The official hosted saas version is available at [Firework.com](http://firework.com), the open source version available to clone/fork on [Github](https://github.com/JeremyNevill/firework).  
+The official hosted version is online at [Firework.com](http://firework.com), the open source version available to clone/fork on [Github](https://github.com/JeremyNevill/firework).  
 
 This is the README document for the open source version.
 
