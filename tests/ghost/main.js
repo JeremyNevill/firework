@@ -9,5 +9,5 @@ var options = {
 GhostInspector.executeSuite('54ceb629e2f4f6677ef70f52', options, function(err, results, passing) {
     if (err) return console.log('Error: ' + err);
     console.log(passing === true ? 'Passed' : 'Failed');
-    //console.log(results);
+    console.log(results);
 });
