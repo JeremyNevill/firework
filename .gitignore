@@ -2,3 +2,4 @@
 .meteor/meteorite
 .idea
 .c9
+tests/node_modules
