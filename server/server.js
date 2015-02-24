@@ -8,9 +8,9 @@ if (Meteor.isServer) {
             owner: this.userId
         }, {
             sort: {
-                "date": 1
-            },
-            limit: 100
+                "createdAt": -1
+            }//,
+            //limit: 100
         });
     });
 

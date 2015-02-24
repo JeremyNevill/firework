@@ -148,6 +148,8 @@ Meteor.methods({
         Meteor.call("upsertAction", action, Meteor.userId());
         Meteor.call("upsertUnits", units, Meteor.userId());
 
+        console.log("Date:" + date);
+
         Items.update({
             "_id": id
         }, {
