@@ -4,8 +4,8 @@ Firework
 Firework is a Real-Time Logging and Analytics Platform. 
 
 * View the test version of Firework at [fwktest.firework.com](http://fwktest.firework.com)
-* The official hosted pro version is at [Firework.com](http://firework.com).
-* #]l];#';        ngbviClone or fork this open source version from [Github](https://github.com/JeremyNevill/firework).  
+* The official hosted pro version is at [Firework.com](http://firework.com)
+* Clone or fork this open source version from [Github](https://github.com/JeremyNevill/firework)
 
 Firework is written using [Meteor](https://www.meteor.com) and [MongoDb](http://www.mongodb.com).
 
