@@ -1,6 +1,8 @@
 Firework
 ========
 
+[ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
+
 Firework is a Real-Time Logging and Analytics Platform. 
 
 * View the test version of Firework at [fwktest.firework.com](http://fwktest.firework.com)
