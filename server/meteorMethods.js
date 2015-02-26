@@ -45,15 +45,32 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
+        // Iterate Actors
         var userActors = Actors.find({
             owner: Meteor.userId
-        }, {
-            sort: {
-                "actor": 1
-            }
         }).fetch();
+        var actorCount = userActors.length;
+        for (var i = 0; i < actorCount; i++) {
+            var actor = userActors[i];
 
-        console.log("Actors count:" + userActors);
+            var actorItems = Items.find({
+                owner: Meteor.userId,
+                actor: actor.actor
+            }).fetch();
+            var itemCount = actorItems.length;
+            console.log(actor.actor + ":" + itemCount);
+
+            Actors.update({
+                "actor": actor.actor,
+                "owner": Meteor.userId
+            }, {
+                $set: {
+                    "itemCount": itemCount
+                }
+            });
+        }
+
+        console.log("Total Actors:" + actorCount);
 
     },
 
@@ -348,24 +365,6 @@ Meteor.methods({
         }
 
         Units.remove(unitId);
-    },
-
-    // Set the User Statistics to the correct amount
-    setUserStats: function() {
-        if (!Meteor.userId()) {
-            throw new Meteor.Error("not-authorized");
-        }
-
-        // Update the... 
-
-        // Actors
-
-        // Actions
-
-        // Units
-
-
-
     }
 
 });
