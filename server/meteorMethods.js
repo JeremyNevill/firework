@@ -38,6 +38,8 @@ Meteor.methods({
         })
     },
 
+
+    // Reset Stats
     statsReset: function() {
         console.log("Stats Reset");
 
@@ -45,14 +47,13 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        // Iterate Actors
+        // Reset Actor Counts
         var userActors = Actors.find({
             owner: Meteor.userId
         }).fetch();
         var actorCount = userActors.length;
         for (var i = 0; i < actorCount; i++) {
             var actor = userActors[i];
-
             var actorItems = Items.find({
                 owner: Meteor.userId,
                 actor: actor.actor
@@ -71,6 +72,32 @@ Meteor.methods({
         }
 
         console.log("Total Actors:" + actorCount);
+
+        // Reset Action Counts
+        var userActions = Actions.find({
+            owner: Meteor.userId
+        }).fetch();
+        var actionCount = userActions.length;
+        for (var i = 0; i < actionCount; i++) {
+            var action = userActions[i];
+            var actionItems = Items.find({
+                owner: Meteor.userId,
+                action: action.action
+            }).fetch();
+            var actionItemCount = actionItems.length;
+            console.log(action.action + ":" + actionItemCount);
+
+            Actions.update({
+                "action": action.action,
+                "owner": Meteor.userId
+            }, {
+                $set: {
+                    "itemCount": actionItemCount
+                }
+            });
+        }
+
+        console.log("Total Actions:" + actionCount);
 
     },
 

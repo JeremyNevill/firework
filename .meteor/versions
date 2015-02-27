@@ -22,7 +22,7 @@ handlebars@1.0.2
 html-tools@1.0.3
 htmljs@1.0.3
 http@1.0.10
-ian:accounts-ui-bootstrap-3@1.2.24
+ian:accounts-ui-bootstrap-3@1.2.33
 id-map@1.0.2
 iron:controller@1.0.7
 iron:core@1.0.7
@@ -70,7 +70,7 @@ srp@1.0.2
 stylus@1.0.6
 templating@1.0.11
 tracker@1.0.5
-tsega:bootstrap3-datetimepicker@3.1.3_3
+tsega:bootstrap3-datetimepicker@4.0.0_4
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3

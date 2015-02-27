@@ -9,8 +9,8 @@ if (Meteor.isServer) {
         }, {
             sort: {
                 "createdAt": -1
-            }//,
-            //limit: 100
+            },
+            limit: 30
         });
     });
 
@@ -20,8 +20,8 @@ if (Meteor.isServer) {
         }, {
             sort: {
                 "actor": 1
-            } ,
-            limit: 100
+            },
+            limit: 30
         });
     });
 
@@ -31,8 +31,8 @@ if (Meteor.isServer) {
         }, {
             sort: {
                 "action": 1
-            } ,
-            limit: 100
+            },
+            limit: 30
         });
     });
 
@@ -42,8 +42,8 @@ if (Meteor.isServer) {
         }, {
             sort: {
                 "unit": 1
-            } ,
-            limit: 100
+            },
+            limit: 30
         });
     });
 }
