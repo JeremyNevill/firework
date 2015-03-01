@@ -59,7 +59,7 @@ Meteor.methods({
                 actor: actor.actor
             }).fetch();
             var itemCount = actorItems.length;
-            console.log(actor.actor + ":" + itemCount);
+            //console.log(actor.actor + ":" + itemCount);
 
             Actors.update({
                 "actor": actor.actor,
@@ -70,8 +70,7 @@ Meteor.methods({
                 }
             });
         }
-
-        console.log("Total Actors:" + actorCount);
+        //console.log("Total Actors:" + actorCount);
 
         // Reset Action Counts
         var userActions = Actions.find({
@@ -85,7 +84,7 @@ Meteor.methods({
                 action: action.action
             }).fetch();
             var actionItemCount = actionItems.length;
-            console.log(action.action + ":" + actionItemCount);
+            //console.log(action.action + ":" + actionItemCount);
 
             Actions.update({
                 "action": action.action,
@@ -96,8 +95,32 @@ Meteor.methods({
                 }
             });
         }
+        //console.log("Total Actions:" + actionCount);
 
-        console.log("Total Actions:" + actionCount);
+        // Reset UNITS Counts
+        var userUnits = Units.find({
+            owner: Meteor.userId
+        }).fetch();
+        var unitsCount = userUnits.length;
+        for (var i = 0; i < unitsCount; i++) {
+            var units = userUnits[i];
+            var unitsItems = Items.find({
+                owner: Meteor.userId,
+                units: units.unit
+            }).fetch();
+            var unitsItemCount = unitsItems.length;
+            //console.log(units.unit + ":" + unitsItemCount);
+
+            Units.update({
+                "unit": units.unit,
+                "owner": Meteor.userId
+            }, {
+                $set: {
+                    "itemCount": unitsItemCount
+                }
+            });
+        }
+        //console.log("Total Units:" + unitsCount);
 
     },
 
