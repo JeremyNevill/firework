@@ -23,6 +23,6 @@
 </template>
 
 <template name="units_show">
-    <h2><span class="glyphicon glyphicon-cog"></span> {{ unit.unit }}</h2>
+    <h2><span class="glyphicon glyphicon-cog"></span> {{ unit.unit }} ({{unit.itemCount}})</h2>
     <hr/> {{#each items }} {{> item}} {{/each}}
 </template>

@@ -12,7 +12,7 @@
 </template>
 
 <template name="actors_show">
-    <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}}</h2>
+    <h2><span class="glyphicon glyphicon-user"></span> {{actor.actor}} ({{actor.itemCount}})</h2>
     <hr/> {{#each items }} {{> item}} {{/each}}
 </template>
 

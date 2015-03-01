@@ -11,7 +11,7 @@
 </template>
 
 <template name="actions_show">
-    <h2><span class="glyphicon glyphicon-play"></span> {{ action.action }}</h2>
+    <h2><span class="glyphicon glyphicon-play"></span> {{ action.action }} ({{action.itemCount}})</h2>
     <hr/> {{#each items }} {{> item}} {{/each}}
 </template>
 
