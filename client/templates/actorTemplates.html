@@ -1,14 +1,12 @@
 <!-- Actors -->
 <template name="actors">
     <h2><span class="glyphicon glyphicon-user"></span> Actors</h2>
-    <hr/> 
-    {{#each actors}}
+    <hr/> {{#each actors}}
     <h3>
         <a href="{{pathFor route='actors.show'}}">{{actor}}</a> 
         ({{itemCount}})
         <button class="delete btn btn-danger btn-xs">Delete</button>
-    </h3> 
-    {{/each}}
+    </h3> {{/each}}
 </template>
 
 <template name="actors_show">
@@ -22,4 +20,22 @@
             <a href="{{pathFor route='actors.show'}}">{{actor}}</a>
     ({{itemCount}})        
 </h4> {{/each}}
+</template>
+
+<template name="actors_stats">
+    {{#each actors}}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3><a href="{{pathFor route='actors.show'}}">{{actor}}</a></h3>
+        </div>
+        <div class="panel-body">
+            <h4>Total: {{itemCount}}</h4>
+            <h4>Today: xxx</h4>
+            <h4>This week: yyy</h4>
+            <h4>This month: zzz</h4>
+        </div>
+    </div>
+    {{/each}}
+
 </template>

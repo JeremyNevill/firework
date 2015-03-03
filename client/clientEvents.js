@@ -51,6 +51,18 @@ Template.actors_menu.helpers({
 });
 
 
+Template.actors_stats.helpers({
+    actors: function() {
+        return Actors.find({}, {
+            sort: {
+                itemCount: -1
+            },
+            limit: 20
+        });
+    }
+});
+
+
 /*
  Actions Helpers
  */
