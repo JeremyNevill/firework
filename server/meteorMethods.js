@@ -189,6 +189,9 @@ Meteor.methods({
 
         // Increment item counts
         Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
+        
+        // Create/increment the Aggregate stats
+        Meteor.call("incrementAggregates",actor);
 
     },
 
@@ -207,7 +210,7 @@ Meteor.methods({
         }
 
         var oldActor = item.actor;
-        var oldAction = item.action;
+        var oldAction = item.action; 
         var oldUnits = item.units;
 
         // Upsert actor, action, units
@@ -275,10 +278,19 @@ Meteor.methods({
             });
         }
         else {
-            console.log("Actor already exists");
+            // console.log("Actor already exists");
         }
     },
+    
+    // Add Actor Pre Aggregated Stat
+    incrementAggregates: function(actor){
 
+        // Construct Actor statId
+        var actorStatId = "actor_" + actor + "_" + "20150110";
+        console.log("StatId:" + actorStatId);
+        
+        
+    },
 
     // Add action if not existing already
     upsertAction: function(action, userId) {
