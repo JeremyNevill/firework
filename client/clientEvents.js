@@ -17,10 +17,10 @@ toastr.options = {
 Template.timeline.helpers({
     items: function() {
         return Items.find({}, {
-            sort: {
-                date: -1
-            },
-            limit: 25
+            //sort: {
+            //    date: -1
+            //},
+            limit: 200
         });
     }
 });
