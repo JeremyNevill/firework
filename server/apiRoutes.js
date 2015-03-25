@@ -24,9 +24,12 @@ Router.map(function() {
                 var units = this.request.body.units;
                 var date = this.request.body.date;
 
+                console.log('API Raw Date: ' + date);
+
                 Meteor.call("addApiItem", token, userid, actor, action, amount, units, date);
             }
 
+            // todo: Return newly created ID here
             var test = {
                 test: "true"
             };

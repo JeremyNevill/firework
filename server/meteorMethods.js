@@ -59,7 +59,6 @@ Meteor.methods({
                 actor: actor.actor
             }).fetch();
             var itemCount = actorItems.length;
-            //console.log(actor.actor + ":" + itemCount);
 
             Actors.update({
                 "actor": actor.actor,
@@ -70,7 +69,6 @@ Meteor.methods({
                 }
             });
         }
-        //console.log("Total Actors:" + actorCount);
 
         // Reset Action Counts
         var userActions = Actions.find({
@@ -84,7 +82,6 @@ Meteor.methods({
                 action: action.action
             }).fetch();
             var actionItemCount = actionItems.length;
-            //console.log(action.action + ":" + actionItemCount);
 
             Actions.update({
                 "action": action.action,
@@ -95,7 +92,6 @@ Meteor.methods({
                 }
             });
         }
-        //console.log("Total Actions:" + actionCount);
 
         // Reset UNITS Counts
         var userUnits = Units.find({
@@ -109,7 +105,6 @@ Meteor.methods({
                 units: units.unit
             }).fetch();
             var unitsItemCount = unitsItems.length;
-            //console.log(units.unit + ":" + unitsItemCount);
 
             Units.update({
                 "unit": units.unit,
@@ -120,8 +115,6 @@ Meteor.methods({
                 }
             });
         }
-        //console.log("Total Units:" + unitsCount);
-
     },
 
 
@@ -142,6 +135,10 @@ Meteor.methods({
             Meteor.call("upsertAction", action, user._id);
             Meteor.call("upsertUnits", units, user._id);
 
+            var momentDate = moment(date);
+            console.log('MomentDate: ' + momentDate);
+            console.log('MomentDate.toDate: ' + momentDate.toDate());
+
             // If the user matches the encoded JWT version 
             // Add the item
             Items.insert({
@@ -149,7 +146,7 @@ Meteor.methods({
                 action: action,
                 amount: amount,
                 units: units,
-                date: date,
+                date: momentDate.toDate(),
                 createdAt: new Date(),
                 owner: user._id,
                 private: true,
@@ -158,7 +155,6 @@ Meteor.methods({
 
             // Increment item counts
             Meteor.call("incrementItemCounts", actor, action, units, user._id);
-
         }
     },
 
@@ -175,13 +171,17 @@ Meteor.methods({
         Meteor.call("upsertAction", action, Meteor.userId());
         Meteor.call("upsertUnits", units, Meteor.userId());
 
+        var momentDate = moment(date);
+        console.log('MomentDate: ' + momentDate);
+        console.log('MomentDate.toDate: ' + momentDate.toDate());
+
         // Add the item
         Items.insert({
             actor: actor,
             action: action,
             amount: amount,
             units: units,
-            date: date,
+            date: momentDate.toDate(),
             createdAt: new Date(),
             owner: Meteor.userId(),
             private: true
@@ -189,10 +189,9 @@ Meteor.methods({
 
         // Increment item counts
         Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
-        
-        // Create/increment the Aggregate stats
-        Meteor.call("incrementAggregates",actor);
 
+        // Create/increment the Aggregate stats
+        Meteor.call("incrementAggregates", actor);
     },
 
 
@@ -210,7 +209,7 @@ Meteor.methods({
         }
 
         var oldActor = item.actor;
-        var oldAction = item.action; 
+        var oldAction = item.action;
         var oldUnits = item.units;
 
         // Upsert actor, action, units
@@ -236,8 +235,6 @@ Meteor.methods({
         Meteor.call("decrementItemCounts", oldActor, oldAction, oldUnits, Meteor.userId());
         // Increment item counts
         Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
-
-
     },
 
 
@@ -281,15 +278,15 @@ Meteor.methods({
             // console.log("Actor already exists");
         }
     },
-    
+
     // Add Actor Pre Aggregated Stat
-    incrementAggregates: function(actor){
+    incrementAggregates: function(actor) {
 
         // Construct Actor statId
         var actorStatId = "actor_" + actor + "_" + "20150110";
         console.log("StatId:" + actorStatId);
-        
-        
+
+
     },
 
     // Add action if not existing already

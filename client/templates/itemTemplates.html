@@ -5,7 +5,7 @@
            <a href="/actors/{{actor}}">@{{actor}}</a>
             <a href="/actions/{{action}}">{{action}}</a>
             {{amount}} <a href="/units/{{units}}">{{units}}</a>
-            {{ dateFormatted }}
+            {{ formatDate date }}
             <a href="/items/{{_id}}/edit">
                 <button class="edit btn btn-warning btn-xs">Edit</button>
             </a>
@@ -23,7 +23,7 @@
             <a href="/actors/{{ item.actor }}">@{{ item.actor }}</a>
             <a href="/actions/{{ item.action }}">{{ item.action }}</a>
             {{ item.amount }} <a href="/units/{{item.units}}">{{ item.units }}</a>
-            {{ dateFormatted }}
+            {{ formate item.date }}    
         {{#if isOwner}}
         <a href="/items/{{ item._id }}/edit">
             <button class="edit btn btn-warning btn-sm">Edit</button>
@@ -57,8 +57,10 @@
         </div>
         <div class="form-group">
             <div class='input-group date' id='datetimepicker'>
+
                 <input type='text' class="form-control" id="date" name="date" />
                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+
                 </span>
             </div>
         </div>
@@ -94,9 +96,10 @@
 
         <div class="form-group">
             <div class='input-group date' id='datetimepicker'>
+
                 <input type='text' class="form-control" id="date" name="date" value="{{formatDate date}}" />
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                </span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+
             </div>
         </div>
 

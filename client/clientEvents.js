@@ -192,7 +192,9 @@ Template.items_edit.events({
         var amount = event.target.amount.value;
         var units = event.target.units.value;
         var date = new Date(event.target.date.value);
-        console.log(date);
+        
+        console.log("Target date: " + event.target.date.value);
+        console.log("Date var: " + date);
 
         Meteor.call("updateItem", id, actor, action, amount, units, date);
         Router.go('/timeline');
@@ -248,32 +250,20 @@ Accounts.ui.config({
     passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 
-Template.item.helpers({
-    dateFormatted: function() {
-        return moment(this.date).format('MM/DD/YYYY HH:MM');
-    }
-});
-
-Template.items_show.helpers({
-    dateFormatted: function() {
-        return moment(this.date).format('MM/DD/YYYY HH:MM');
-    }
-});
-
-Template.registerHelper('formatDate', function(date) {
-    return moment(date).format('MM/DD/YYYY HH:MM');
+Template.registerHelper("formatDate", function(date) {
+        return moment(date).format('L LT');
 });
 
 Template.items_add.rendered = function() {
-    $('#datetimepicker').datetimepicker({
-        format: "MM/DD/YYYY HH:MM"
-    });
+    //$('#datetimepicker').datetimepicker({
+    //    format: "MM/DD/YYYY HH:MM"
+    //});
     var newDate = new Date();
-    $('input[id="date"]').val(moment(newDate).format('MM/DD/YYYY HH:MM'));
+    $('input[id="date"]').val(moment(newDate).format('L LT'));
 };
 
 Template.items_edit.rendered = function() {
-    $('#datetimepicker').datetimepicker({
-        format: "MM/DD/YYYY HH:MM"
-    });
+    //$('#datetimepicker').datetimepicker({
+    //    format: "MM/DD/YYYY HH:MM"
+    //});
 };
