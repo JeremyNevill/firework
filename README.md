@@ -1,15 +1,16 @@
 Firework
 ========
 
+Firework is a Real-Time Logging and Analytics Platform. 
+
+* [Get online support](http://support.firework.com)
+* [Clone or fork from Github](https://github.com/JeremyNevill/firework)
+* [Use the Test server](http://fwktest.firework.com)
+* [Use the official Hosted Pro version](http://firework.com)
+
 Latest version: Alpha
 
 [ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
-
-Firework is a Real-Time Logging and Analytics Platform. 
-
-* View the test version of Firework at [fwktest.firework.com](http://fwktest.firework.com)
-* The official hosted pro version is at [Firework.com](http://firework.com)
-* Clone or fork this open source version from [Github](https://github.com/JeremyNevill/firework)
 
 Firework is written using [Meteor](https://www.meteor.com) and [MongoDb](http://www.mongodb.com).
 
