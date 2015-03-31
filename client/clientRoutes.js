@@ -69,6 +69,10 @@ Router.route('/actors', function() {
 Router.route('/actors/:actor', function() {
     this.render('actors_show', {
         data: function() {
+
+            Session.set('currentActor', this.params.actor);
+
+
             var templateData = {
                 actor: Actors.findOne({
                     "actor": this.params.actor

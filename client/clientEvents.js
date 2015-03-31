@@ -5,6 +5,7 @@ Meteor.subscribe("items");
 Meteor.subscribe("actors");
 Meteor.subscribe("actions");
 Meteor.subscribe("units");
+Meteor.subscribe("actor_items", "RunScope");
 
 toastr.options = {
     "positionClass": "toast-bottom-right"
@@ -192,7 +193,7 @@ Template.items_edit.events({
         var amount = event.target.amount.value;
         var units = event.target.units.value;
         var date = new Date(event.target.date.value);
-        
+
         console.log("Target date: " + event.target.date.value);
         console.log("Date var: " + date);
 
@@ -251,7 +252,7 @@ Accounts.ui.config({
 });
 
 Template.registerHelper("formatDate", function(date) {
-        return moment(date).format('L LT');
+    return moment(date).format('L LT');
 });
 
 Template.items_add.rendered = function() {
@@ -267,3 +268,9 @@ Template.items_edit.rendered = function() {
     //    format: "MM/DD/YYYY HH:MM"
     //});
 };
+
+Tracker.autorun(function() {
+    var actor = Session.get('currentActor');
+    console.log("Tracker Autorun - Current Actor: " + actor);
+    Meteor.subscribe('actor_items', actor);
+});
