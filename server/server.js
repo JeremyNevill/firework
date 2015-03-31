@@ -49,6 +49,21 @@ if (Meteor.isServer) {
         });
     });
 
+    // Unit Items
+    Meteor.publish("unit_items", function(unit) {
+
+        console.log("Meteor.publish - unit_items:" + unit);
+
+        return Items.find({
+            owner: this.userId,
+            units: unit
+        }, {
+            sort: {
+                "date": -1
+            },
+            limit: 20
+        });
+    });
 
     // Actors
     Meteor.publish("actors", function() {

@@ -279,3 +279,9 @@ Tracker.autorun(function() {
     console.log("Tracker Autorun - Current Action: " + action);
     Meteor.subscribe('action_items', action);
 });
+
+Tracker.autorun(function() {
+    var unit = Session.get('currentUnit');
+    console.log("Tracker Autorun - Current Unit: " + unit);
+    Meteor.subscribe('unit_items', unit);
+});
