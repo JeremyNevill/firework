@@ -72,7 +72,6 @@ Router.route('/actors/:actor', function() {
 
             Session.set('currentActor', this.params.actor);
 
-
             var templateData = {
                 actor: Actors.findOne({
                     "actor": this.params.actor
@@ -99,6 +98,9 @@ Router.route('/actions', function() {
 Router.route('/actions/:action', function() {
     this.render('actions_show', {
         data: function() {
+
+            Session.set('currentAction', this.params.action);
+
             var templateData = {
                 action: Actions.findOne({
                     "action": this.params.action
@@ -125,6 +127,9 @@ Router.route('/units', function() {
 Router.route('/units/:unit', function() {
     this.render('units_show', {
         data: function() {
+
+            Session.set('currentUnit', this.params.unit);
+
             var templateData = {
                 unit: Units.findOne({
                     "unit": this.params.unit

@@ -33,6 +33,23 @@ if (Meteor.isServer) {
     });
 
 
+    // Action Items
+    Meteor.publish("action_items", function(action) {
+
+        console.log("Meteor.publish - action_items:" + action);
+
+        return Items.find({
+            owner: this.userId,
+            action: action
+        }, {
+            sort: {
+                "date": -1
+            },
+            limit: 20
+        });
+    });
+
+
     // Actors
     Meteor.publish("actors", function() {
         return Actors.find({

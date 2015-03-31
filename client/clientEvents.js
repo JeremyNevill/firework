@@ -5,7 +5,6 @@ Meteor.subscribe("items");
 Meteor.subscribe("actors");
 Meteor.subscribe("actions");
 Meteor.subscribe("units");
-Meteor.subscribe("actor_items", "RunScope");
 
 toastr.options = {
     "positionClass": "toast-bottom-right"
@@ -273,4 +272,10 @@ Tracker.autorun(function() {
     var actor = Session.get('currentActor');
     console.log("Tracker Autorun - Current Actor: " + actor);
     Meteor.subscribe('actor_items', actor);
+});
+
+Tracker.autorun(function() {
+    var action = Session.get('currentAction');
+    console.log("Tracker Autorun - Current Action: " + action);
+    Meteor.subscribe('action_items', action);
 });
