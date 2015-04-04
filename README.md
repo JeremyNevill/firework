@@ -6,7 +6,7 @@ Firework is a Real-Time Logging and Analytics Platform that can be hosted on Lin
 * [Get online support](http://support.firework.com)
 * [Clone or fork from Github](https://github.com/JeremyNevill/firework)
 * [Use the Test server](http://fwktest.firework.com)
-* [Use the official Hosted Pro version](http://firework.com)
+* [Use the Hosted version](http://firework.com)
 
 Latest version: Alpha
 
