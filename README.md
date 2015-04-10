@@ -1,20 +1,22 @@
 Firework
 ========
 
-Firework is a Real-Time Logging and Analytics Platform that can be hosted on Linux, Mac and Windows.
+Firework is a Real-Time IOT Logging and Analytics Platform.
 
-* [Get online support](http://support.firework.com)
-* [Clone or fork from Github](https://github.com/JeremyNevill/firework)
-* [Use the Test server](http://fwktest.firework.com)
-* [Use the Hosted version](http://firework.com)
+Firework is Open Source so you are free to host your own Firework Server on a linux, mac or windows machine.
 
-Latest version: Alpha
+Alternatively use our hosted version at [Firework.com](http://firework.com) and migrate to a self hosted solution at any time.
+
+* [Online Support](http://support.firework.com)
+* [Github Repo](https://github.com/JeremyNevill/firework)
+* [Test Server](http://fwktest.firework.com)
+* [Hosted Version](http://firework.com)
 
 [ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
 
 Firework is written using [Meteor](https://www.meteor.com) with a [MongoDb](http://www.mongodb.com) database.
 
-The platform consists of 2 main parts:
+The platform consists of a server which provides:
 
 * Realtime Dashboard
 * Logging API
@@ -29,14 +31,14 @@ Log items include properties such as:
 
 Once log items have been added you can browse the real-time timeline to see what happened when.
 
-Items can be added manually or automatically via the inbound rest API.
+Items can be added via the inbound rest API or manually through the dashboard.
 
-Integration to services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream applications.
+Integration to services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream devices and applications.
 
 
-## Run a Firework Server
+## Self Host a Firework Server
 
-To host a test or production version of the Firework server follow the instructions below:
+To self host a test or production version of the Firework server follow the instructions below:
 
 ### Linux Hosting
 
