@@ -1,22 +1,22 @@
 Firework
 ========
 
-Firework is a Real-Time IOT Logging and Analytics Platform.
+Firework is a Real-time IOT Logging and Analytics application that can be installed on Linux, OS X and Windows.   
 
-Firework is Open Source so you are free to host your own Firework Server on a linux, mac or windows machine.
+It is an [open source project hosted on Github](https://github.com/JeremyNevill/firework) where you can clone or fork your own version for free.
 
-Alternatively use our hosted version at [Firework.com](http://firework.com) and migrate to a self hosted solution at any time.
+To try out the hosted version go to [Firework.com](http://firework.com). 
 
-* [Online Support](http://support.firework.com)
+* [Documentation and Support](http://docs.firework.com)
 * [Github Repo](https://github.com/JeremyNevill/firework)
 * [Test Server](http://fwktest.firework.com)
 * [Hosted Version](http://firework.com)
 
 [ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
 
-Firework is written using [Meteor](https://www.meteor.com) with a [MongoDb](http://www.mongodb.com) database.
+Firework uses [Meteor](https://www.meteor.com) with a [MongoDb](http://www.mongodb.com) database.
 
-The platform consists of a server which provides:
+Firework Server provides:
 
 * Realtime Dashboard
 * Logging API
@@ -35,6 +35,7 @@ Items can be added via the inbound rest API or manually through the dashboard.
 
 Integration to services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream devices and applications.
 
+For comprehensive instructions visit the * [Documentation and Support](http://docs.firework.com) website.
 
 ## Self Host a Firework Server
 
