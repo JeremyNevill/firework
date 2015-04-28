@@ -49,7 +49,7 @@ Items can be added via the inbound rest API or manually through the dashboard.
 
 Integration to services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream devices and applications.
 
-For comprehensive instructions visit the * [Documentation and Support](http://docs.firework.com) website.
+For comprehensive instructions visit the [documentation and support](http://docs.firework.com) website.
 
 
 ## Requirements
