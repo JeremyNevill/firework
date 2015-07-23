@@ -17,10 +17,9 @@ toastr.options = {
 Template.timeline.helpers({
     items: function() {
         return Items.find({}, {
-            //sort: {
-            //    date: -1
-            //},
-            limit: 200
+            sort: {
+                date: -1
+            }
         });
     }
 });
@@ -34,8 +33,7 @@ Template.actors.helpers({
         return Actors.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 50
+            }
         });
     }
 });
@@ -44,8 +42,7 @@ Template.actors_menu.helpers({
         return Actors.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 20
+            }
         });
     }
 });
@@ -56,8 +53,7 @@ Template.actors_stats.helpers({
         return Actors.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 20
+            }
         });
     }
 });
@@ -71,8 +67,7 @@ Template.actions.helpers({
         return Actions.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 50
+            }
         });
     }
 });
@@ -81,8 +76,7 @@ Template.actions_menu.helpers({
         return Actions.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 50
+            }
         });
     }
 });
@@ -96,8 +90,7 @@ Template.units.helpers({
         return Units.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 50
+            }
         });
     }
 });
@@ -106,8 +99,7 @@ Template.units_menu.helpers({
         return Units.find({}, {
             sort: {
                 itemCount: -1
-            },
-            limit: 50
+            }
         });
     }
 });

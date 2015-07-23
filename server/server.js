@@ -19,7 +19,7 @@ if (Meteor.isServer) {
     // Actor Items
     Meteor.publish("actor_items", function(actor) {
 
-        console.log("Meteor.publish - actor_items:" + actor);
+        // console.log("Meteor.publish - actor_items:" + actor);
 
         return Items.find({
             owner: this.userId,
@@ -36,7 +36,7 @@ if (Meteor.isServer) {
     // Action Items
     Meteor.publish("action_items", function(action) {
 
-        console.log("Meteor.publish - action_items:" + action);
+        // console.log("Meteor.publish - action_items:" + action);
 
         return Items.find({
             owner: this.userId,
@@ -52,7 +52,7 @@ if (Meteor.isServer) {
     // Unit Items
     Meteor.publish("unit_items", function(unit) {
 
-        console.log("Meteor.publish - unit_items:" + unit);
+        // console.log("Meteor.publish - unit_items:" + unit);
 
         return Items.find({
             owner: this.userId,
