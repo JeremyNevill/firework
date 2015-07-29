@@ -141,7 +141,7 @@ Meteor.methods({
 
             // If the user matches the encoded JWT version 
             // Add the item
-            Items.insert({
+            var newItemId = Items.insert({
                 actor: actor,
                 action: action,
                 amount: amount,
@@ -155,6 +155,8 @@ Meteor.methods({
 
             // Increment item counts
             Meteor.call("incrementItemCounts", actor, action, units, user._id);
+        
+            return newItemId;
         }
     },
 

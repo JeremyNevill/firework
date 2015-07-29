@@ -7,7 +7,7 @@ Router.map(function() {
         where: 'server',
         action: function() {
 
-            console.log(this.request.method);
+            // console.log(this.request.method);
 
             var requestMethod = this.request.method;
             this.response.writeHead(200, {
@@ -24,18 +24,13 @@ Router.map(function() {
                 var units = this.request.body.units;
                 var date = this.request.body.date;
 
-                console.log('API Raw Date: ' + date);
-
-                Meteor.call("addApiItem", token, userid, actor, action, amount, units, date);
+                var newItemId = Meteor.call("addApiItem", token, userid, actor, action, amount, units, date);
             }
 
-            // todo: Return newly created ID here
-            var test = {
-                test: "true"
-            };
+            var newItem = Items.findOne({"_id":newItemId});
 
             this.response.end(JSON.stringify(
-                test
+                newItem
             ));
         }
     });
