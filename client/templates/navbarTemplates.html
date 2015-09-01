@@ -20,6 +20,11 @@
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="nav navbar-nav navbar-right">
                         {{#if currentUser}}
+                        <li role="presentation">
+                            <a href="/timeline">
+                                <span class="glyphicon glyphicon-time"></span> Timeline
+                            </a>
+                        </li>
                         <li role="presentation"><a href="{{pathFor route='add'}}"><span
                                     class="glyphicon glyphicon-plus"></span> Add</a>
                         </li>
