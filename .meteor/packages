@@ -14,5 +14,5 @@ less
 meteorhacks:npm
 npm-container
 momentjs:moment
-sanjo:jasmine
 velocity:html-reporter
+sanjo:jasmine

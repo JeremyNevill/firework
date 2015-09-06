@@ -7085,7 +7085,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "0777157c16df15b49cad144f9fe67d8e62e00e0f"
+                  "value": "5cc94799cc2f0b8cb2d57c73584abb69634ceb47"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7100,7 +7100,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "aee760d978232083a126ec99adf27143d5be1055"
+                  "value": "a63a01c4425d806723596f80077feb36db6e00c3"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7224,7 +7224,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 0
+              "value": 1
             },
             "timeout": {
               "type": "constant",
@@ -7867,7 +7867,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "359efd142db329456783df4c63c57fe370007fc0"
+          "value": "35388f6555a08d0b893c06dd55fbe6e2430b98b5"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -7875,7 +7875,7 @@ var packageMetadata = {
         },
         "autoupdateVersionCordova": {
           "type": "constant",
-          "value": "aee760d978232083a126ec99adf27143d5be1055"
+          "value": "a63a01c4425d806723596f80077feb36db6e00c3"
         },
         "appId": {
           "type": "constant",
@@ -8979,6 +8979,8 @@ var packageMetadata = {
   "less": {},
   "meteorhacks:npm": {},
   "npm-container": {},
+  "grigio:babel": {},
+  "velocity:html-reporter": {},
   "coffeescript": {},
   "practicalmeteor:loglevel": {
     "loglevel": {
@@ -9897,8 +9899,6 @@ var packageMetadata = {
       }
     }
   },
-  "grigio:babel": {},
-  "velocity:html-reporter": {},
   "session": {},
   "livedata": {
     "DDP": {
