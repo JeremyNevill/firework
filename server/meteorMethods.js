@@ -155,7 +155,7 @@ Meteor.methods({
 
             // Increment item counts
             Meteor.call("incrementItemCounts", actor, action, units, user._id);
-        
+
             return newItemId;
         }
     },
@@ -178,7 +178,7 @@ Meteor.methods({
         console.log('MomentDate.toDate: ' + momentDate.toDate());
 
         // Add the item
-        Items.insert({
+        var newItemId = Items.insert({
             actor: actor,
             action: action,
             amount: amount,
@@ -194,6 +194,8 @@ Meteor.methods({
 
         // Create/increment the Aggregate stats
         Meteor.call("incrementAggregates", actor);
+
+        return newItemId;
     },
 
 
