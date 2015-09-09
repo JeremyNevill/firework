@@ -26,6 +26,7 @@ Try out the latest hosted version at [Firework.com](http://firework.com).
 [ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
 
 Passing builds are automatically deployed to the [test server](http://fwktest.firework.com). 
+The test server is hosted on Modulus and the database on Compose.
 
 
 ## Description
