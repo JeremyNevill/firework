@@ -136,8 +136,8 @@ Meteor.methods({
             Meteor.call("upsertUnits", units, user._id);
 
             var momentDate = moment(date);
-            console.log('MomentDate: ' + momentDate);
-            console.log('MomentDate.toDate: ' + momentDate.toDate());
+            // console.log('MomentDate: ' + momentDate);
+            // console.log('MomentDate.toDate: ' + momentDate.toDate());
 
             // If the user matches the encoded JWT version 
             // Add the item

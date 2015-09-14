@@ -11,7 +11,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 25
+            limit: 20
         });
     });
 
@@ -28,7 +28,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 25
+            limit: 20
         });
     });
 
@@ -45,7 +45,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 25
+            limit: 20
         });
     });
 
@@ -61,7 +61,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 25
+            limit: 20
         });
     });
 
