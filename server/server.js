@@ -2,6 +2,8 @@
  Server Code
  */
 if (Meteor.isServer) {
+    
+    var pageLimit=15;
 
     // Timeline Items
     Meteor.publish("items", function() {
@@ -11,7 +13,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 20
+            limit: pageLimit
         });
     });
 
@@ -28,7 +30,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 20
+            limit: pageLimit
         });
     });
 
@@ -45,7 +47,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 20
+            limit: pageLimit
         });
     });
 
@@ -61,7 +63,7 @@ if (Meteor.isServer) {
             sort: {
                 "date": -1
             },
-            limit: 20
+            limit: pageLimit
         });
     });
 
