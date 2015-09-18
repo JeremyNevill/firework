@@ -23,3 +23,38 @@ Run the tests:
 ```
 node ghost/main.js
 ```
+
+
+### Jasmine PhantomJs
+
+Prerequisites:
+
+* Jasmine
+* WebdriverIO - http://webdriver.io/guide/usage/selectors.html
+* PhantomJs
+
+
+#### PhantomJs
+
+```
+npm install -g phantomjs
+```
+
+#### webdriver
+
+```
+meteor add xolvio:webdriver
+```
+
+#### Running with PhantomJs
+
+
+
+#### Various Properties
+```
+JASMINE_SERVER_UNIT=0
+JASMINE_SERVER_INTEGRATION=0
+JASMINE_CLIENT_UNIT=0
+JASMINE_CLIENT_INTEGRATION=0
+```
+

@@ -16,3 +16,4 @@ npm-container
 momentjs:moment
 velocity:html-reporter
 sanjo:jasmine
+xolvio:webdriver

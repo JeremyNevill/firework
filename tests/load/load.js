@@ -1,8 +1,8 @@
 var request = require('request');
 
 var loopCounter = 0;
-var loopSize = 1000;
-var loopInterval = 20; // ms
+var loopSize = 100;
+var loopInterval = 10; // ms
 
 var i = setInterval(function() {
 
@@ -15,14 +15,14 @@ var i = setInterval(function() {
             'api-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyaWQiOiIzM3lERm9pbWh2WlJvQnNtVCJ9.uXrju8Q_myjCScYbeaN8Xn5OEwpPT5qH09C8SFMUSHE'
         },
         json: {
-            actor: 'Henry',
-            action: 'skipped',
+            actor: 'Frank',
+            action: 'laughed',
             amount: loopCounter,
-            units: 'miles'
+            units: 'times'
         }
     }, function(error, response, body) {
         if (error) {
-            console.log(error);
+            console.log('Error:', error);
         }
         else {
             console.log(loopCounter, response.statusCode);

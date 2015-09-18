@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ghost-inspector": "^1.2.0"
+    "ghost-inspector": "^1.2.0",
+    "request": "^2.61.0"
   }
 }
