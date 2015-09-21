@@ -7085,7 +7085,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "e29d14dca86647f2ed3b915550f7ea36f6a64386"
+                  "value": "86e5349c824cf76700ee015a72ecde5fa2bd2660"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7100,7 +7100,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "f1387f11c712e053536d609be224288371318742"
+                  "value": "11c2c360191d1da9695e4b9662d5c069b3a63bc7"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7224,7 +7224,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 3
+              "value": 0
             },
             "timeout": {
               "type": "constant",
@@ -7867,7 +7867,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "8a2dddc395fd2f42201c036f11f8a2a95c4e8619"
+          "value": "72ee3d0479714bbf28a24e4300c861ff720bfae1"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
@@ -7875,7 +7875,7 @@ var packageMetadata = {
         },
         "autoupdateVersionCordova": {
           "type": "constant",
-          "value": "f1387f11c712e053536d609be224288371318742"
+          "value": "11c2c360191d1da9695e4b9662d5c069b3a63bc7"
         },
         "appId": {
           "type": "constant",
@@ -9899,7 +9899,6 @@ var packageMetadata = {
       }
     }
   },
-  "meteortypescript:compiler": {},
   "session": {},
   "livedata": {
     "DDP": {
