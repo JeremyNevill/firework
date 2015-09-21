@@ -185,9 +185,6 @@ Template.items_edit.events({
         var units = event.target.units.value;
         var date = new Date(event.target.date.value);
 
-        console.log("Target date: " + event.target.date.value);
-        console.log("Date var: " + date);
-
         Meteor.call("updateItem", id, actor, action, amount, units, date);
         Router.go('/timeline');
         toastr.success("Update Item", "Item Updated");
@@ -262,18 +259,18 @@ Template.items_edit.rendered = function() {
 
 Tracker.autorun(function() {
     var actor = Session.get('currentActor');
-    console.log("Tracker Autorun - Current Actor: " + actor);
+    // console.log("Tracker Autorun - Current Actor: " + actor);
     Meteor.subscribe('actor_items', actor);
 });
 
 Tracker.autorun(function() {
     var action = Session.get('currentAction');
-    console.log("Tracker Autorun - Current Action: " + action);
+    // console.log("Tracker Autorun - Current Action: " + action);
     Meteor.subscribe('action_items', action);
 });
 
 Tracker.autorun(function() {
     var unit = Session.get('currentUnit');
-    console.log("Tracker Autorun - Current Unit: " + unit);
+    // console.log("Tracker Autorun - Current Unit: " + unit);
     Meteor.subscribe('unit_items', unit);
 });

@@ -1,8 +1,8 @@
 var request = require('request');
 
 var loopCounter = 0;
-var loopSize = 100;
-var loopInterval = 10; // ms
+var loopSize = 10000;
+var loopInterval = 25; // ms
 
 var i = setInterval(function() {
 

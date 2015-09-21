@@ -4,20 +4,16 @@
     <h2><span class="glyphicon glyphicon-large"></span> Units</h2>
     <hr/> {{#each units}}
     <h3>
-        <a href="{{pathFor route='units.show'}}">{{unit}}
-        </a>
+        <a href="{{pathFor route='units.show'}}">{{unit}}</a>
         ({{itemCount}})
-        <button class="delete btn btn-danger btn-xs">Delete</button>
-    </h3> {{/each}}
+     </h3> {{/each}}
 </template>
 
 
 <template name="units_menu">
     {{#each units}}
     <h4>       
-    <a href="{{pathFor route='units.show'}}">{{unit}}
-        
-     </a>
+    <a href="{{pathFor route='units.show'}}">{{unit}}</a>
      ({{itemCount}})
         </h4> {{/each}}
 </template>
