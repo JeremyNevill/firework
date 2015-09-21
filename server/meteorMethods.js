@@ -1,8 +1,4 @@
-/*
- Meteor Methods
- */
 Meteor.methods({
-
 
     // Create Secret Key and API Token
     createToken: function() {
@@ -136,8 +132,6 @@ Meteor.methods({
             Meteor.call("upsertUnits", units, user._id);
 
             var momentDate = moment(date);
-            // console.log('MomentDate: ' + momentDate);
-            // console.log('MomentDate.toDate: ' + momentDate.toDate());
 
             // If the user matches the encoded JWT version 
             // Add the item
@@ -153,8 +147,8 @@ Meteor.methods({
                 username: user.username
             });
 
-            // Increment item counts
             Meteor.call("incrementItemCounts", actor, action, units, user._id);
+            Meteor.call("incrementAggregates", user._id, actor, action, units, momentDate);
 
             return newItemId;
         }
@@ -189,11 +183,8 @@ Meteor.methods({
             private: true
         });
 
-        // Increment item counts
         Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
-
-        // Create/increment the Aggregate stats
-        Meteor.call("incrementAggregates", actor);
+        Meteor.call("incrementAggregates", Meteor.userId(), actor, action, units, momentDate);
 
         return newItemId;
     },
@@ -283,15 +274,6 @@ Meteor.methods({
         }
     },
 
-    // Add Actor Pre Aggregated Stat
-    incrementAggregates: function(actor) {
-
-        // Construct Actor statId
-        var actorStatId = "actor_" + actor + "_" + "20150110";
-        console.log("StatId:" + actorStatId);
-
-
-    },
 
     // Add action if not existing already
     upsertAction: function(action, userId) {
