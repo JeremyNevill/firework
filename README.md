@@ -1,11 +1,11 @@
 Firework
 ========
 
-Firework is a Real-time IOT Logging and Analytics app that can be installed on Linux, OS X and Windows.   
+Firework is a Real-time Logging App for IOT devices, websites and online services.
 
-Firework is [open source and hosted on Github](https://github.com/JeremyNevill/firework).
+Firework is [open source](https://github.com/JeremyNevill/firework) and can be installed on Linux, OS X and Windows.
 
-Try out the latest hosted version at [Firework.com](http://firework.com). 
+Try out the latest version at [Firework.com](http://firework.com) or [download and install your own server](http://docs.firework.com/v1.0/docs).
 
 
 ## Getting Started
@@ -17,7 +17,7 @@ Try out the latest hosted version at [Firework.com](http://firework.com).
 
 * [Documentation and Support](http://docs.firework.com)
 * [Github Repo](https://github.com/JeremyNevill/firework)
-* [Test Server](http://fwktest.firework.com)
+* [Test Server Continously Deployed from Github](http://fwktest.firework.com)
 * [Hosted Version](http://firework.com)
 
 
@@ -25,16 +25,15 @@ Try out the latest hosted version at [Firework.com](http://firework.com).
 
 [ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
 
-Passing builds are automatically deployed to the [test server](http://fwktest.firework.com). 
-The test server is hosted on Modulus and the database on Compose.
+Passing builds are continuously deployed to the [test server](http://fwktest.firework.com). 
 
 
 ## Description
 
-Firework Server provides:
+Firework provides:
 
-* Realtime Dashboard
-* Logging API
+* Realtime Web Dashboard
+* Logging API - REST with Json Body
 
 Log items include properties such as:
 
@@ -48,7 +47,7 @@ Once log items have been added you can browse the real-time timeline to see what
 
 Items can be added via the inbound rest API or manually through the dashboard.
 
-Integration to services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream devices and applications.
+Integration to online services such as [Zapier](https://zapier.com) enable realtime logging of hundreds of upstream devices and applications.
 
 For comprehensive instructions visit the [documentation and support](http://docs.firework.com) website.
 
@@ -57,10 +56,11 @@ For comprehensive instructions visit the [documentation and support](http://docs
 
 Firework can be deployed on Linux, OS X, and Windows operating systems.
 
-Firework also requires [Meteor](https://www.meteor.com) which in turn requires [MongoDb](http://www.mongodb.com).
+Firework requires [Meteor v1.2](https://www.meteor.com) which in turn uses [MongoDb](http://www.mongodb.com) and [Node JS](https://nodejs.org).
 
 
 ## Get in Contact
 
 We'd love to hear what you think of Firework, get in contact via twitter [JeremyNevill](https://twitter.com/JeremyNevill) or
-email [jeremy@nevill.net](mailto:jeremy@nevill.net)
+email [jeremy@nevill.net](mailto:jeremy@nevill.net).
+
