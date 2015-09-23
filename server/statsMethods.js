@@ -1,13 +1,13 @@
 Meteor.methods({
     incrementAggregates: function(userid, actor, action, amount, units, date) {
 
-        var actorStatId = userid + "_actor_" + actor;
+        var actorStatId = userid + "_actor_" + actor + "_" + date;
         console.log("actorStatId: " + actorStatId);
 
-        var actionStatId = userid + "_action_" + action;
-        console.log("actionStatId: " + actionStatId);
+        //var actionStatId = userid + "_action_" + action;
+        //console.log("actionStatId: " + actionStatId);
 
-        var unitsStatId = userid + "_units_" + units;
-        console.log("unitsStatId: " + unitsStatId);
+        //var unitsStatId = userid + "_units_" + units;
+        //console.log("unitsStatId: " + unitsStatId);
     }
 });

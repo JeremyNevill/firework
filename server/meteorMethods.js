@@ -148,7 +148,7 @@ Meteor.methods({
             });
 
             Meteor.call("incrementItemCounts", actor, action, units, user._id);
-            Meteor.call("incrementAggregates", user._id, actor, action, units, momentDate);
+            Meteor.call("incrementAggregates", user._id, actor, action, amount, units, momentDate);
 
             return newItemId;
         }
@@ -184,7 +184,7 @@ Meteor.methods({
         });
 
         Meteor.call("incrementItemCounts", actor, action, units, Meteor.userId());
-        Meteor.call("incrementAggregates", Meteor.userId(), actor, action, units, momentDate);
+        Meteor.call("incrementAggregates", Meteor.userId(), actor, action, amount, units, momentDate);
 
         return newItemId;
     },

@@ -4,21 +4,25 @@
     <hr/>
 
     <div class="panel panel-default">
-        <div class="panel-heading"><span class="glyphicon glyphicon-stats"></span> API Token
+        <div class="panel-heading"><span class="glyphicon glyphicon-stats"></span> API Access
         </div>
         <div class="panel-body">
             <p>
-                User Id:
+                user-id
             </p>
             <pre>{{ currentUser._id }}</pre>
             <p>
-                Api Token:
+                api-token
             </p>
             <pre>{{ currentUser.profile.apiToken }}</pre>
 
             <form role="form" class="new-tokens">
-                <button type="submit" class="btn btn-default">Create New Token</button>
+                <p>
+                    <button type="submit" class="btn btn-default">Reset Token</button>
+                </p> 
             </form>
+            <p>Note: Performing a token reset will render the existing token redundant.</p>
+
         </div>
     </div>
 
