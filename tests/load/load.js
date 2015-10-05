@@ -2,7 +2,7 @@ var request = require('request');
 
 var loopCounter = 0;
 var loopSize = 1000000;
-var loopInterval = 100; // ms
+var loopInterval = 10; // ms
 
 var i = setInterval(function() {
 
@@ -11,8 +11,8 @@ var i = setInterval(function() {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            'user-id': '33yDFoimhvZRoBsmT',
-            'api-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyaWQiOiIzM3lERm9pbWh2WlJvQnNtVCJ9.uXrju8Q_myjCScYbeaN8Xn5OEwpPT5qH09C8SFMUSHE'
+            'user-id': 'wHh6t4k3ExFSeFY2v',
+            'api-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyaWQiOiJ3SGg2dDRrM0V4RlNlRlkydiJ9.tgDxA8Yw3L78i6O-JEnu9qTnJGZPK9zlhptzE9NCOZI'
         },
         json: {
             actor: 'Frank',

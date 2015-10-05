@@ -64,3 +64,19 @@ Firework requires [Meteor v1.2](https://www.meteor.com) which in turn uses [Mong
 We'd love to hear what you think of Firework, get in contact via twitter [JeremyNevill](https://twitter.com/JeremyNevill) or
 email [jeremy@nevill.net](mailto:jeremy@nevill.net).
 
+
+
+ian:accounts-ui-bootstrap-3
+mrt:moment
+chrismbeckett:toastr
+nemo64:bootstrap
+less
+meteorhacks:npm
+momentjs:moment
+npm-container
+logging
+reload
+random
+ejson
+spacebars
+check

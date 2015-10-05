@@ -2,29 +2,42 @@
 // DEPENDS ON GLOBAL OBJECT: 'ComponentMocker'
 
 var packageMetadata = {
-  "npm-bcrypt": {
-    "NpmModuleBcrypt": {
+  "es5-shim": {
+    "Date": {
+      "type": "function"
+    },
+    "parseInt": {
+      "type": "function"
+    }
+  },
+  "meteor-base": {},
+  "mobile-experience": {},
+  "npm-mongo": {
+    "NpmModuleMongodbVersion": {
+      "type": "constant",
+      "value": "1.4.39"
+    }
+  },
+  "random": {
+    "Random": {
       "type": "object",
       "members": {
-        "genSaltSync": {
+        "createWithSeeds": {
           "type": "function"
         },
-        "genSalt": {
+        "fraction": {
           "type": "function"
         },
-        "hashSync": {
+        "hexString": {
           "type": "function"
         },
-        "hash": {
+        "id": {
           "type": "function"
         },
-        "compareSync": {
+        "secret": {
           "type": "function"
         },
-        "compare": {
-          "type": "function"
-        },
-        "getRounds": {
+        "choice": {
           "type": "function"
         }
       }
@@ -83,95 +96,41 @@ var packageMetadata = {
       "type": "object"
     }
   },
-  "check": {
-    "check": {
-      "type": "function"
-    },
-    "Match": {
-      "type": "object",
-      "members": {
-        "Optional": {
-          "type": "function"
-        },
-        "OneOf": {
-          "type": "function"
-        },
-        "Any": {
-          "type": "array"
-        },
-        "Where": {
-          "type": "function"
-        },
-        "ObjectIncluding": {
-          "type": "function"
-        },
-        "ObjectWithValues": {
-          "type": "function"
-        },
-        "Integer": {
-          "type": "array"
-        },
-        "Error": {
-          "type": "function",
-          "refID": 13,
-          "members": {
-            "captureStackTrace": {
-              "type": "function"
-            },
-            "stackTraceLimit": {
-              "type": "constant",
-              "value": 10
-            },
-            "prepareStackTrace": {
-              "type": "function"
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "constructor": {
-                  "ref": 13
-                }
-              }
-            }
-          }
-        },
-        "test": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "babel-compiler": {
-    "Babel": {
-      "type": "object",
-      "members": {
-        "getDefaultOptions": {
-          "type": "function"
-        },
-        "validateExtraFeatures": {
-          "type": "function"
-        },
-        "compile": {
-          "type": "function"
-        },
-        "transformMeteor": {
-          "type": "function"
-        },
-        "setCacheDir": {
-          "type": "function"
-        }
-      }
-    },
-    "BabelCompiler": {
+  "id-map": {
+    "IdMap": {
       "type": "function",
       "members": {
         "prototype": {
           "type": "object",
           "members": {
-            "processFilesForTarget": {
+            "get": {
               "type": "function"
             },
-            "setDiskCacheDirectory": {
+            "set": {
+              "type": "function"
+            },
+            "remove": {
+              "type": "function"
+            },
+            "has": {
+              "type": "function"
+            },
+            "empty": {
+              "type": "function"
+            },
+            "clear": {
+              "type": "function"
+            },
+            "forEach": {
+              "type": "function"
+            },
+            "size": {
+              "type": "function"
+            },
+            "setDefault": {
+              "type": "function"
+            },
+            "clone": {
               "type": "function"
             }
           }
@@ -179,98 +138,62 @@ var packageMetadata = {
       }
     }
   },
-  "ecmascript": {
-    "ECMAScript": {
-      "type": "object",
-      "members": {
-        "compileForShell": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "random": {
-    "Random": {
-      "type": "object",
-      "members": {
-        "createWithSeeds": {
-          "type": "function"
-        },
-        "fraction": {
-          "type": "function"
-        },
-        "hexString": {
-          "type": "function"
-        },
-        "id": {
-          "type": "function"
-        },
-        "secret": {
-          "type": "function"
-        },
-        "choice": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "rate-limit": {
-    "RateLimiter": {
+  "ordered-dict": {
+    "OrderedDict": {
       "type": "function",
       "members": {
+        "BREAK": {
+          "type": "object"
+        },
         "prototype": {
           "type": "object",
           "members": {
-            "check": {
+            "empty": {
               "type": "function"
             },
-            "addRule": {
+            "size": {
               "type": "function"
             },
-            "increment": {
+            "putBefore": {
               "type": "function"
             },
-            "removeRule": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "ddp-rate-limiter": {
-    "DDPRateLimiter": {
-      "type": "object",
-      "members": {
-        "getErrorMessage": {
-          "type": "function"
-        },
-        "setErrorMessage": {
-          "type": "function"
-        },
-        "addRule": {
-          "type": "function"
-        },
-        "printRules": {
-          "type": "function"
-        },
-        "removeRule": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "callback-hook": {
-    "Hook": {
-      "type": "function",
-      "members": {
-        "prototype": {
-          "type": "object",
-          "members": {
-            "register": {
+            "append": {
               "type": "function"
             },
-            "each": {
+            "remove": {
+              "type": "function"
+            },
+            "get": {
+              "type": "function"
+            },
+            "has": {
+              "type": "function"
+            },
+            "forEach": {
+              "type": "function"
+            },
+            "first": {
+              "type": "function"
+            },
+            "firstValue": {
+              "type": "function"
+            },
+            "last": {
+              "type": "function"
+            },
+            "lastValue": {
+              "type": "function"
+            },
+            "prev": {
+              "type": "function"
+            },
+            "next": {
+              "type": "function"
+            },
+            "moveBefore": {
+              "type": "function"
+            },
+            "indexOf": {
               "type": "function"
             }
           }
@@ -416,6 +339,331 @@ var packageMetadata = {
       }
     }
   },
+  "mongo-id": {
+    "MongoID": {
+      "type": "object",
+      "members": {
+        "ObjectID": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "toString": {
+                  "type": "function"
+                },
+                "equals": {
+                  "type": "function"
+                },
+                "clone": {
+                  "type": "function"
+                },
+                "typeName": {
+                  "type": "function"
+                },
+                "getTimestamp": {
+                  "type": "function"
+                },
+                "toHexString": {
+                  "type": "function",
+                  "refID": 13
+                },
+                "toJSONValue": {
+                  "ref": 13
+                },
+                "valueOf": {
+                  "ref": 13
+                }
+              }
+            }
+          }
+        },
+        "idStringify": {
+          "type": "function"
+        },
+        "idParse": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "diff-sequence": {
+    "DiffSequence": {
+      "type": "object",
+      "members": {
+        "diffQueryChanges": {
+          "type": "function"
+        },
+        "diffQueryUnorderedChanges": {
+          "type": "function"
+        },
+        "diffQueryOrderedChanges": {
+          "type": "function"
+        },
+        "diffObjects": {
+          "type": "function"
+        },
+        "makeChangedFields": {
+          "type": "function"
+        },
+        "applyChanges": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "geojson-utils": {
+    "GeoJSON": {
+      "type": "object",
+      "members": {
+        "lineStringsIntersect": {
+          "type": "function"
+        },
+        "pointInBoundingBox": {
+          "type": "function"
+        },
+        "pointInPolygon": {
+          "type": "function"
+        },
+        "numberToRadius": {
+          "type": "function"
+        },
+        "numberToDegree": {
+          "type": "function"
+        },
+        "drawCircle": {
+          "type": "function"
+        },
+        "rectangleCentroid": {
+          "type": "function"
+        },
+        "pointDistance": {
+          "type": "function"
+        },
+        "geometryWithinRadius": {
+          "type": "function"
+        },
+        "area": {
+          "type": "function"
+        },
+        "centroid": {
+          "type": "function"
+        },
+        "simplify": {
+          "type": "function"
+        },
+        "destinationPoint": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "minimongo": {
+    "LocalCollection": {
+      "type": "function",
+      "members": {
+        "Cursor": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "rewind": {
+                  "type": "function"
+                },
+                "forEach": {
+                  "type": "function"
+                },
+                "getTransform": {
+                  "type": "function"
+                },
+                "map": {
+                  "type": "function"
+                },
+                "fetch": {
+                  "type": "function"
+                },
+                "count": {
+                  "type": "function"
+                },
+                "observe": {
+                  "type": "function"
+                },
+                "observeChanges": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "ObserveHandle": {
+          "type": "function"
+        },
+        "wrapTransform": {
+          "type": "function"
+        },
+        "prototype": {
+          "type": "object",
+          "members": {
+            "find": {
+              "type": "function"
+            },
+            "findOne": {
+              "type": "function"
+            },
+            "insert": {
+              "type": "function"
+            },
+            "remove": {
+              "type": "function"
+            },
+            "update": {
+              "type": "function"
+            },
+            "upsert": {
+              "type": "function"
+            },
+            "saveOriginals": {
+              "type": "function"
+            },
+            "retrieveOriginals": {
+              "type": "function"
+            },
+            "pauseObservers": {
+              "type": "function"
+            },
+            "resumeObservers": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    },
+    "Minimongo": {
+      "type": "object",
+      "members": {
+        "Matcher": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "documentMatches": {
+                  "type": "function"
+                },
+                "hasGeoQuery": {
+                  "type": "function"
+                },
+                "hasWhere": {
+                  "type": "function"
+                },
+                "isSimple": {
+                  "type": "function"
+                },
+                "combineIntoProjection": {
+                  "type": "function"
+                },
+                "affectedByModifier": {
+                  "type": "function"
+                },
+                "canBecomeTrueByModifier": {
+                  "type": "function"
+                },
+                "matchingDocument": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "Sorter": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "getComparator": {
+                  "type": "function"
+                },
+                "affectedByModifier": {
+                  "type": "function"
+                },
+                "combineIntoProjection": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "MinimongoTest": {
+      "type": "object",
+      "members": {
+        "makeLookupFunction": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "check": {
+    "check": {
+      "type": "function"
+    },
+    "Match": {
+      "type": "object",
+      "members": {
+        "Optional": {
+          "type": "function"
+        },
+        "OneOf": {
+          "type": "function"
+        },
+        "Any": {
+          "type": "array"
+        },
+        "Where": {
+          "type": "function"
+        },
+        "ObjectIncluding": {
+          "type": "function"
+        },
+        "ObjectWithValues": {
+          "type": "function"
+        },
+        "Integer": {
+          "type": "array"
+        },
+        "Error": {
+          "type": "function",
+          "refID": 13,
+          "members": {
+            "captureStackTrace": {
+              "type": "function"
+            },
+            "stackTraceLimit": {
+              "type": "constant",
+              "value": 10
+            },
+            "prepareStackTrace": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 13
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "type": "function"
+        }
+      }
+    }
+  },
   "retry": {
     "Retry": {
       "type": "function",
@@ -427,48 +675,6 @@ var packageMetadata = {
               "type": "function"
             },
             "retryLater": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "id-map": {
-    "IdMap": {
-      "type": "function",
-      "members": {
-        "prototype": {
-          "type": "object",
-          "members": {
-            "get": {
-              "type": "function"
-            },
-            "set": {
-              "type": "function"
-            },
-            "remove": {
-              "type": "function"
-            },
-            "has": {
-              "type": "function"
-            },
-            "empty": {
-              "type": "function"
-            },
-            "clear": {
-              "type": "function"
-            },
-            "forEach": {
-              "type": "function"
-            },
-            "size": {
-              "type": "function"
-            },
-            "setDefault": {
-              "type": "function"
-            },
-            "clone": {
               "type": "function"
             }
           }
@@ -533,79 +739,6 @@ var packageMetadata = {
           }
         },
         "makeRpcSeed": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "diff-sequence": {
-    "DiffSequence": {
-      "type": "object",
-      "members": {
-        "diffQueryChanges": {
-          "type": "function"
-        },
-        "diffQueryUnorderedChanges": {
-          "type": "function"
-        },
-        "diffQueryOrderedChanges": {
-          "type": "function"
-        },
-        "diffObjects": {
-          "type": "function"
-        },
-        "makeChangedFields": {
-          "type": "function"
-        },
-        "applyChanges": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "mongo-id": {
-    "MongoID": {
-      "type": "object",
-      "members": {
-        "ObjectID": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "toString": {
-                  "type": "function"
-                },
-                "equals": {
-                  "type": "function"
-                },
-                "clone": {
-                  "type": "function"
-                },
-                "typeName": {
-                  "type": "function"
-                },
-                "getTimestamp": {
-                  "type": "function"
-                },
-                "toHexString": {
-                  "type": "function",
-                  "refID": 13
-                },
-                "toJSONValue": {
-                  "ref": 13
-                },
-                "valueOf": {
-                  "ref": 13
-                }
-              }
-            }
-          }
-        },
-        "idStringify": {
-          "type": "function"
-        },
-        "idParse": {
           "type": "function"
         }
       }
@@ -749,6 +882,100 @@ var packageMetadata = {
               }
             }
           }
+        }
+      }
+    }
+  },
+  "babel-compiler": {
+    "Babel": {
+      "type": "object",
+      "members": {
+        "getDefaultOptions": {
+          "type": "function"
+        },
+        "validateExtraFeatures": {
+          "type": "function"
+        },
+        "compile": {
+          "type": "function"
+        },
+        "transformMeteor": {
+          "type": "function"
+        },
+        "setCacheDir": {
+          "type": "function"
+        }
+      }
+    },
+    "BabelCompiler": {
+      "type": "function",
+      "members": {
+        "prototype": {
+          "type": "object",
+          "members": {
+            "processFilesForTarget": {
+              "type": "function"
+            },
+            "setDiskCacheDirectory": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "ecmascript": {
+    "ECMAScript": {
+      "type": "object",
+      "members": {
+        "compileForShell": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "rate-limit": {
+    "RateLimiter": {
+      "type": "function",
+      "members": {
+        "prototype": {
+          "type": "object",
+          "members": {
+            "check": {
+              "type": "function"
+            },
+            "addRule": {
+              "type": "function"
+            },
+            "increment": {
+              "type": "function"
+            },
+            "removeRule": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "ddp-rate-limiter": {
+    "DDPRateLimiter": {
+      "type": "object",
+      "members": {
+        "getErrorMessage": {
+          "type": "function"
+        },
+        "setErrorMessage": {
+          "type": "function"
+        },
+        "addRule": {
+          "type": "function"
+        },
+        "printRules": {
+          "type": "function"
+        },
+        "removeRule": {
+          "type": "function"
         }
       }
     }
@@ -7361,26 +7588,10 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "6600b52aec899f4129c0a295e658b8591d047b1c"
+                  "value": "c1ae5dc0fe852914c0f8eae4b6297ed2ece5bc46"
                 },
                 "PUBLIC_SETTINGS": {
-                  "type": "object",
-                  "refID": 4
-                }
-              }
-            },
-            "web.cordova": {
-              "type": "object",
-              "members": {
-                "manifest": {
-                  "type": "array"
-                },
-                "version": {
-                  "type": "constant",
-                  "value": "30c2f14bd75cac55566e174513a5e950e0255f7b"
-                },
-                "PUBLIC_SETTINGS": {
-                  "ref": 4
+                  "type": "object"
                 }
               }
             }
@@ -7397,46 +7608,46 @@ var packageMetadata = {
           "members": {
             "use": {
               "type": "function",
-              "refID": 12
+              "refID": 10
             },
             "handle": {
               "type": "function",
-              "refID": 14
+              "refID": 12
             },
             "listen": {
               "type": "function",
-              "refID": 16
+              "refID": 14
             },
             "setMaxListeners": {
               "type": "function",
-              "refID": 18
+              "refID": 16
             },
             "emit": {
               "type": "function",
-              "refID": 20
+              "refID": 18
             },
             "addListener": {
               "type": "function",
-              "refID": 22
+              "refID": 20
             },
             "on": {
-              "ref": 22
+              "ref": 20
             },
             "once": {
               "type": "function",
-              "refID": 24
+              "refID": 22
             },
             "removeListener": {
               "type": "function",
-              "refID": 26
+              "refID": 24
             },
             "removeAllListeners": {
               "type": "function",
-              "refID": 28
+              "refID": 26
             },
             "listeners": {
               "type": "function",
-              "refID": 30
+              "refID": 28
             },
             "route": {
               "type": "constant",
@@ -7451,37 +7662,37 @@ var packageMetadata = {
           "type": "function",
           "members": {
             "use": {
-              "ref": 12
+              "ref": 10
             },
             "handle": {
-              "ref": 14
+              "ref": 12
             },
             "listen": {
-              "ref": 16
+              "ref": 14
             },
             "setMaxListeners": {
-              "ref": 18
+              "ref": 16
             },
             "emit": {
-              "ref": 20
+              "ref": 18
             },
             "addListener": {
-              "ref": 22
+              "ref": 20
             },
             "on": {
-              "ref": 22
+              "ref": 20
             },
             "once": {
-              "ref": 24
+              "ref": 22
             },
             "removeListener": {
-              "ref": 26
+              "ref": 24
             },
             "removeAllListeners": {
-              "ref": 28
+              "ref": 26
             },
             "listeners": {
-              "ref": 30
+              "ref": 28
             },
             "route": {
               "type": "constant",
@@ -7532,28 +7743,28 @@ var packageMetadata = {
               "type": "function"
             },
             "setMaxListeners": {
-              "ref": 18
+              "ref": 16
             },
             "emit": {
-              "ref": 20
+              "ref": 18
             },
             "addListener": {
-              "ref": 22
+              "ref": 20
             },
             "on": {
-              "ref": 22
+              "ref": 20
             },
             "once": {
-              "ref": 24
+              "ref": 22
             },
             "removeListener": {
-              "ref": 26
+              "ref": 24
             },
             "removeAllListeners": {
-              "ref": 28
+              "ref": 26
             },
             "listeners": {
-              "ref": 30
+              "ref": 28
             }
           }
         },
@@ -7581,259 +7792,20 @@ var packageMetadata = {
       "type": "function"
     }
   },
-  "ordered-dict": {
-    "OrderedDict": {
+  "callback-hook": {
+    "Hook": {
       "type": "function",
       "members": {
-        "BREAK": {
-          "type": "object"
-        },
         "prototype": {
           "type": "object",
           "members": {
-            "empty": {
+            "register": {
               "type": "function"
             },
-            "size": {
-              "type": "function"
-            },
-            "putBefore": {
-              "type": "function"
-            },
-            "append": {
-              "type": "function"
-            },
-            "remove": {
-              "type": "function"
-            },
-            "get": {
-              "type": "function"
-            },
-            "has": {
-              "type": "function"
-            },
-            "forEach": {
-              "type": "function"
-            },
-            "first": {
-              "type": "function"
-            },
-            "firstValue": {
-              "type": "function"
-            },
-            "last": {
-              "type": "function"
-            },
-            "lastValue": {
-              "type": "function"
-            },
-            "prev": {
-              "type": "function"
-            },
-            "next": {
-              "type": "function"
-            },
-            "moveBefore": {
-              "type": "function"
-            },
-            "indexOf": {
+            "each": {
               "type": "function"
             }
           }
-        }
-      }
-    }
-  },
-  "geojson-utils": {
-    "GeoJSON": {
-      "type": "object",
-      "members": {
-        "lineStringsIntersect": {
-          "type": "function"
-        },
-        "pointInBoundingBox": {
-          "type": "function"
-        },
-        "pointInPolygon": {
-          "type": "function"
-        },
-        "numberToRadius": {
-          "type": "function"
-        },
-        "numberToDegree": {
-          "type": "function"
-        },
-        "drawCircle": {
-          "type": "function"
-        },
-        "rectangleCentroid": {
-          "type": "function"
-        },
-        "pointDistance": {
-          "type": "function"
-        },
-        "geometryWithinRadius": {
-          "type": "function"
-        },
-        "area": {
-          "type": "function"
-        },
-        "centroid": {
-          "type": "function"
-        },
-        "simplify": {
-          "type": "function"
-        },
-        "destinationPoint": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "minimongo": {
-    "LocalCollection": {
-      "type": "function",
-      "members": {
-        "Cursor": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "rewind": {
-                  "type": "function"
-                },
-                "forEach": {
-                  "type": "function"
-                },
-                "getTransform": {
-                  "type": "function"
-                },
-                "map": {
-                  "type": "function"
-                },
-                "fetch": {
-                  "type": "function"
-                },
-                "count": {
-                  "type": "function"
-                },
-                "observe": {
-                  "type": "function"
-                },
-                "observeChanges": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "ObserveHandle": {
-          "type": "function"
-        },
-        "wrapTransform": {
-          "type": "function"
-        },
-        "prototype": {
-          "type": "object",
-          "members": {
-            "find": {
-              "type": "function"
-            },
-            "findOne": {
-              "type": "function"
-            },
-            "insert": {
-              "type": "function"
-            },
-            "remove": {
-              "type": "function"
-            },
-            "update": {
-              "type": "function"
-            },
-            "upsert": {
-              "type": "function"
-            },
-            "saveOriginals": {
-              "type": "function"
-            },
-            "retrieveOriginals": {
-              "type": "function"
-            },
-            "pauseObservers": {
-              "type": "function"
-            },
-            "resumeObservers": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    },
-    "Minimongo": {
-      "type": "object",
-      "members": {
-        "Matcher": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "documentMatches": {
-                  "type": "function"
-                },
-                "hasGeoQuery": {
-                  "type": "function"
-                },
-                "hasWhere": {
-                  "type": "function"
-                },
-                "isSimple": {
-                  "type": "function"
-                },
-                "combineIntoProjection": {
-                  "type": "function"
-                },
-                "affectedByModifier": {
-                  "type": "function"
-                },
-                "canBecomeTrueByModifier": {
-                  "type": "function"
-                },
-                "matchingDocument": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "Sorter": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "getComparator": {
-                  "type": "function"
-                },
-                "affectedByModifier": {
-                  "type": "function"
-                },
-                "combineIntoProjection": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "MinimongoTest": {
-      "type": "object",
-      "members": {
-        "makeLookupFunction": {
-          "type": "function"
         }
       }
     }
@@ -7918,7 +7890,7 @@ var packageMetadata = {
             },
             "fibersCreated": {
               "type": "constant",
-              "value": 14
+              "value": 8
             },
             "prototype": {
               "type": "object",
@@ -8042,12 +8014,6 @@ var packageMetadata = {
     },
     "DDPServer": {
       "type": "object"
-    }
-  },
-  "npm-mongo": {
-    "NpmModuleMongodbVersion": {
-      "type": "constant",
-      "value": "1.4.39"
     }
   },
   "binary-heap": {
@@ -8333,6 +8299,887 @@ var packageMetadata = {
         },
         "Cursor": {
           "ref": 2
+        }
+      }
+    }
+  },
+  "blaze-html-templates": {},
+  "session": {},
+  "standard-minifiers": {},
+  "templating": {},
+  "iron:core": {
+    "Iron": {
+      "type": "object",
+      "members": {
+        "utils": {
+          "type": "object",
+          "members": {
+            "assert": {
+              "type": "function"
+            },
+            "warn": {
+              "type": "function"
+            },
+            "defaultValue": {
+              "type": "function"
+            },
+            "inherits": {
+              "type": "function"
+            },
+            "extend": {
+              "type": "function"
+            },
+            "namespace": {
+              "type": "function"
+            },
+            "resolve": {
+              "type": "function"
+            },
+            "capitalize": {
+              "type": "function"
+            },
+            "classCase": {
+              "type": "function"
+            },
+            "camelCase": {
+              "type": "function"
+            },
+            "notifyDeprecated": {
+              "type": "function"
+            },
+            "withDeprecatedNotice": {
+              "type": "function"
+            },
+            "debug": {
+              "type": "function"
+            },
+            "get": {
+              "type": "function"
+            }
+          }
+        },
+        "DynamicTemplate": {
+          "type": "function",
+          "members": {
+            "getParentDataContext": {
+              "type": "function",
+              "refID": 31
+            },
+            "getDataContext": {
+              "type": "function",
+              "refID": 33
+            },
+            "getInclusionArguments": {
+              "type": "function",
+              "refID": 35
+            },
+            "args": {
+              "type": "function",
+              "refID": 37
+            },
+            "extend": {
+              "type": "function",
+              "refID": 39
+            },
+            "findFirstLookupHost": {
+              "type": "function",
+              "refID": 41
+            },
+            "findLookupHostWithProperty": {
+              "type": "function",
+              "refID": 43
+            },
+            "findLookupHostWithHelper": {
+              "type": "function",
+              "refID": 45
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "template": {
+                  "type": "function",
+                  "refID": 48
+                },
+                "defaultTemplate": {
+                  "type": "function",
+                  "refID": 50
+                },
+                "clear": {
+                  "type": "function"
+                },
+                "data": {
+                  "type": "function",
+                  "refID": 54
+                },
+                "create": {
+                  "type": "function",
+                  "refID": 56
+                },
+                "renderView": {
+                  "type": "function",
+                  "refID": 58
+                },
+                "destroy": {
+                  "type": "function",
+                  "refID": 60
+                },
+                "onViewCreated": {
+                  "type": "function",
+                  "refID": 62
+                },
+                "onViewReady": {
+                  "type": "function",
+                  "refID": 64
+                },
+                "onViewDestroyed": {
+                  "type": "function",
+                  "refID": 66
+                },
+                "events": {
+                  "type": "function",
+                  "refID": 68
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 70
+                }
+              }
+            }
+          }
+        },
+        "Layout": {
+          "type": "function",
+          "refID": 72,
+          "members": {
+            "DEFAULT_REGION": {
+              "type": "constant",
+              "value": "main"
+            },
+            "getParentDataContext": {
+              "ref": 31
+            },
+            "getDataContext": {
+              "ref": 33
+            },
+            "getInclusionArguments": {
+              "ref": 35
+            },
+            "args": {
+              "ref": 37
+            },
+            "extend": {
+              "ref": 39
+            },
+            "findFirstLookupHost": {
+              "ref": 41
+            },
+            "findLookupHostWithProperty": {
+              "ref": 43
+            },
+            "findLookupHostWithHelper": {
+              "ref": 45
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 72
+                },
+                "region": {
+                  "type": "function"
+                },
+                "destroyRegions": {
+                  "type": "function"
+                },
+                "render": {
+                  "type": "function"
+                },
+                "has": {
+                  "type": "function"
+                },
+                "regionKeys": {
+                  "type": "function"
+                },
+                "clear": {
+                  "type": "function"
+                },
+                "clearAll": {
+                  "type": "function"
+                },
+                "beginRendering": {
+                  "type": "function"
+                },
+                "onRegionCreated": {
+                  "type": "function"
+                },
+                "onRegionRendered": {
+                  "type": "function"
+                },
+                "onRegionDestroyed": {
+                  "type": "function"
+                },
+                "template": {
+                  "ref": 48
+                },
+                "defaultTemplate": {
+                  "ref": 50
+                },
+                "data": {
+                  "ref": 54
+                },
+                "create": {
+                  "ref": 56
+                },
+                "renderView": {
+                  "ref": 58
+                },
+                "destroy": {
+                  "ref": 60
+                },
+                "onViewCreated": {
+                  "ref": 62
+                },
+                "onViewReady": {
+                  "ref": 64
+                },
+                "onViewDestroyed": {
+                  "ref": 66
+                },
+                "events": {
+                  "ref": 68
+                },
+                "insert": {
+                  "ref": 70
+                }
+              }
+            }
+          }
+        },
+        "Url": {
+          "type": "function",
+          "members": {
+            "normalize": {
+              "type": "function"
+            },
+            "isSameOrigin": {
+              "type": "function"
+            },
+            "fromQueryString": {
+              "type": "function"
+            },
+            "toQueryString": {
+              "type": "function"
+            },
+            "parse": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "test": {
+                  "type": "function"
+                },
+                "exec": {
+                  "type": "function"
+                },
+                "params": {
+                  "type": "function"
+                },
+                "resolve": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "MiddlewareStack": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "findByName": {
+                  "type": "function"
+                },
+                "push": {
+                  "type": "function"
+                },
+                "append": {
+                  "type": "function"
+                },
+                "insertAt": {
+                  "type": "function"
+                },
+                "insertBefore": {
+                  "type": "function"
+                },
+                "insertAfter": {
+                  "type": "function"
+                },
+                "concat": {
+                  "type": "function"
+                },
+                "dispatch": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "Controller": {
+          "type": "function",
+          "members": {
+            "extend": {
+              "type": "function",
+              "refID": 135
+            },
+            "events": {
+              "type": "function",
+              "refID": 137
+            },
+            "helpers": {
+              "type": "function",
+              "refID": 139
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "layout": {
+                  "type": "function",
+                  "refID": 142
+                },
+                "render": {
+                  "type": "function",
+                  "refID": 144
+                },
+                "beginRendering": {
+                  "type": "function",
+                  "refID": 146
+                },
+                "init": {
+                  "type": "function"
+                },
+                "wait": {
+                  "type": "function",
+                  "refID": 150
+                },
+                "ready": {
+                  "type": "function",
+                  "refID": 152
+                }
+              }
+            }
+          }
+        },
+        "RouteController": {
+          "type": "function",
+          "members": {
+            "extend": {
+              "ref": 135
+            },
+            "events": {
+              "ref": 137
+            },
+            "helpers": {
+              "ref": 139
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "type": "function"
+                },
+                "lookupOption": {
+                  "type": "function"
+                },
+                "configureFromUrl": {
+                  "type": "function"
+                },
+                "runHooks": {
+                  "type": "function"
+                },
+                "getParams": {
+                  "type": "function"
+                },
+                "setParams": {
+                  "type": "function"
+                },
+                "init": {
+                  "type": "function"
+                },
+                "dispatch": {
+                  "type": "function"
+                },
+                "layout": {
+                  "ref": 142
+                },
+                "render": {
+                  "ref": 144
+                },
+                "beginRendering": {
+                  "ref": 146
+                },
+                "wait": {
+                  "ref": 150
+                },
+                "ready": {
+                  "ref": 152
+                }
+              }
+            }
+          }
+        },
+        "Route": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "getName": {
+                  "type": "function"
+                },
+                "findControllerConstructor": {
+                  "type": "function"
+                },
+                "createController": {
+                  "type": "function"
+                },
+                "setControllerParams": {
+                  "type": "function"
+                },
+                "dispatch": {
+                  "type": "function"
+                },
+                "path": {
+                  "type": "function"
+                },
+                "url": {
+                  "type": "function"
+                },
+                "params": {
+                  "type": "function"
+                },
+                "get": {
+                  "type": "function"
+                },
+                "post": {
+                  "type": "function"
+                },
+                "put": {
+                  "type": "function"
+                },
+                "delete": {
+                  "type": "function"
+                },
+                "patch": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "Router": {
+          "type": "function",
+          "members": {
+            "HOOK_TYPES": {
+              "type": "array"
+            },
+            "hooks": {
+              "type": "object",
+              "members": {
+                "loading": {
+                  "type": "function"
+                },
+                "dataNotFound": {
+                  "type": "function"
+                }
+              }
+            },
+            "plugins": {
+              "type": "object",
+              "members": {
+                "loading": {
+                  "type": "function"
+                },
+                "dataNotFound": {
+                  "type": "function"
+                }
+              }
+            },
+            "bodyParser": {
+              "type": "function",
+              "members": {
+                "json": {
+                  "type": "function"
+                },
+                "raw": {
+                  "type": "function"
+                },
+                "text": {
+                  "type": "function"
+                },
+                "urlencoded": {
+                  "type": "function"
+                }
+              }
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "init": {
+                  "type": "function"
+                },
+                "configure": {
+                  "type": "function"
+                },
+                "map": {
+                  "type": "function"
+                },
+                "route": {
+                  "type": "function"
+                },
+                "findFirstRoute": {
+                  "type": "function"
+                },
+                "path": {
+                  "type": "function"
+                },
+                "url": {
+                  "type": "function"
+                },
+                "createController": {
+                  "type": "function"
+                },
+                "setTemplateNameConverter": {
+                  "type": "function"
+                },
+                "setControllerNameConverter": {
+                  "type": "function"
+                },
+                "toTemplateName": {
+                  "type": "function"
+                },
+                "toControllerName": {
+                  "type": "function"
+                },
+                "addHook": {
+                  "type": "function"
+                },
+                "lookupHook": {
+                  "type": "function"
+                },
+                "getHooks": {
+                  "type": "function"
+                },
+                "onRun": {
+                  "type": "function"
+                },
+                "onRerun": {
+                  "type": "function"
+                },
+                "onBeforeAction": {
+                  "type": "function"
+                },
+                "onAfterAction": {
+                  "type": "function"
+                },
+                "onStop": {
+                  "type": "function"
+                },
+                "waitOn": {
+                  "type": "function"
+                },
+                "subscriptions": {
+                  "type": "function"
+                },
+                "load": {
+                  "type": "function"
+                },
+                "before": {
+                  "type": "function"
+                },
+                "after": {
+                  "type": "function"
+                },
+                "unload": {
+                  "type": "function"
+                },
+                "plugin": {
+                  "type": "function"
+                },
+                "configureBodyParsers": {
+                  "type": "function"
+                },
+                "start": {
+                  "type": "function"
+                },
+                "dispatch": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "iron:dynamic-template": {},
+  "iron:layout": {},
+  "iron:url": {},
+  "iron:middleware-stack": {
+    "Handler": {
+      "type": "function",
+      "members": {
+        "prototype": {
+          "type": "object",
+          "members": {
+            "test": {
+              "type": "function"
+            },
+            "params": {
+              "type": "function"
+            },
+            "resolve": {
+              "type": "function"
+            },
+            "clone": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "iron:location": {},
+  "reactive-dict": {
+    "ReactiveDict": {
+      "type": "function",
+      "members": {
+        "prototype": {
+          "type": "object",
+          "members": {
+            "set": {
+              "type": "function"
+            },
+            "setDefault": {
+              "type": "function"
+            },
+            "get": {
+              "type": "function"
+            },
+            "equals": {
+              "type": "function"
+            },
+            "all": {
+              "type": "function"
+            },
+            "clear": {
+              "type": "function"
+            },
+            "delete": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "iron:controller": {},
+  "iron:router": {
+    "Router": {
+      "type": "function",
+      "members": {
+        "routes": {
+          "type": "array"
+        },
+        "options": {
+          "type": "object",
+          "members": {
+            "layoutTemplate": {
+              "type": "constant",
+              "value": "ApplicationLayout"
+            },
+            "notFoundTemplate": {
+              "type": "constant",
+              "value": "notFound"
+            }
+          }
+        },
+        "init": {
+          "type": "function"
+        },
+        "configure": {
+          "type": "function"
+        },
+        "map": {
+          "type": "function"
+        },
+        "route": {
+          "type": "function"
+        },
+        "findFirstRoute": {
+          "type": "function"
+        },
+        "path": {
+          "type": "function"
+        },
+        "url": {
+          "type": "function"
+        },
+        "createController": {
+          "type": "function"
+        },
+        "setTemplateNameConverter": {
+          "type": "function"
+        },
+        "setControllerNameConverter": {
+          "type": "function"
+        },
+        "toTemplateName": {
+          "type": "function"
+        },
+        "toControllerName": {
+          "type": "function"
+        },
+        "addHook": {
+          "type": "function"
+        },
+        "lookupHook": {
+          "type": "function"
+        },
+        "getHooks": {
+          "type": "function"
+        },
+        "onRun": {
+          "type": "function"
+        },
+        "onRerun": {
+          "type": "function"
+        },
+        "onBeforeAction": {
+          "type": "function"
+        },
+        "onAfterAction": {
+          "type": "function"
+        },
+        "onStop": {
+          "type": "function"
+        },
+        "waitOn": {
+          "type": "function"
+        },
+        "subscriptions": {
+          "type": "function"
+        },
+        "load": {
+          "type": "function"
+        },
+        "before": {
+          "type": "function"
+        },
+        "after": {
+          "type": "function"
+        },
+        "unload": {
+          "type": "function"
+        },
+        "plugin": {
+          "type": "function"
+        },
+        "configureBodyParsers": {
+          "type": "function"
+        },
+        "start": {
+          "type": "function"
+        },
+        "dispatch": {
+          "type": "function"
+        }
+      }
+    },
+    "RouteController": {
+      "type": "function",
+      "members": {
+        "extend": {
+          "type": "function"
+        },
+        "events": {
+          "type": "function"
+        },
+        "helpers": {
+          "type": "function"
+        },
+        "prototype": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "type": "function"
+            },
+            "lookupOption": {
+              "type": "function"
+            },
+            "configureFromUrl": {
+              "type": "function"
+            },
+            "runHooks": {
+              "type": "function"
+            },
+            "getParams": {
+              "type": "function"
+            },
+            "setParams": {
+              "type": "function"
+            },
+            "init": {
+              "type": "function"
+            },
+            "dispatch": {
+              "type": "function"
+            },
+            "layout": {
+              "type": "function"
+            },
+            "render": {
+              "type": "function"
+            },
+            "beginRendering": {
+              "type": "function"
+            },
+            "wait": {
+              "type": "function"
+            },
+            "ready": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "npm-bcrypt": {
+    "NpmModuleBcrypt": {
+      "type": "object",
+      "members": {
+        "genSaltSync": {
+          "type": "function"
+        },
+        "genSalt": {
+          "type": "function"
+        },
+        "hashSync": {
+          "type": "function"
+        },
+        "hash": {
+          "type": "function"
+        },
+        "compareSync": {
+          "type": "function"
+        },
+        "compare": {
+          "type": "function"
+        },
+        "getRounds": {
+          "type": "function"
         }
       }
     }
@@ -9318,865 +10165,12 @@ var packageMetadata = {
     }
   },
   "accounts-password": {},
-  "templating": {},
-  "iron:core": {
-    "Iron": {
-      "type": "object",
-      "members": {
-        "utils": {
-          "type": "object",
-          "members": {
-            "assert": {
-              "type": "function"
-            },
-            "warn": {
-              "type": "function"
-            },
-            "defaultValue": {
-              "type": "function"
-            },
-            "inherits": {
-              "type": "function"
-            },
-            "extend": {
-              "type": "function"
-            },
-            "namespace": {
-              "type": "function"
-            },
-            "resolve": {
-              "type": "function"
-            },
-            "capitalize": {
-              "type": "function"
-            },
-            "classCase": {
-              "type": "function"
-            },
-            "camelCase": {
-              "type": "function"
-            },
-            "notifyDeprecated": {
-              "type": "function"
-            },
-            "withDeprecatedNotice": {
-              "type": "function"
-            },
-            "debug": {
-              "type": "function"
-            },
-            "get": {
-              "type": "function"
-            }
-          }
-        },
-        "DynamicTemplate": {
-          "type": "function",
-          "members": {
-            "getParentDataContext": {
-              "type": "function",
-              "refID": 31
-            },
-            "getDataContext": {
-              "type": "function",
-              "refID": 33
-            },
-            "getInclusionArguments": {
-              "type": "function",
-              "refID": 35
-            },
-            "args": {
-              "type": "function",
-              "refID": 37
-            },
-            "extend": {
-              "type": "function",
-              "refID": 39
-            },
-            "findFirstLookupHost": {
-              "type": "function",
-              "refID": 41
-            },
-            "findLookupHostWithProperty": {
-              "type": "function",
-              "refID": 43
-            },
-            "findLookupHostWithHelper": {
-              "type": "function",
-              "refID": 45
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "template": {
-                  "type": "function",
-                  "refID": 48
-                },
-                "defaultTemplate": {
-                  "type": "function",
-                  "refID": 50
-                },
-                "clear": {
-                  "type": "function"
-                },
-                "data": {
-                  "type": "function",
-                  "refID": 54
-                },
-                "create": {
-                  "type": "function",
-                  "refID": 56
-                },
-                "renderView": {
-                  "type": "function",
-                  "refID": 58
-                },
-                "destroy": {
-                  "type": "function",
-                  "refID": 60
-                },
-                "onViewCreated": {
-                  "type": "function",
-                  "refID": 62
-                },
-                "onViewReady": {
-                  "type": "function",
-                  "refID": 64
-                },
-                "onViewDestroyed": {
-                  "type": "function",
-                  "refID": 66
-                },
-                "events": {
-                  "type": "function",
-                  "refID": 68
-                },
-                "insert": {
-                  "type": "function",
-                  "refID": 70
-                }
-              }
-            }
-          }
-        },
-        "Layout": {
-          "type": "function",
-          "refID": 72,
-          "members": {
-            "DEFAULT_REGION": {
-              "type": "constant",
-              "value": "main"
-            },
-            "getParentDataContext": {
-              "ref": 31
-            },
-            "getDataContext": {
-              "ref": 33
-            },
-            "getInclusionArguments": {
-              "ref": 35
-            },
-            "args": {
-              "ref": 37
-            },
-            "extend": {
-              "ref": 39
-            },
-            "findFirstLookupHost": {
-              "ref": 41
-            },
-            "findLookupHostWithProperty": {
-              "ref": 43
-            },
-            "findLookupHostWithHelper": {
-              "ref": 45
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "constructor": {
-                  "ref": 72
-                },
-                "region": {
-                  "type": "function"
-                },
-                "destroyRegions": {
-                  "type": "function"
-                },
-                "render": {
-                  "type": "function"
-                },
-                "has": {
-                  "type": "function"
-                },
-                "regionKeys": {
-                  "type": "function"
-                },
-                "clear": {
-                  "type": "function"
-                },
-                "clearAll": {
-                  "type": "function"
-                },
-                "beginRendering": {
-                  "type": "function"
-                },
-                "onRegionCreated": {
-                  "type": "function"
-                },
-                "onRegionRendered": {
-                  "type": "function"
-                },
-                "onRegionDestroyed": {
-                  "type": "function"
-                },
-                "template": {
-                  "ref": 48
-                },
-                "defaultTemplate": {
-                  "ref": 50
-                },
-                "data": {
-                  "ref": 54
-                },
-                "create": {
-                  "ref": 56
-                },
-                "renderView": {
-                  "ref": 58
-                },
-                "destroy": {
-                  "ref": 60
-                },
-                "onViewCreated": {
-                  "ref": 62
-                },
-                "onViewReady": {
-                  "ref": 64
-                },
-                "onViewDestroyed": {
-                  "ref": 66
-                },
-                "events": {
-                  "ref": 68
-                },
-                "insert": {
-                  "ref": 70
-                }
-              }
-            }
-          }
-        },
-        "Url": {
-          "type": "function",
-          "members": {
-            "normalize": {
-              "type": "function"
-            },
-            "isSameOrigin": {
-              "type": "function"
-            },
-            "fromQueryString": {
-              "type": "function"
-            },
-            "toQueryString": {
-              "type": "function"
-            },
-            "parse": {
-              "type": "function"
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "test": {
-                  "type": "function"
-                },
-                "exec": {
-                  "type": "function"
-                },
-                "params": {
-                  "type": "function"
-                },
-                "resolve": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "MiddlewareStack": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "findByName": {
-                  "type": "function"
-                },
-                "push": {
-                  "type": "function"
-                },
-                "append": {
-                  "type": "function"
-                },
-                "insertAt": {
-                  "type": "function"
-                },
-                "insertBefore": {
-                  "type": "function"
-                },
-                "insertAfter": {
-                  "type": "function"
-                },
-                "concat": {
-                  "type": "function"
-                },
-                "dispatch": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "Controller": {
-          "type": "function",
-          "members": {
-            "extend": {
-              "type": "function",
-              "refID": 135
-            },
-            "events": {
-              "type": "function",
-              "refID": 137
-            },
-            "helpers": {
-              "type": "function",
-              "refID": 139
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "layout": {
-                  "type": "function",
-                  "refID": 142
-                },
-                "render": {
-                  "type": "function",
-                  "refID": 144
-                },
-                "beginRendering": {
-                  "type": "function",
-                  "refID": 146
-                },
-                "init": {
-                  "type": "function"
-                },
-                "wait": {
-                  "type": "function",
-                  "refID": 150
-                },
-                "ready": {
-                  "type": "function",
-                  "refID": 152
-                }
-              }
-            }
-          }
-        },
-        "RouteController": {
-          "type": "function",
-          "members": {
-            "extend": {
-              "ref": 135
-            },
-            "events": {
-              "ref": 137
-            },
-            "helpers": {
-              "ref": 139
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "constructor": {
-                  "type": "function"
-                },
-                "lookupOption": {
-                  "type": "function"
-                },
-                "configureFromUrl": {
-                  "type": "function"
-                },
-                "runHooks": {
-                  "type": "function"
-                },
-                "getParams": {
-                  "type": "function"
-                },
-                "setParams": {
-                  "type": "function"
-                },
-                "init": {
-                  "type": "function"
-                },
-                "dispatch": {
-                  "type": "function"
-                },
-                "layout": {
-                  "ref": 142
-                },
-                "render": {
-                  "ref": 144
-                },
-                "beginRendering": {
-                  "ref": 146
-                },
-                "wait": {
-                  "ref": 150
-                },
-                "ready": {
-                  "ref": 152
-                }
-              }
-            }
-          }
-        },
-        "Route": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "getName": {
-                  "type": "function"
-                },
-                "findControllerConstructor": {
-                  "type": "function"
-                },
-                "createController": {
-                  "type": "function"
-                },
-                "setControllerParams": {
-                  "type": "function"
-                },
-                "dispatch": {
-                  "type": "function"
-                },
-                "path": {
-                  "type": "function"
-                },
-                "url": {
-                  "type": "function"
-                },
-                "params": {
-                  "type": "function"
-                },
-                "get": {
-                  "type": "function"
-                },
-                "post": {
-                  "type": "function"
-                },
-                "put": {
-                  "type": "function"
-                },
-                "delete": {
-                  "type": "function"
-                },
-                "patch": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "Router": {
-          "type": "function",
-          "members": {
-            "HOOK_TYPES": {
-              "type": "array"
-            },
-            "hooks": {
-              "type": "object",
-              "members": {
-                "loading": {
-                  "type": "function"
-                },
-                "dataNotFound": {
-                  "type": "function"
-                }
-              }
-            },
-            "plugins": {
-              "type": "object",
-              "members": {
-                "loading": {
-                  "type": "function"
-                },
-                "dataNotFound": {
-                  "type": "function"
-                }
-              }
-            },
-            "bodyParser": {
-              "type": "function",
-              "members": {
-                "json": {
-                  "type": "function"
-                },
-                "raw": {
-                  "type": "function"
-                },
-                "text": {
-                  "type": "function"
-                },
-                "urlencoded": {
-                  "type": "function"
-                }
-              }
-            },
-            "prototype": {
-              "type": "object",
-              "members": {
-                "init": {
-                  "type": "function"
-                },
-                "configure": {
-                  "type": "function"
-                },
-                "map": {
-                  "type": "function"
-                },
-                "route": {
-                  "type": "function"
-                },
-                "findFirstRoute": {
-                  "type": "function"
-                },
-                "path": {
-                  "type": "function"
-                },
-                "url": {
-                  "type": "function"
-                },
-                "createController": {
-                  "type": "function"
-                },
-                "setTemplateNameConverter": {
-                  "type": "function"
-                },
-                "setControllerNameConverter": {
-                  "type": "function"
-                },
-                "toTemplateName": {
-                  "type": "function"
-                },
-                "toControllerName": {
-                  "type": "function"
-                },
-                "addHook": {
-                  "type": "function"
-                },
-                "lookupHook": {
-                  "type": "function"
-                },
-                "getHooks": {
-                  "type": "function"
-                },
-                "onRun": {
-                  "type": "function"
-                },
-                "onRerun": {
-                  "type": "function"
-                },
-                "onBeforeAction": {
-                  "type": "function"
-                },
-                "onAfterAction": {
-                  "type": "function"
-                },
-                "onStop": {
-                  "type": "function"
-                },
-                "waitOn": {
-                  "type": "function"
-                },
-                "subscriptions": {
-                  "type": "function"
-                },
-                "load": {
-                  "type": "function"
-                },
-                "before": {
-                  "type": "function"
-                },
-                "after": {
-                  "type": "function"
-                },
-                "unload": {
-                  "type": "function"
-                },
-                "plugin": {
-                  "type": "function"
-                },
-                "configureBodyParsers": {
-                  "type": "function"
-                },
-                "start": {
-                  "type": "function"
-                },
-                "dispatch": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "iron:dynamic-template": {},
-  "iron:layout": {},
-  "iron:url": {},
-  "iron:middleware-stack": {
-    "Handler": {
-      "type": "function",
-      "members": {
-        "prototype": {
-          "type": "object",
-          "members": {
-            "test": {
-              "type": "function"
-            },
-            "params": {
-              "type": "function"
-            },
-            "resolve": {
-              "type": "function"
-            },
-            "clone": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "iron:location": {},
-  "reactive-dict": {
-    "ReactiveDict": {
-      "type": "function",
-      "members": {
-        "prototype": {
-          "type": "object",
-          "members": {
-            "set": {
-              "type": "function"
-            },
-            "setDefault": {
-              "type": "function"
-            },
-            "get": {
-              "type": "function"
-            },
-            "equals": {
-              "type": "function"
-            },
-            "all": {
-              "type": "function"
-            },
-            "clear": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "iron:controller": {},
-  "iron:router": {
-    "Router": {
-      "type": "function",
-      "members": {
-        "routes": {
-          "type": "array"
-        },
-        "options": {
-          "type": "object",
-          "members": {
-            "layoutTemplate": {
-              "type": "constant",
-              "value": "ApplicationLayout"
-            },
-            "notFoundTemplate": {
-              "type": "constant",
-              "value": "notFound"
-            }
-          }
-        },
-        "init": {
-          "type": "function"
-        },
-        "configure": {
-          "type": "function"
-        },
-        "map": {
-          "type": "function"
-        },
-        "route": {
-          "type": "function"
-        },
-        "findFirstRoute": {
-          "type": "function"
-        },
-        "path": {
-          "type": "function"
-        },
-        "url": {
-          "type": "function"
-        },
-        "createController": {
-          "type": "function"
-        },
-        "setTemplateNameConverter": {
-          "type": "function"
-        },
-        "setControllerNameConverter": {
-          "type": "function"
-        },
-        "toTemplateName": {
-          "type": "function"
-        },
-        "toControllerName": {
-          "type": "function"
-        },
-        "addHook": {
-          "type": "function"
-        },
-        "lookupHook": {
-          "type": "function"
-        },
-        "getHooks": {
-          "type": "function"
-        },
-        "onRun": {
-          "type": "function"
-        },
-        "onRerun": {
-          "type": "function"
-        },
-        "onBeforeAction": {
-          "type": "function"
-        },
-        "onAfterAction": {
-          "type": "function"
-        },
-        "onStop": {
-          "type": "function"
-        },
-        "waitOn": {
-          "type": "function"
-        },
-        "subscriptions": {
-          "type": "function"
-        },
-        "load": {
-          "type": "function"
-        },
-        "before": {
-          "type": "function"
-        },
-        "after": {
-          "type": "function"
-        },
-        "unload": {
-          "type": "function"
-        },
-        "plugin": {
-          "type": "function"
-        },
-        "configureBodyParsers": {
-          "type": "function"
-        },
-        "start": {
-          "type": "function"
-        },
-        "dispatch": {
-          "type": "function"
-        }
-      }
-    },
-    "RouteController": {
-      "type": "function",
-      "members": {
-        "extend": {
-          "type": "function"
-        },
-        "events": {
-          "type": "function"
-        },
-        "helpers": {
-          "type": "function"
-        },
-        "prototype": {
-          "type": "object",
-          "members": {
-            "constructor": {
-              "type": "function"
-            },
-            "lookupOption": {
-              "type": "function"
-            },
-            "configureFromUrl": {
-              "type": "function"
-            },
-            "runHooks": {
-              "type": "function"
-            },
-            "getParams": {
-              "type": "function"
-            },
-            "setParams": {
-              "type": "function"
-            },
-            "init": {
-              "type": "function"
-            },
-            "dispatch": {
-              "type": "function"
-            },
-            "layout": {
-              "type": "function"
-            },
-            "render": {
-              "type": "function"
-            },
-            "beginRendering": {
-              "type": "function"
-            },
-            "wait": {
-              "type": "function"
-            },
-            "ready": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "ian:accounts-ui-bootstrap-3": {},
   "chrismbeckett:toastr": {},
-  "nemo64:bootstrap": {},
-  "less": {},
+  "ian:accounts-ui-bootstrap-3": {},
+  "twbs:bootstrap": {},
   "meteorhacks:npm": {},
   "npm-container": {},
-  "standard-minifiers": {},
-  "meteor-base": {},
-  "mobile-experience": {},
-  "blaze-html-templates": {},
-  "session": {},
-  "reload": {},
+  "less": {},
   "velocity:html-reporter": {},
   "coffeescript": {},
   "practicalmeteor:loglevel": {
@@ -10191,25 +10185,6 @@ var packageMetadata = {
         },
         "createAppLogger": {
           "type": "function"
-        }
-      }
-    },
-    "ObjectLogger": {
-      "type": "function",
-      "members": {
-        "prototype": {
-          "type": "object",
-          "members": {
-            "enter": {
-              "type": "function"
-            },
-            "return": {
-              "type": "function"
-            },
-            "bindMethod": {
-              "type": "function"
-            }
-          }
         }
       }
     }
@@ -11035,11 +11010,11 @@ var packageMetadata = {
         },
         "mirrorMeteorVersion": {
           "type": "constant",
-          "value": "1.2.0.1_1"
+          "value": "1.2.0.2_1"
         },
         "mirrorMeteorRelease": {
           "type": "constant",
-          "value": "velocity:METEOR@1.2.0.1_1"
+          "value": "velocity:METEOR@1.2.0.2_1"
         },
         "mirrorMeteorToolReleaseName": {
           "type": "constant",
@@ -11047,11 +11022,11 @@ var packageMetadata = {
         },
         "mirrorMeteorToolVersion": {
           "type": "constant",
-          "value": "1.1.8_1"
+          "value": "1.1.9_1"
         },
         "mirrorMeteorToolRelease": {
           "type": "constant",
-          "value": "velocity:meteor-tool@1.1.8_1"
+          "value": "velocity:meteor-tool@1.1.9_1"
         },
         "reusableMirrors": {
           "type": "array"
@@ -11369,9 +11344,6 @@ var packageMetadata = {
         },
         "setConfig": {
           "type": "function"
-        },
-        "getConfigPath": {
-          "type": "function"
         }
       }
     },
@@ -11416,19 +11388,6 @@ var packageMetadata = {
           "type": "function"
         },
         "setKarmaConfig": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "meteorhacks:async": {
-    "Async": {
-      "type": "object",
-      "members": {
-        "runSync": {
-          "type": "function"
-        },
-        "wrap": {
           "type": "function"
         }
       }
@@ -11509,21 +11468,34 @@ var packageMetadata = {
       "type": "undefined"
     }
   },
+  "meteorhacks:async": {
+    "Async": {
+      "type": "object",
+      "members": {
+        "runSync": {
+          "type": "function"
+        },
+        "wrap": {
+          "type": "function"
+        }
+      }
+    }
+  },
   "autoupdate": {
     "Autoupdate": {
       "type": "object",
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "268c33d459ad62bde72186aa3e81b071985a77ba"
+          "value": "b4b426c66c886cbf152f4d6832a024891ae9e78a"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
-          "value": "e8aa792e8c9c1362d27e24b9110134485cdcb1e8"
+          "value": "01d1a297c777cde6ccc2255994ee5631c5e59272"
         },
         "autoupdateVersionCordova": {
           "type": "constant",
-          "value": "30c2f14bd75cac55566e174513a5e950e0255f7b"
+          "value": "none"
         },
         "appId": {
           "type": "constant",
@@ -11532,6 +11504,7 @@ var packageMetadata = {
       }
     }
   },
+  "reload": {},
   "service-configuration": {
     "ServiceConfiguration": {
       "type": "object",
