@@ -5,6 +5,7 @@ Meteor.subscribe("items");
 Meteor.subscribe("actors");
 Meteor.subscribe("actions");
 Meteor.subscribe("units");
+Meteor.subscribe("stats");
 
 toastr.options = {
     "positionClass": "toast-bottom-right"
@@ -47,6 +48,16 @@ Template.actors_menu.helpers({
     }
 });
 
+
+Template.stats.helpers({
+    dailyStats: function() {
+        return Stats.find({}, {
+            sort: {
+                itemCount: -1
+            }
+        });
+    }
+});
 
 Template.actors_stats.helpers({
     actors: function() {

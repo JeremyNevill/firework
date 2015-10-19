@@ -7588,7 +7588,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "c1ae5dc0fe852914c0f8eae4b6297ed2ece5bc46"
+                  "value": "7ba5e67fb8656cb31642087b73dc1f39048960c3"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "object"
@@ -8185,6 +8185,7 @@ var packageMetadata = {
       "members": {
         "Collection": {
           "type": "function",
+          "refID": 1,
           "members": {
             "Cursor": {
               "type": "function",
@@ -8257,9 +8258,18 @@ var packageMetadata = {
                 }
               }
             },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
             "prototype": {
               "type": "object",
               "members": {
+                "constructor": {
+                  "ref": 1
+                },
                 "find": {
                   "type": "function"
                 },
@@ -9194,45 +9204,164 @@ var packageMetadata = {
         "users": {
           "type": "object",
           "members": {
-            "find": {
+            "constructor": {
               "type": "function",
-              "refID": 2
+              "refID": 2,
+              "members": {
+                "Cursor": {
+                  "type": "function",
+                  "members": {
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "rewind": {
+                          "type": "function"
+                        },
+                        "forEach": {
+                          "type": "function"
+                        },
+                        "getTransform": {
+                          "type": "function"
+                        },
+                        "map": {
+                          "type": "function"
+                        },
+                        "fetch": {
+                          "type": "function"
+                        },
+                        "count": {
+                          "type": "function"
+                        },
+                        "observe": {
+                          "type": "function"
+                        },
+                        "observeChanges": {
+                          "type": "function"
+                        }
+                      }
+                    }
+                  }
+                },
+                "ObjectID": {
+                  "type": "function",
+                  "members": {
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "toString": {
+                          "type": "function"
+                        },
+                        "equals": {
+                          "type": "function"
+                        },
+                        "clone": {
+                          "type": "function"
+                        },
+                        "typeName": {
+                          "type": "function"
+                        },
+                        "getTimestamp": {
+                          "type": "function"
+                        },
+                        "toHexString": {
+                          "type": "function",
+                          "refID": 33
+                        },
+                        "toJSONValue": {
+                          "ref": 33
+                        },
+                        "valueOf": {
+                          "ref": 33
+                        }
+                      }
+                    }
+                  }
+                },
+                "get": {
+                  "type": "function"
+                },
+                "getAll": {
+                  "type": "function"
+                },
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "constructor": {
+                      "ref": 2
+                    },
+                    "find": {
+                      "type": "function",
+                      "refID": 40
+                    },
+                    "findOne": {
+                      "type": "function",
+                      "refID": 42
+                    },
+                    "insert": {
+                      "type": "function",
+                      "refID": 44
+                    },
+                    "update": {
+                      "type": "function",
+                      "refID": 46
+                    },
+                    "remove": {
+                      "type": "function",
+                      "refID": 48
+                    },
+                    "upsert": {
+                      "type": "function",
+                      "refID": 50
+                    },
+                    "rawCollection": {
+                      "type": "function",
+                      "refID": 52
+                    },
+                    "rawDatabase": {
+                      "type": "function",
+                      "refID": 54
+                    },
+                    "allow": {
+                      "type": "function",
+                      "refID": 56
+                    },
+                    "deny": {
+                      "type": "function",
+                      "refID": 58
+                    }
+                  }
+                }
+              }
+            },
+            "find": {
+              "ref": 40
             },
             "findOne": {
-              "type": "function",
-              "refID": 4
+              "ref": 42
             },
             "insert": {
-              "type": "function",
-              "refID": 6
+              "ref": 44
             },
             "update": {
-              "type": "function",
-              "refID": 8
+              "ref": 46
             },
             "remove": {
-              "type": "function",
-              "refID": 10
+              "ref": 48
             },
             "upsert": {
-              "type": "function",
-              "refID": 12
+              "ref": 50
             },
             "rawCollection": {
-              "type": "function",
-              "refID": 14
+              "ref": 52
             },
             "rawDatabase": {
-              "type": "function",
-              "refID": 16
+              "ref": 54
             },
             "allow": {
-              "type": "function",
-              "refID": 18
+              "ref": 56
             },
             "deny": {
-              "type": "function",
-              "refID": 20
+              "ref": 58
             }
           }
         },
@@ -9381,7 +9510,7 @@ var packageMetadata = {
         },
         "LoginCancelledError": {
           "type": "function",
-          "refID": 98,
+          "refID": 136,
           "members": {
             "captureStackTrace": {
               "type": "function"
@@ -9401,7 +9530,7 @@ var packageMetadata = {
               "type": "object",
               "members": {
                 "constructor": {
-                  "ref": 98
+                  "ref": 136
                 },
                 "name": {
                   "type": "constant",
@@ -9420,35 +9549,38 @@ var packageMetadata = {
         "loginServiceConfiguration": {
           "type": "object",
           "members": {
-            "find": {
+            "constructor": {
               "ref": 2
             },
+            "find": {
+              "ref": 40
+            },
             "findOne": {
-              "ref": 4
+              "ref": 42
             },
             "insert": {
-              "ref": 6
+              "ref": 44
             },
             "update": {
-              "ref": 8
+              "ref": 46
             },
             "remove": {
-              "ref": 10
+              "ref": 48
             },
             "upsert": {
-              "ref": 12
+              "ref": 50
             },
             "rawCollection": {
-              "ref": 14
+              "ref": 52
             },
             "rawDatabase": {
-              "ref": 16
+              "ref": 54
             },
             "allow": {
-              "ref": 18
+              "ref": 56
             },
             "deny": {
-              "ref": 20
+              "ref": 58
             }
           }
         },
@@ -9557,35 +9689,164 @@ var packageMetadata = {
             "loginServiceConfiguration": {
               "type": "object",
               "members": {
+                "constructor": {
+                  "type": "function",
+                  "refID": 46,
+                  "members": {
+                    "Cursor": {
+                      "type": "function",
+                      "members": {
+                        "prototype": {
+                          "type": "object",
+                          "members": {
+                            "rewind": {
+                              "type": "function"
+                            },
+                            "forEach": {
+                              "type": "function"
+                            },
+                            "getTransform": {
+                              "type": "function"
+                            },
+                            "map": {
+                              "type": "function"
+                            },
+                            "fetch": {
+                              "type": "function"
+                            },
+                            "count": {
+                              "type": "function"
+                            },
+                            "observe": {
+                              "type": "function"
+                            },
+                            "observeChanges": {
+                              "type": "function"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "ObjectID": {
+                      "type": "function",
+                      "members": {
+                        "prototype": {
+                          "type": "object",
+                          "members": {
+                            "toString": {
+                              "type": "function"
+                            },
+                            "equals": {
+                              "type": "function"
+                            },
+                            "clone": {
+                              "type": "function"
+                            },
+                            "typeName": {
+                              "type": "function"
+                            },
+                            "getTimestamp": {
+                              "type": "function"
+                            },
+                            "toHexString": {
+                              "type": "function",
+                              "refID": 77
+                            },
+                            "toJSONValue": {
+                              "ref": 77
+                            },
+                            "valueOf": {
+                              "ref": 77
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "get": {
+                      "type": "function"
+                    },
+                    "getAll": {
+                      "type": "function"
+                    },
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "constructor": {
+                          "ref": 46
+                        },
+                        "find": {
+                          "type": "function",
+                          "refID": 84
+                        },
+                        "findOne": {
+                          "type": "function",
+                          "refID": 86
+                        },
+                        "insert": {
+                          "type": "function",
+                          "refID": 88
+                        },
+                        "update": {
+                          "type": "function",
+                          "refID": 90
+                        },
+                        "remove": {
+                          "type": "function",
+                          "refID": 92
+                        },
+                        "upsert": {
+                          "type": "function",
+                          "refID": 94
+                        },
+                        "rawCollection": {
+                          "type": "function",
+                          "refID": 96
+                        },
+                        "rawDatabase": {
+                          "type": "function",
+                          "refID": 98
+                        },
+                        "allow": {
+                          "type": "function",
+                          "refID": 100
+                        },
+                        "deny": {
+                          "type": "function",
+                          "refID": 102
+                        }
+                      }
+                    }
+                  }
+                },
                 "find": {
-                  "type": "function"
+                  "ref": 84
                 },
                 "findOne": {
-                  "type": "function"
+                  "ref": 86
                 },
                 "insert": {
-                  "type": "function"
+                  "ref": 88
                 },
                 "update": {
-                  "type": "function"
+                  "ref": 90
                 },
                 "remove": {
-                  "type": "function"
+                  "ref": 92
                 },
                 "upsert": {
-                  "type": "function"
+                  "ref": 94
                 },
                 "rawCollection": {
-                  "type": "function"
+                  "ref": 96
                 },
                 "rawDatabase": {
-                  "type": "function"
+                  "ref": 98
                 },
                 "allow": {
-                  "type": "function"
+                  "ref": 100
                 },
                 "deny": {
-                  "type": "function"
+                  "ref": 102
                 }
               }
             },
@@ -11393,6 +11654,1506 @@ var packageMetadata = {
       }
     }
   },
+  "url": {
+    "URL": {
+      "type": "object"
+    }
+  },
+  "http": {
+    "HTTP": {
+      "type": "object",
+      "members": {
+        "get": {
+          "type": "function"
+        },
+        "post": {
+          "type": "function"
+        },
+        "put": {
+          "type": "function"
+        },
+        "del": {
+          "type": "function"
+        },
+        "call": {
+          "type": "function"
+        }
+      }
+    },
+    "HTTPInternals": {
+      "type": "object",
+      "members": {
+        "NpmModules": {
+          "type": "object",
+          "members": {
+            "request": {
+              "type": "object",
+              "members": {
+                "version": {
+                  "type": "constant",
+                  "value": "2.53.0"
+                },
+                "module": {
+                  "type": "function",
+                  "members": {
+                    "get": {
+                      "type": "function"
+                    },
+                    "head": {
+                      "type": "function"
+                    },
+                    "post": {
+                      "type": "function"
+                    },
+                    "put": {
+                      "type": "function"
+                    },
+                    "patch": {
+                      "type": "function"
+                    },
+                    "del": {
+                      "type": "function"
+                    },
+                    "jar": {
+                      "type": "function"
+                    },
+                    "cookie": {
+                      "type": "function"
+                    },
+                    "defaults": {
+                      "type": "function"
+                    },
+                    "forever": {
+                      "type": "function"
+                    },
+                    "Request": {
+                      "type": "function",
+                      "members": {
+                        "super_": {
+                          "type": "function",
+                          "refID": 25,
+                          "members": {
+                            "super_": {
+                              "type": "function",
+                              "members": {
+                                "listenerCount": {
+                                  "type": "function"
+                                },
+                                "prototype": {
+                                  "type": "object",
+                                  "members": {
+                                    "setMaxListeners": {
+                                      "type": "function",
+                                      "refID": 30
+                                    },
+                                    "emit": {
+                                      "type": "function",
+                                      "refID": 32
+                                    },
+                                    "addListener": {
+                                      "type": "function",
+                                      "refID": 34
+                                    },
+                                    "on": {
+                                      "ref": 34
+                                    },
+                                    "once": {
+                                      "type": "function",
+                                      "refID": 36
+                                    },
+                                    "removeListener": {
+                                      "type": "function",
+                                      "refID": 38
+                                    },
+                                    "removeAllListeners": {
+                                      "type": "function",
+                                      "refID": 40
+                                    },
+                                    "listeners": {
+                                      "type": "function",
+                                      "refID": 42
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Readable": {
+                              "type": "function",
+                              "refID": 44,
+                              "members": {
+                                "ReadableState": {
+                                  "type": "function"
+                                },
+                                "super_": {
+                                  "ref": 25
+                                },
+                                "prototype": {
+                                  "type": "object",
+                                  "members": {
+                                    "push": {
+                                      "type": "function",
+                                      "refID": 48
+                                    },
+                                    "unshift": {
+                                      "type": "function",
+                                      "refID": 50
+                                    },
+                                    "setEncoding": {
+                                      "type": "function",
+                                      "refID": 52
+                                    },
+                                    "read": {
+                                      "type": "function",
+                                      "refID": 54
+                                    },
+                                    "pipe": {
+                                      "type": "function",
+                                      "refID": 56
+                                    },
+                                    "unpipe": {
+                                      "type": "function",
+                                      "refID": 58
+                                    },
+                                    "on": {
+                                      "type": "function",
+                                      "refID": 60
+                                    },
+                                    "addListener": {
+                                      "ref": 60
+                                    },
+                                    "resume": {
+                                      "type": "function",
+                                      "refID": 62
+                                    },
+                                    "pause": {
+                                      "type": "function",
+                                      "refID": 64
+                                    },
+                                    "wrap": {
+                                      "type": "function",
+                                      "refID": 66
+                                    },
+                                    "setMaxListeners": {
+                                      "ref": 30
+                                    },
+                                    "emit": {
+                                      "ref": 32
+                                    },
+                                    "once": {
+                                      "ref": 36
+                                    },
+                                    "removeListener": {
+                                      "ref": 38
+                                    },
+                                    "removeAllListeners": {
+                                      "ref": 40
+                                    },
+                                    "listeners": {
+                                      "ref": 42
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Writable": {
+                              "type": "function",
+                              "members": {
+                                "WritableState": {
+                                  "type": "function"
+                                },
+                                "super_": {
+                                  "ref": 25
+                                },
+                                "prototype": {
+                                  "type": "object",
+                                  "members": {
+                                    "pipe": {
+                                      "type": "function"
+                                    },
+                                    "write": {
+                                      "type": "function",
+                                      "refID": 74
+                                    },
+                                    "end": {
+                                      "type": "function",
+                                      "refID": 76
+                                    },
+                                    "setMaxListeners": {
+                                      "ref": 30
+                                    },
+                                    "emit": {
+                                      "ref": 32
+                                    },
+                                    "addListener": {
+                                      "ref": 34
+                                    },
+                                    "on": {
+                                      "ref": 34
+                                    },
+                                    "once": {
+                                      "ref": 36
+                                    },
+                                    "removeListener": {
+                                      "ref": 38
+                                    },
+                                    "removeAllListeners": {
+                                      "ref": 40
+                                    },
+                                    "listeners": {
+                                      "ref": 42
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Duplex": {
+                              "type": "function",
+                              "refID": 78,
+                              "members": {
+                                "super_": {
+                                  "ref": 44
+                                },
+                                "prototype": {
+                                  "type": "object",
+                                  "members": {
+                                    "write": {
+                                      "ref": 74
+                                    },
+                                    "end": {
+                                      "ref": 76
+                                    },
+                                    "push": {
+                                      "ref": 48
+                                    },
+                                    "unshift": {
+                                      "ref": 50
+                                    },
+                                    "setEncoding": {
+                                      "ref": 52
+                                    },
+                                    "read": {
+                                      "ref": 54
+                                    },
+                                    "pipe": {
+                                      "ref": 56
+                                    },
+                                    "unpipe": {
+                                      "ref": 58
+                                    },
+                                    "on": {
+                                      "ref": 60
+                                    },
+                                    "addListener": {
+                                      "ref": 60
+                                    },
+                                    "resume": {
+                                      "ref": 62
+                                    },
+                                    "pause": {
+                                      "ref": 64
+                                    },
+                                    "wrap": {
+                                      "ref": 66
+                                    },
+                                    "setMaxListeners": {
+                                      "ref": 30
+                                    },
+                                    "emit": {
+                                      "ref": 32
+                                    },
+                                    "once": {
+                                      "ref": 36
+                                    },
+                                    "removeListener": {
+                                      "ref": 38
+                                    },
+                                    "removeAllListeners": {
+                                      "ref": 40
+                                    },
+                                    "listeners": {
+                                      "ref": 42
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Transform": {
+                              "type": "function",
+                              "refID": 80,
+                              "members": {
+                                "super_": {
+                                  "ref": 78
+                                },
+                                "prototype": {
+                                  "type": "object",
+                                  "members": {
+                                    "push": {
+                                      "type": "function",
+                                      "refID": 82
+                                    },
+                                    "write": {
+                                      "ref": 74
+                                    },
+                                    "end": {
+                                      "ref": 76
+                                    },
+                                    "unshift": {
+                                      "ref": 50
+                                    },
+                                    "setEncoding": {
+                                      "ref": 52
+                                    },
+                                    "read": {
+                                      "ref": 54
+                                    },
+                                    "pipe": {
+                                      "ref": 56
+                                    },
+                                    "unpipe": {
+                                      "ref": 58
+                                    },
+                                    "on": {
+                                      "ref": 60
+                                    },
+                                    "addListener": {
+                                      "ref": 60
+                                    },
+                                    "resume": {
+                                      "ref": 62
+                                    },
+                                    "pause": {
+                                      "ref": 64
+                                    },
+                                    "wrap": {
+                                      "ref": 66
+                                    },
+                                    "setMaxListeners": {
+                                      "ref": 30
+                                    },
+                                    "emit": {
+                                      "ref": 32
+                                    },
+                                    "once": {
+                                      "ref": 36
+                                    },
+                                    "removeListener": {
+                                      "ref": 38
+                                    },
+                                    "removeAllListeners": {
+                                      "ref": 40
+                                    },
+                                    "listeners": {
+                                      "ref": 42
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "PassThrough": {
+                              "type": "function",
+                              "members": {
+                                "super_": {
+                                  "ref": 80
+                                },
+                                "prototype": {
+                                  "type": "object",
+                                  "members": {
+                                    "push": {
+                                      "ref": 82
+                                    },
+                                    "write": {
+                                      "ref": 74
+                                    },
+                                    "end": {
+                                      "ref": 76
+                                    },
+                                    "unshift": {
+                                      "ref": 50
+                                    },
+                                    "setEncoding": {
+                                      "ref": 52
+                                    },
+                                    "read": {
+                                      "ref": 54
+                                    },
+                                    "pipe": {
+                                      "ref": 56
+                                    },
+                                    "unpipe": {
+                                      "ref": 58
+                                    },
+                                    "on": {
+                                      "ref": 60
+                                    },
+                                    "addListener": {
+                                      "ref": 60
+                                    },
+                                    "resume": {
+                                      "ref": 62
+                                    },
+                                    "pause": {
+                                      "ref": 64
+                                    },
+                                    "wrap": {
+                                      "ref": 66
+                                    },
+                                    "setMaxListeners": {
+                                      "ref": 30
+                                    },
+                                    "emit": {
+                                      "ref": 32
+                                    },
+                                    "once": {
+                                      "ref": 36
+                                    },
+                                    "removeListener": {
+                                      "ref": 38
+                                    },
+                                    "removeAllListeners": {
+                                      "ref": 40
+                                    },
+                                    "listeners": {
+                                      "ref": 42
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "Stream": {
+                              "ref": 25
+                            },
+                            "prototype": {
+                              "type": "object",
+                              "members": {
+                                "pipe": {
+                                  "type": "function"
+                                },
+                                "setMaxListeners": {
+                                  "ref": 30
+                                },
+                                "emit": {
+                                  "ref": 32
+                                },
+                                "addListener": {
+                                  "ref": 34
+                                },
+                                "on": {
+                                  "ref": 34
+                                },
+                                "once": {
+                                  "ref": 36
+                                },
+                                "removeListener": {
+                                  "ref": 38
+                                },
+                                "removeAllListeners": {
+                                  "ref": 40
+                                },
+                                "listeners": {
+                                  "ref": 42
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "debug": {
+                          "type": "undefined"
+                        },
+                        "defaultProxyHeaderWhiteList": {
+                          "type": "array"
+                        },
+                        "defaultProxyHeaderExclusiveList": {
+                          "type": "array"
+                        },
+                        "prototype": {
+                          "type": "object",
+                          "members": {
+                            "setupTunnel": {
+                              "type": "function"
+                            },
+                            "init": {
+                              "type": "function"
+                            },
+                            "getNewAgent": {
+                              "type": "function"
+                            },
+                            "start": {
+                              "type": "function"
+                            },
+                            "onRequestError": {
+                              "type": "function"
+                            },
+                            "onRequestResponse": {
+                              "type": "function"
+                            },
+                            "abort": {
+                              "type": "function"
+                            },
+                            "pipeDest": {
+                              "type": "function"
+                            },
+                            "qs": {
+                              "type": "function"
+                            },
+                            "form": {
+                              "type": "function"
+                            },
+                            "multipart": {
+                              "type": "function"
+                            },
+                            "json": {
+                              "type": "function"
+                            },
+                            "getHeader": {
+                              "type": "function"
+                            },
+                            "auth": {
+                              "type": "function"
+                            },
+                            "aws": {
+                              "type": "function"
+                            },
+                            "httpSignature": {
+                              "type": "function"
+                            },
+                            "hawk": {
+                              "type": "function"
+                            },
+                            "oauth": {
+                              "type": "function"
+                            },
+                            "jar": {
+                              "type": "function"
+                            },
+                            "pipe": {
+                              "type": "function"
+                            },
+                            "write": {
+                              "type": "function"
+                            },
+                            "end": {
+                              "type": "function"
+                            },
+                            "pause": {
+                              "type": "function"
+                            },
+                            "resume": {
+                              "type": "function"
+                            },
+                            "destroy": {
+                              "type": "function"
+                            },
+                            "toJSON": {
+                              "type": "function"
+                            },
+                            "setMaxListeners": {
+                              "ref": 30
+                            },
+                            "emit": {
+                              "ref": 32
+                            },
+                            "addListener": {
+                              "ref": 34
+                            },
+                            "on": {
+                              "ref": 34
+                            },
+                            "once": {
+                              "ref": 36
+                            },
+                            "removeListener": {
+                              "ref": 38
+                            },
+                            "removeAllListeners": {
+                              "ref": 40
+                            },
+                            "listeners": {
+                              "ref": 42
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "initParams": {
+                      "type": "function"
+                    },
+                    "debug": {
+                      "type": "undefined"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "lai:collection-extensions": {},
+  "dburles:mongo-collection-instances": {},
+  "meteortoys:toykit": {
+    "MeteorToysData": {
+      "type": "object",
+      "members": {
+        "Impersonate": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "type": "function",
+              "refID": 2,
+              "members": {
+                "Cursor": {
+                  "type": "function",
+                  "members": {
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "rewind": {
+                          "type": "function"
+                        },
+                        "forEach": {
+                          "type": "function"
+                        },
+                        "getTransform": {
+                          "type": "function"
+                        },
+                        "map": {
+                          "type": "function"
+                        },
+                        "fetch": {
+                          "type": "function"
+                        },
+                        "count": {
+                          "type": "function"
+                        },
+                        "observe": {
+                          "type": "function"
+                        },
+                        "observeChanges": {
+                          "type": "function"
+                        }
+                      }
+                    }
+                  }
+                },
+                "ObjectID": {
+                  "type": "function",
+                  "members": {
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "toString": {
+                          "type": "function"
+                        },
+                        "equals": {
+                          "type": "function"
+                        },
+                        "clone": {
+                          "type": "function"
+                        },
+                        "typeName": {
+                          "type": "function"
+                        },
+                        "getTimestamp": {
+                          "type": "function"
+                        },
+                        "toHexString": {
+                          "type": "function",
+                          "refID": 33
+                        },
+                        "toJSONValue": {
+                          "ref": 33
+                        },
+                        "valueOf": {
+                          "ref": 33
+                        }
+                      }
+                    }
+                  }
+                },
+                "get": {
+                  "type": "function"
+                },
+                "getAll": {
+                  "type": "function"
+                },
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "constructor": {
+                      "ref": 2
+                    },
+                    "find": {
+                      "type": "function",
+                      "refID": 40
+                    },
+                    "findOne": {
+                      "type": "function",
+                      "refID": 42
+                    },
+                    "insert": {
+                      "type": "function",
+                      "refID": 44
+                    },
+                    "update": {
+                      "type": "function",
+                      "refID": 46
+                    },
+                    "remove": {
+                      "type": "function",
+                      "refID": 48
+                    },
+                    "upsert": {
+                      "type": "function",
+                      "refID": 50
+                    },
+                    "rawCollection": {
+                      "type": "function",
+                      "refID": 52
+                    },
+                    "rawDatabase": {
+                      "type": "function",
+                      "refID": 54
+                    },
+                    "allow": {
+                      "type": "function",
+                      "refID": 56
+                    },
+                    "deny": {
+                      "type": "function",
+                      "refID": 58
+                    }
+                  }
+                }
+              }
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "JetSetter": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "Mongol": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "AutoPub": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "Email": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "Result": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "Throttle": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        },
+        "credentials": {
+          "type": "object",
+          "members": {
+            "constructor": {
+              "ref": 2
+            },
+            "find": {
+              "ref": 40
+            },
+            "findOne": {
+              "ref": 42
+            },
+            "insert": {
+              "ref": 44
+            },
+            "update": {
+              "ref": 46
+            },
+            "remove": {
+              "ref": 48
+            },
+            "upsert": {
+              "ref": 50
+            },
+            "rawCollection": {
+              "ref": 52
+            },
+            "rawDatabase": {
+              "ref": 54
+            },
+            "allow": {
+              "ref": 56
+            },
+            "deny": {
+              "ref": 58
+            }
+          }
+        }
+      }
+    }
+  },
+  "msavin:mongol": {},
+  "msavin:jetsetter": {},
+  "meteortoys:blueprint": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Blueprint"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_template"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:blueprint"
+        }
+      }
+    }
+  },
+  "meteortoys:authenticate": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Authenticate"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_accounts"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:authenticate"
+        }
+      }
+    }
+  },
+  "meteortoys:shell": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Shell"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_shell"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:shell"
+        }
+      }
+    }
+  },
+  "meteortoys:method": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Method"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_method"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:method"
+        }
+      }
+    }
+  },
+  "meteortoys:result": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Result"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_result"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:result"
+        }
+      }
+    }
+  },
+  "meteortoys:autopub": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "AutoPub"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_autopub"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:autopub"
+        }
+      }
+    }
+  },
+  "meteortoys:pub": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Pub"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_sub"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:pub"
+        }
+      }
+    }
+  },
+  "meteortoys:sub": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Sub"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_pubsub"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:sub"
+        }
+      }
+    }
+  },
+  "meteortoys:email": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Email"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_email"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:email"
+        }
+      }
+    }
+  },
+  "meteortoys:listen": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Listen"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_intercept"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:listen"
+        }
+      }
+    }
+  },
+  "meteortoys:throttle": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Throttle"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_throttle"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:throttle"
+        }
+      }
+    }
+  },
+  "meteortoys:status": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Status"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_status"
+        },
+        "ToyKit": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:status"
+        }
+      }
+    }
+  },
+  "meteortoys:hotreload": {
+    "ToyKit": {
+      "type": "object",
+      "members": {
+        "name": {
+          "type": "constant",
+          "value": "Hot Reload"
+        },
+        "version": {
+          "type": "constant",
+          "value": "1.0.0"
+        },
+        "template": {
+          "type": "constant",
+          "value": "MeteorToys_reload"
+        },
+        "onOpen": {
+          "type": "function"
+        },
+        "onClose": {
+          "type": "function"
+        },
+        "packageName": {
+          "type": "constant",
+          "value": "meteortoys:hotreload"
+        }
+      }
+    }
+  },
+  "meteortoys:toypro": {
+    "MeteorToys_Data": {
+      "type": "undefined"
+    }
+  },
+  "meteortoys:pro": {},
+  "meteortoys:allthings": {},
   "livedata": {
     "DDP": {
       "type": "object",
@@ -11487,11 +13248,11 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "b4b426c66c886cbf152f4d6832a024891ae9e78a"
+          "value": "12f440d7f7276ad57e725dbacbf6988c5f5a6388"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
-          "value": "01d1a297c777cde6ccc2255994ee5631c5e59272"
+          "value": "8ca778bb70e39a5e570e341d35900ba8568d2e59"
         },
         "autoupdateVersionCordova": {
           "type": "constant",
@@ -11512,35 +13273,164 @@ var packageMetadata = {
         "configurations": {
           "type": "object",
           "members": {
+            "constructor": {
+              "type": "function",
+              "refID": 2,
+              "members": {
+                "Cursor": {
+                  "type": "function",
+                  "members": {
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "rewind": {
+                          "type": "function"
+                        },
+                        "forEach": {
+                          "type": "function"
+                        },
+                        "getTransform": {
+                          "type": "function"
+                        },
+                        "map": {
+                          "type": "function"
+                        },
+                        "fetch": {
+                          "type": "function"
+                        },
+                        "count": {
+                          "type": "function"
+                        },
+                        "observe": {
+                          "type": "function"
+                        },
+                        "observeChanges": {
+                          "type": "function"
+                        }
+                      }
+                    }
+                  }
+                },
+                "ObjectID": {
+                  "type": "function",
+                  "members": {
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "toString": {
+                          "type": "function"
+                        },
+                        "equals": {
+                          "type": "function"
+                        },
+                        "clone": {
+                          "type": "function"
+                        },
+                        "typeName": {
+                          "type": "function"
+                        },
+                        "getTimestamp": {
+                          "type": "function"
+                        },
+                        "toHexString": {
+                          "type": "function",
+                          "refID": 33
+                        },
+                        "toJSONValue": {
+                          "ref": 33
+                        },
+                        "valueOf": {
+                          "ref": 33
+                        }
+                      }
+                    }
+                  }
+                },
+                "get": {
+                  "type": "function"
+                },
+                "getAll": {
+                  "type": "function"
+                },
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "constructor": {
+                      "ref": 2
+                    },
+                    "find": {
+                      "type": "function",
+                      "refID": 40
+                    },
+                    "findOne": {
+                      "type": "function",
+                      "refID": 42
+                    },
+                    "insert": {
+                      "type": "function",
+                      "refID": 44
+                    },
+                    "update": {
+                      "type": "function",
+                      "refID": 46
+                    },
+                    "remove": {
+                      "type": "function",
+                      "refID": 48
+                    },
+                    "upsert": {
+                      "type": "function",
+                      "refID": 50
+                    },
+                    "rawCollection": {
+                      "type": "function",
+                      "refID": 52
+                    },
+                    "rawDatabase": {
+                      "type": "function",
+                      "refID": 54
+                    },
+                    "allow": {
+                      "type": "function",
+                      "refID": 56
+                    },
+                    "deny": {
+                      "type": "function",
+                      "refID": 58
+                    }
+                  }
+                }
+              }
+            },
             "find": {
-              "type": "function"
+              "ref": 40
             },
             "findOne": {
-              "type": "function"
+              "ref": 42
             },
             "insert": {
-              "type": "function"
+              "ref": 44
             },
             "update": {
-              "type": "function"
+              "ref": 46
             },
             "remove": {
-              "type": "function"
+              "ref": 48
             },
             "upsert": {
-              "type": "function"
+              "ref": 50
             },
             "rawCollection": {
-              "type": "function"
+              "ref": 52
             },
             "rawDatabase": {
-              "type": "function"
+              "ref": 54
             },
             "allow": {
-              "type": "function"
+              "ref": 56
             },
             "deny": {
-              "type": "function"
+              "ref": 58
             }
           }
         },

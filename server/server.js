@@ -96,3 +96,14 @@ Meteor.publish("units", function() {
         }
     });
 });
+
+// Stats
+Meteor.publish("stats", function() {
+    return Stats.find({
+        owner: this.userId
+    }, {
+        sort: {
+            "itemCount": -1
+        }
+    });
+});

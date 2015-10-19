@@ -15,10 +15,10 @@ var i = setInterval(function() {
             'api-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyaWQiOiJ3SGg2dDRrM0V4RlNlRlkydiJ9.tgDxA8Yw3L78i6O-JEnu9qTnJGZPK9zlhptzE9NCOZI'
         },
         json: {
-            actor: 'Frank',
-            action: 'laughed',
+            actor: 'Jimbo',
+            action: 'skipped',
             amount: loopCounter,
-            units: 'times'
+            units: 'miles'
         }
     }, function(error, response, body) {
         if (error) {
