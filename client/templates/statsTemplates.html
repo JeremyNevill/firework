@@ -3,12 +3,14 @@
 
     <div class="row">
 
-        {{#each dailyStats }}
         <div class="col-md-12">
-            {{ actor }} : 
-            {{ itemCount }}
+            {{#each dailyStats }}
+            <div class="col-md-12">
+                {{ actor }} : {{ itemCount }}
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
+
     </div>
 
 </template>

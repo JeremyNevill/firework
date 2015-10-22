@@ -1,11 +1,4 @@
-/*
- Subscriptions
- */
-Meteor.subscribe("items");
-Meteor.subscribe("actors");
-Meteor.subscribe("actions");
-Meteor.subscribe("units");
-Meteor.subscribe("stats");
+
 
 toastr.options = {
     "positionClass": "toast-bottom-right"
@@ -38,20 +31,10 @@ Template.actors.helpers({
         });
     }
 });
+
 Template.actors_menu.helpers({
     actors: function() {
         return Actors.find({}, {
-            sort: {
-                itemCount: -1
-            }
-        });
-    }
-});
-
-
-Template.stats.helpers({
-    dailyStats: function() {
-        return Stats.find({}, {
             sort: {
                 itemCount: -1
             }

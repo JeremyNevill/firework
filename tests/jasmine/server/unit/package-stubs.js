@@ -7587,7 +7587,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "7ba5e67fb8656cb31642087b73dc1f39048960c3"
+                  "value": "a69c7df0bd05c97814697debebc6f51e67eccd5e"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "object"
@@ -7711,7 +7711,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 0
+              "value": 1
             },
             "timeout": {
               "type": "constant",
@@ -10432,1227 +10432,6 @@ var packageMetadata = {
   "npm-container": {},
   "less": {},
   "velocity:html-reporter": {},
-  "coffeescript": {},
-  "practicalmeteor:loglevel": {
-    "loglevel": {
-      "type": "object",
-      "members": {
-        "createLogger": {
-          "type": "function"
-        },
-        "createPackageLogger": {
-          "type": "function"
-        },
-        "createAppLogger": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "velocity:chokidar": {
-    "chokidar": {
-      "type": "object",
-      "members": {
-        "FSWatcher": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "add": {
-                  "type": "function"
-                },
-                "unwatch": {
-                  "type": "function"
-                },
-                "close": {
-                  "type": "function"
-                },
-                "setMaxListeners": {
-                  "type": "function"
-                },
-                "emit": {
-                  "type": "function"
-                },
-                "addListener": {
-                  "type": "function",
-                  "refID": 13
-                },
-                "on": {
-                  "ref": 13
-                },
-                "once": {
-                  "type": "function"
-                },
-                "removeListener": {
-                  "type": "function"
-                },
-                "removeAllListeners": {
-                  "type": "function"
-                },
-                "listeners": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "watch": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "velocity:meteor-internals": {
-    "VelocityMeteorInternals": {
-      "type": "object",
-      "members": {
-        "parseStack": {
-          "type": "object",
-          "members": {
-            "markBottom": {
-              "type": "function"
-            }
-          }
-        },
-        "buildmessage": {
-          "type": "object",
-          "members": {
-            "markBoundary": {
-              "type": "function"
-            }
-          }
-        },
-        "files": {
-          "type": "object",
-          "members": {
-            "cwd": {
-              "type": "function"
-            },
-            "findAppDir": {
-              "type": "function"
-            },
-            "findPackageDir": {
-              "type": "function"
-            },
-            "statOrNull": {
-              "type": "function"
-            },
-            "runJavaScript": {
-              "type": "function"
-            },
-            "FancySyntaxError": {
-              "type": "function"
-            },
-            "writeFile": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "writeFile"
-                }
-              }
-            },
-            "appendFile": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "appendFile"
-                }
-              }
-            },
-            "readFile": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "readFile"
-                }
-              }
-            },
-            "stat": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "stat"
-                }
-              }
-            },
-            "lstat": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "lstat"
-                }
-              }
-            },
-            "exists": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "exists"
-                }
-              }
-            },
-            "rename": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "rename"
-                }
-              }
-            },
-            "realpath": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "realpath"
-                }
-              }
-            },
-            "readdir": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "readdir"
-                }
-              }
-            },
-            "rmdir": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "rmdir"
-                }
-              }
-            },
-            "mkdir": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "mkdir"
-                }
-              }
-            },
-            "unlink": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "unlink"
-                }
-              }
-            },
-            "chmod": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "chmod"
-                }
-              }
-            },
-            "open": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "open"
-                }
-              }
-            },
-            "read": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "read"
-                }
-              }
-            },
-            "write": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "write"
-                }
-              }
-            },
-            "close": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "close"
-                }
-              }
-            },
-            "symlink": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "symlink"
-                }
-              }
-            },
-            "readlink": {
-              "type": "function",
-              "members": {
-                "displayName": {
-                  "type": "constant",
-                  "value": "readlink"
-                }
-              }
-            },
-            "createReadStream": {
-              "type": "function"
-            },
-            "createWriteStream": {
-              "type": "function"
-            },
-            "watchFile": {
-              "type": "function"
-            },
-            "unwatchFile": {
-              "type": "function"
-            },
-            "pathJoin": {
-              "type": "function"
-            },
-            "pathNormalize": {
-              "type": "function"
-            },
-            "pathRelative": {
-              "type": "function"
-            },
-            "pathResolve": {
-              "type": "function"
-            },
-            "pathDirname": {
-              "type": "function"
-            },
-            "pathBasename": {
-              "type": "function"
-            },
-            "pathExtname": {
-              "type": "function"
-            },
-            "pathSep": {
-              "type": "constant",
-              "value": "/"
-            },
-            "pathDelimiter": {
-              "type": "constant",
-              "value": ":"
-            },
-            "pathOsDelimiter": {
-              "type": "constant",
-              "value": ":"
-            },
-            "convertToStandardPath": {
-              "type": "function"
-            },
-            "convertToOSPath": {
-              "type": "function"
-            },
-            "convertToWindowsPath": {
-              "type": "function"
-            },
-            "convertToPosixPath": {
-              "type": "function"
-            },
-            "convertToStandardLineEndings": {
-              "type": "function"
-            },
-            "convertToOSLineEndings": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "velocity:source-map-support": {
-    "SourceMapSupport": {
-      "type": "object",
-      "members": {
-        "install": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "sanjo:long-running-child-process": {
-    "LongRunningChildProcess": {
-      "type": "function",
-      "members": {
-        "prototype": {
-          "type": "object",
-          "members": {
-            "taskName": {
-              "type": "null",
-              "value": null
-            },
-            "child": {
-              "type": "null",
-              "value": null
-            },
-            "pid": {
-              "type": "null",
-              "value": null
-            },
-            "getTaskName": {
-              "type": "function"
-            },
-            "getChild": {
-              "type": "function"
-            },
-            "getPid": {
-              "type": "function"
-            },
-            "isDead": {
-              "type": "function"
-            },
-            "isRunning": {
-              "type": "function"
-            },
-            "readPid": {
-              "type": "function"
-            },
-            "spawn": {
-              "type": "function"
-            },
-            "kill": {
-              "type": "function"
-            }
-          }
-        }
-      }
-    }
-  },
-  "sanjo:meteor-version": {
-    "MeteorVersion": {
-      "type": "object",
-      "members": {
-        "getSemanticVersion": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "package-version-parser": {
-    "PackageVersion": {
-      "type": "function",
-      "members": {
-        "parse": {
-          "type": "function"
-        },
-        "versionMagnitude": {
-          "type": "function"
-        },
-        "lessThan": {
-          "type": "function"
-        },
-        "majorVersion": {
-          "type": "function"
-        },
-        "compare": {
-          "type": "function"
-        },
-        "getValidServerVersion": {
-          "type": "function"
-        },
-        "VersionConstraint": {
-          "type": "function"
-        },
-        "parseVersionConstraint": {
-          "type": "function"
-        },
-        "PackageConstraint": {
-          "type": "function",
-          "members": {
-            "prototype": {
-              "type": "object",
-              "members": {
-                "toString": {
-                  "type": "function"
-                }
-              }
-            }
-          }
-        },
-        "parsePackageConstraint": {
-          "type": "function"
-        },
-        "validatePackageName": {
-          "type": "function"
-        },
-        "invalidFirstFormatConstraint": {
-          "type": "function"
-        },
-        "removeBuildID": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "sanjo:meteor-files-helpers": {
-    "MeteorFilesHelpers": {
-      "type": "object",
-      "members": {
-        "getAppPath": {
-          "type": "function"
-        },
-        "getMeteorToolPath": {
-          "type": "function"
-        },
-        "getMeteorInstallationPath": {
-          "type": "function"
-        },
-        "getNodeModulePath": {
-          "type": "function"
-        },
-        "getPackageVersions": {
-          "type": "function"
-        },
-        "getPackageVersion": {
-          "type": "function"
-        },
-        "isPackageInstalled": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "velocity:core": {
-    "Velocity": {
-      "type": "object",
-      "members": {
-        "Collections": {
-          "type": "object",
-          "members": {
-            "TestFiles": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "type": "function",
-                  "refID": 3
-                },
-                "findOne": {
-                  "type": "function",
-                  "refID": 5
-                },
-                "insert": {
-                  "type": "function",
-                  "refID": 7
-                },
-                "update": {
-                  "type": "function",
-                  "refID": 9
-                },
-                "remove": {
-                  "type": "function",
-                  "refID": 11
-                },
-                "upsert": {
-                  "type": "function",
-                  "refID": 13
-                },
-                "rawCollection": {
-                  "type": "function",
-                  "refID": 15
-                },
-                "rawDatabase": {
-                  "type": "function",
-                  "refID": 17
-                },
-                "allow": {
-                  "type": "function",
-                  "refID": 19
-                },
-                "deny": {
-                  "type": "function",
-                  "refID": 21
-                }
-              }
-            },
-            "FixtureFiles": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "ref": 3
-                },
-                "findOne": {
-                  "ref": 5
-                },
-                "insert": {
-                  "ref": 7
-                },
-                "update": {
-                  "ref": 9
-                },
-                "remove": {
-                  "ref": 11
-                },
-                "upsert": {
-                  "ref": 13
-                },
-                "rawCollection": {
-                  "ref": 15
-                },
-                "rawDatabase": {
-                  "ref": 17
-                },
-                "allow": {
-                  "ref": 19
-                },
-                "deny": {
-                  "ref": 21
-                }
-              }
-            },
-            "TestReports": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "ref": 3
-                },
-                "findOne": {
-                  "ref": 5
-                },
-                "insert": {
-                  "ref": 7
-                },
-                "update": {
-                  "ref": 9
-                },
-                "remove": {
-                  "ref": 11
-                },
-                "upsert": {
-                  "ref": 13
-                },
-                "rawCollection": {
-                  "ref": 15
-                },
-                "rawDatabase": {
-                  "ref": 17
-                },
-                "allow": {
-                  "ref": 19
-                },
-                "deny": {
-                  "ref": 21
-                }
-              }
-            },
-            "AggregateReports": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "ref": 3
-                },
-                "findOne": {
-                  "ref": 5
-                },
-                "insert": {
-                  "ref": 7
-                },
-                "update": {
-                  "ref": 9
-                },
-                "remove": {
-                  "ref": 11
-                },
-                "upsert": {
-                  "ref": 13
-                },
-                "rawCollection": {
-                  "ref": 15
-                },
-                "rawDatabase": {
-                  "ref": 17
-                },
-                "allow": {
-                  "ref": 19
-                },
-                "deny": {
-                  "ref": 21
-                }
-              }
-            },
-            "Logs": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "ref": 3
-                },
-                "findOne": {
-                  "ref": 5
-                },
-                "insert": {
-                  "ref": 7
-                },
-                "update": {
-                  "ref": 9
-                },
-                "remove": {
-                  "ref": 11
-                },
-                "upsert": {
-                  "ref": 13
-                },
-                "rawCollection": {
-                  "ref": 15
-                },
-                "rawDatabase": {
-                  "ref": 17
-                },
-                "allow": {
-                  "ref": 19
-                },
-                "deny": {
-                  "ref": 21
-                }
-              }
-            },
-            "Mirrors": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "ref": 3
-                },
-                "findOne": {
-                  "ref": 5
-                },
-                "insert": {
-                  "ref": 7
-                },
-                "update": {
-                  "ref": 9
-                },
-                "remove": {
-                  "ref": 11
-                },
-                "upsert": {
-                  "ref": 13
-                },
-                "rawCollection": {
-                  "ref": 15
-                },
-                "rawDatabase": {
-                  "ref": 17
-                },
-                "allow": {
-                  "ref": 19
-                },
-                "deny": {
-                  "ref": 21
-                }
-              }
-            },
-            "Options": {
-              "type": "object",
-              "members": {
-                "find": {
-                  "ref": 3
-                },
-                "findOne": {
-                  "ref": 5
-                },
-                "insert": {
-                  "ref": 7
-                },
-                "update": {
-                  "ref": 9
-                },
-                "remove": {
-                  "ref": 11
-                },
-                "upsert": {
-                  "ref": 13
-                },
-                "rawCollection": {
-                  "ref": 15
-                },
-                "rawDatabase": {
-                  "ref": 17
-                },
-                "allow": {
-                  "ref": 19
-                },
-                "deny": {
-                  "ref": 21
-                }
-              }
-            }
-          }
-        },
-        "Methods": {
-          "type": "object",
-          "members": {
-            "velocity/logs/reset": {
-              "type": "function"
-            },
-            "velocity/logs/submit": {
-              "type": "function"
-            },
-            "velocity/mirrors/init": {
-              "type": "function"
-            },
-            "velocity/mirrors/register": {
-              "type": "function"
-            },
-            "velocity/mirrors/request": {
-              "type": "function"
-            },
-            "velocity/parentHandshake": {
-              "type": "function"
-            },
-            "velocity/getOption": {
-              "type": "function"
-            },
-            "velocity/setOption": {
-              "type": "function"
-            },
-            "velocity/setOptions": {
-              "type": "function"
-            },
-            "velocity/reports/completed": {
-              "type": "function"
-            },
-            "velocity/reports/reset": {
-              "type": "function"
-            },
-            "velocity/reports/submit": {
-              "type": "function"
-            },
-            "velocity/copySampleTests": {
-              "type": "function"
-            },
-            "velocity/featureTestDone": {
-              "type": "function"
-            },
-            "velocity/featureTestFailed": {
-              "type": "function"
-            },
-            "velocity/isEnabled": {
-              "type": "function"
-            },
-            "velocity/isMirror": {
-              "type": "function"
-            },
-            "velocity/register/framework": {
-              "type": "function"
-            },
-            "velocity/reset": {
-              "type": "function"
-            },
-            "velocity/returnTODOTestAndMarkItAsDOING": {
-              "type": "function"
-            }
-          }
-        },
-        "mirrorMeteorReleaseName": {
-          "type": "constant",
-          "value": "velocity:METEOR"
-        },
-        "mirrorMeteorVersion": {
-          "type": "constant",
-          "value": "1.2.0.2_1"
-        },
-        "mirrorMeteorRelease": {
-          "type": "constant",
-          "value": "velocity:METEOR@1.2.0.2_1"
-        },
-        "mirrorMeteorToolReleaseName": {
-          "type": "constant",
-          "value": "velocity:meteor-tool"
-        },
-        "mirrorMeteorToolVersion": {
-          "type": "constant",
-          "value": "1.1.9_1"
-        },
-        "mirrorMeteorToolRelease": {
-          "type": "constant",
-          "value": "velocity:meteor-tool@1.1.9_1"
-        },
-        "reusableMirrors": {
-          "type": "array"
-        },
-        "startup": {
-          "type": "function"
-        },
-        "getAppPath": {
-          "type": "function"
-        },
-        "getTestsPath": {
-          "type": "function"
-        },
-        "getPackagesPath": {
-          "type": "function"
-        },
-        "getPackagePath": {
-          "type": "function"
-        },
-        "postProcessors": {
-          "type": "array"
-        },
-        "addPostProcessor": {
-          "type": "function"
-        },
-        "getReportGithubIssueMessage": {
-          "type": "function"
-        },
-        "registerTestingFramework": {
-          "type": "function"
-        },
-        "unregisterTestingFramework": {
-          "type": "function"
-        },
-        "onTest": {
-          "type": "function"
-        },
-        "setOption": {
-          "type": "function"
-        },
-        "setOptions": {
-          "type": "function"
-        },
-        "getOption": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityTestFiles": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityFixtureFiles": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityTestReports": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityAggregateReports": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityLogs": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityMirrors": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    },
-    "VelocityOptions": {
-      "type": "object",
-      "members": {
-        "find": {
-          "type": "function"
-        },
-        "findOne": {
-          "type": "function"
-        },
-        "insert": {
-          "type": "function"
-        },
-        "update": {
-          "type": "function"
-        },
-        "remove": {
-          "type": "function"
-        },
-        "upsert": {
-          "type": "function"
-        },
-        "rawCollection": {
-          "type": "function"
-        },
-        "rawDatabase": {
-          "type": "function"
-        },
-        "allow": {
-          "type": "function"
-        },
-        "deny": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "velocity:shim": {},
-  "velocity:meteor-stubs": {
-    "MeteorStubs": {
-      "type": "object",
-      "members": {
-        "install": {
-          "type": "function"
-        },
-        "uninstall": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "sanjo:karma": {
-    "Karma": {
-      "type": "object",
-      "members": {
-        "start": {
-          "type": "function"
-        },
-        "setConfig": {
-          "type": "function"
-        }
-      }
-    },
-    "KarmaInternals": {
-      "type": "object",
-      "members": {
-        "karmaChilds": {
-          "type": "object"
-        },
-        "getKarmaChild": {
-          "type": "function"
-        },
-        "setKarmaChild": {
-          "type": "function"
-        },
-        "startKarmaServer": {
-          "type": "function"
-        },
-        "writeKarmaConfig": {
-          "type": "function"
-        },
-        "generateKarmaConfig": {
-          "type": "function"
-        },
-        "readKarmaConfig": {
-          "type": "function"
-        },
-        "getConfigPath": {
-          "type": "function"
-        },
-        "getKarmaPath": {
-          "type": "function"
-        }
-      }
-    }
-  },
-  "sanjo:jasmine": {
-    "Jasmine": {
-      "type": "object",
-      "members": {
-        "onTest": {
-          "type": "function"
-        },
-        "setKarmaConfig": {
-          "type": "function"
-        }
-      }
-    }
-  },
   "url": {
     "URL": {
       "type": "object"
@@ -13153,6 +11932,2267 @@ var packageMetadata = {
   },
   "meteortoys:pro": {},
   "meteortoys:allthings": {},
+  "coffeescript": {},
+  "practicalmeteor:loglevel": {
+    "loglevel": {
+      "type": "object",
+      "members": {
+        "createLogger": {
+          "type": "function"
+        },
+        "createPackageLogger": {
+          "type": "function"
+        },
+        "createAppLogger": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "velocity:chokidar": {
+    "chokidar": {
+      "type": "object",
+      "members": {
+        "FSWatcher": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "add": {
+                  "type": "function"
+                },
+                "unwatch": {
+                  "type": "function"
+                },
+                "close": {
+                  "type": "function"
+                },
+                "setMaxListeners": {
+                  "type": "function"
+                },
+                "emit": {
+                  "type": "function"
+                },
+                "addListener": {
+                  "type": "function",
+                  "refID": 13
+                },
+                "on": {
+                  "ref": 13
+                },
+                "once": {
+                  "type": "function"
+                },
+                "removeListener": {
+                  "type": "function"
+                },
+                "removeAllListeners": {
+                  "type": "function"
+                },
+                "listeners": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "watch": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "velocity:meteor-internals": {
+    "VelocityMeteorInternals": {
+      "type": "object",
+      "members": {
+        "parseStack": {
+          "type": "object",
+          "members": {
+            "markBottom": {
+              "type": "function"
+            }
+          }
+        },
+        "buildmessage": {
+          "type": "object",
+          "members": {
+            "markBoundary": {
+              "type": "function"
+            }
+          }
+        },
+        "files": {
+          "type": "object",
+          "members": {
+            "cwd": {
+              "type": "function"
+            },
+            "findAppDir": {
+              "type": "function"
+            },
+            "findPackageDir": {
+              "type": "function"
+            },
+            "statOrNull": {
+              "type": "function"
+            },
+            "runJavaScript": {
+              "type": "function"
+            },
+            "FancySyntaxError": {
+              "type": "function"
+            },
+            "writeFile": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "writeFile"
+                }
+              }
+            },
+            "appendFile": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "appendFile"
+                }
+              }
+            },
+            "readFile": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "readFile"
+                }
+              }
+            },
+            "stat": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "stat"
+                }
+              }
+            },
+            "lstat": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "lstat"
+                }
+              }
+            },
+            "exists": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "exists"
+                }
+              }
+            },
+            "rename": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "rename"
+                }
+              }
+            },
+            "realpath": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "realpath"
+                }
+              }
+            },
+            "readdir": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "readdir"
+                }
+              }
+            },
+            "rmdir": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "rmdir"
+                }
+              }
+            },
+            "mkdir": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "mkdir"
+                }
+              }
+            },
+            "unlink": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "unlink"
+                }
+              }
+            },
+            "chmod": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "chmod"
+                }
+              }
+            },
+            "open": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "open"
+                }
+              }
+            },
+            "read": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "read"
+                }
+              }
+            },
+            "write": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "write"
+                }
+              }
+            },
+            "close": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "close"
+                }
+              }
+            },
+            "symlink": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "symlink"
+                }
+              }
+            },
+            "readlink": {
+              "type": "function",
+              "members": {
+                "displayName": {
+                  "type": "constant",
+                  "value": "readlink"
+                }
+              }
+            },
+            "createReadStream": {
+              "type": "function"
+            },
+            "createWriteStream": {
+              "type": "function"
+            },
+            "watchFile": {
+              "type": "function"
+            },
+            "unwatchFile": {
+              "type": "function"
+            },
+            "pathJoin": {
+              "type": "function"
+            },
+            "pathNormalize": {
+              "type": "function"
+            },
+            "pathRelative": {
+              "type": "function"
+            },
+            "pathResolve": {
+              "type": "function"
+            },
+            "pathDirname": {
+              "type": "function"
+            },
+            "pathBasename": {
+              "type": "function"
+            },
+            "pathExtname": {
+              "type": "function"
+            },
+            "pathSep": {
+              "type": "constant",
+              "value": "/"
+            },
+            "pathDelimiter": {
+              "type": "constant",
+              "value": ":"
+            },
+            "pathOsDelimiter": {
+              "type": "constant",
+              "value": ":"
+            },
+            "convertToStandardPath": {
+              "type": "function"
+            },
+            "convertToOSPath": {
+              "type": "function"
+            },
+            "convertToWindowsPath": {
+              "type": "function"
+            },
+            "convertToPosixPath": {
+              "type": "function"
+            },
+            "convertToStandardLineEndings": {
+              "type": "function"
+            },
+            "convertToOSLineEndings": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "velocity:source-map-support": {
+    "SourceMapSupport": {
+      "type": "object",
+      "members": {
+        "install": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "sanjo:long-running-child-process": {
+    "LongRunningChildProcess": {
+      "type": "function",
+      "members": {
+        "prototype": {
+          "type": "object",
+          "members": {
+            "taskName": {
+              "type": "null",
+              "value": null
+            },
+            "child": {
+              "type": "null",
+              "value": null
+            },
+            "pid": {
+              "type": "null",
+              "value": null
+            },
+            "getTaskName": {
+              "type": "function"
+            },
+            "getChild": {
+              "type": "function"
+            },
+            "getPid": {
+              "type": "function"
+            },
+            "isDead": {
+              "type": "function"
+            },
+            "isRunning": {
+              "type": "function"
+            },
+            "readPid": {
+              "type": "function"
+            },
+            "spawn": {
+              "type": "function"
+            },
+            "kill": {
+              "type": "function"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sanjo:meteor-version": {
+    "MeteorVersion": {
+      "type": "object",
+      "members": {
+        "getSemanticVersion": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "package-version-parser": {
+    "PackageVersion": {
+      "type": "function",
+      "members": {
+        "parse": {
+          "type": "function"
+        },
+        "versionMagnitude": {
+          "type": "function"
+        },
+        "lessThan": {
+          "type": "function"
+        },
+        "majorVersion": {
+          "type": "function"
+        },
+        "compare": {
+          "type": "function"
+        },
+        "getValidServerVersion": {
+          "type": "function"
+        },
+        "VersionConstraint": {
+          "type": "function"
+        },
+        "parseVersionConstraint": {
+          "type": "function"
+        },
+        "PackageConstraint": {
+          "type": "function",
+          "members": {
+            "prototype": {
+              "type": "object",
+              "members": {
+                "toString": {
+                  "type": "function"
+                }
+              }
+            }
+          }
+        },
+        "parsePackageConstraint": {
+          "type": "function"
+        },
+        "validatePackageName": {
+          "type": "function"
+        },
+        "invalidFirstFormatConstraint": {
+          "type": "function"
+        },
+        "removeBuildID": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "sanjo:meteor-files-helpers": {
+    "MeteorFilesHelpers": {
+      "type": "object",
+      "members": {
+        "getAppPath": {
+          "type": "function"
+        },
+        "getMeteorToolPath": {
+          "type": "function"
+        },
+        "getMeteorInstallationPath": {
+          "type": "function"
+        },
+        "getNodeModulePath": {
+          "type": "function"
+        },
+        "getPackageVersions": {
+          "type": "function"
+        },
+        "getPackageVersion": {
+          "type": "function"
+        },
+        "isPackageInstalled": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "velocity:core": {
+    "Velocity": {
+      "type": "object",
+      "members": {
+        "Collections": {
+          "type": "object",
+          "members": {
+            "TestFiles": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "type": "function",
+                  "refID": 3,
+                  "members": {
+                    "Cursor": {
+                      "type": "function",
+                      "members": {
+                        "prototype": {
+                          "type": "object",
+                          "members": {
+                            "rewind": {
+                              "type": "function"
+                            },
+                            "forEach": {
+                              "type": "function"
+                            },
+                            "getTransform": {
+                              "type": "function"
+                            },
+                            "map": {
+                              "type": "function"
+                            },
+                            "fetch": {
+                              "type": "function"
+                            },
+                            "count": {
+                              "type": "function"
+                            },
+                            "observe": {
+                              "type": "function"
+                            },
+                            "observeChanges": {
+                              "type": "function"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "ObjectID": {
+                      "type": "function",
+                      "members": {
+                        "prototype": {
+                          "type": "object",
+                          "members": {
+                            "toString": {
+                              "type": "function"
+                            },
+                            "equals": {
+                              "type": "function"
+                            },
+                            "clone": {
+                              "type": "function"
+                            },
+                            "typeName": {
+                              "type": "function"
+                            },
+                            "getTimestamp": {
+                              "type": "function"
+                            },
+                            "toHexString": {
+                              "type": "function",
+                              "refID": 34
+                            },
+                            "toJSONValue": {
+                              "ref": 34
+                            },
+                            "valueOf": {
+                              "ref": 34
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "get": {
+                      "type": "function"
+                    },
+                    "getAll": {
+                      "type": "function"
+                    },
+                    "prototype": {
+                      "type": "object",
+                      "members": {
+                        "constructor": {
+                          "ref": 3
+                        },
+                        "find": {
+                          "type": "function",
+                          "refID": 41
+                        },
+                        "findOne": {
+                          "type": "function",
+                          "refID": 43
+                        },
+                        "insert": {
+                          "type": "function",
+                          "refID": 45
+                        },
+                        "update": {
+                          "type": "function",
+                          "refID": 47
+                        },
+                        "remove": {
+                          "type": "function",
+                          "refID": 49
+                        },
+                        "upsert": {
+                          "type": "function",
+                          "refID": 51
+                        },
+                        "rawCollection": {
+                          "type": "function",
+                          "refID": 53
+                        },
+                        "rawDatabase": {
+                          "type": "function",
+                          "refID": 55
+                        },
+                        "allow": {
+                          "type": "function",
+                          "refID": 57
+                        },
+                        "deny": {
+                          "type": "function",
+                          "refID": 59
+                        }
+                      }
+                    }
+                  }
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            },
+            "FixtureFiles": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 3
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            },
+            "TestReports": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 3
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            },
+            "AggregateReports": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 3
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            },
+            "Logs": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 3
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            },
+            "Mirrors": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 3
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            },
+            "Options": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 3
+                },
+                "find": {
+                  "ref": 41
+                },
+                "findOne": {
+                  "ref": 43
+                },
+                "insert": {
+                  "ref": 45
+                },
+                "update": {
+                  "ref": 47
+                },
+                "remove": {
+                  "ref": 49
+                },
+                "upsert": {
+                  "ref": 51
+                },
+                "rawCollection": {
+                  "ref": 53
+                },
+                "rawDatabase": {
+                  "ref": 55
+                },
+                "allow": {
+                  "ref": 57
+                },
+                "deny": {
+                  "ref": 59
+                }
+              }
+            }
+          }
+        },
+        "Methods": {
+          "type": "object",
+          "members": {
+            "velocity/logs/reset": {
+              "type": "function"
+            },
+            "velocity/logs/submit": {
+              "type": "function"
+            },
+            "velocity/mirrors/init": {
+              "type": "function"
+            },
+            "velocity/mirrors/register": {
+              "type": "function"
+            },
+            "velocity/mirrors/request": {
+              "type": "function"
+            },
+            "velocity/parentHandshake": {
+              "type": "function"
+            },
+            "velocity/getOption": {
+              "type": "function"
+            },
+            "velocity/setOption": {
+              "type": "function"
+            },
+            "velocity/setOptions": {
+              "type": "function"
+            },
+            "velocity/reports/completed": {
+              "type": "function"
+            },
+            "velocity/reports/reset": {
+              "type": "function"
+            },
+            "velocity/reports/submit": {
+              "type": "function"
+            },
+            "velocity/copySampleTests": {
+              "type": "function"
+            },
+            "velocity/featureTestDone": {
+              "type": "function"
+            },
+            "velocity/featureTestFailed": {
+              "type": "function"
+            },
+            "velocity/isEnabled": {
+              "type": "function"
+            },
+            "velocity/isMirror": {
+              "type": "function"
+            },
+            "velocity/register/framework": {
+              "type": "function"
+            },
+            "velocity/reset": {
+              "type": "function"
+            },
+            "velocity/returnTODOTestAndMarkItAsDOING": {
+              "type": "function"
+            }
+          }
+        },
+        "mirrorMeteorReleaseName": {
+          "type": "constant",
+          "value": "velocity:METEOR"
+        },
+        "mirrorMeteorVersion": {
+          "type": "constant",
+          "value": "1.2.0.2_1"
+        },
+        "mirrorMeteorRelease": {
+          "type": "constant",
+          "value": "velocity:METEOR@1.2.0.2_1"
+        },
+        "mirrorMeteorToolReleaseName": {
+          "type": "constant",
+          "value": "velocity:meteor-tool"
+        },
+        "mirrorMeteorToolVersion": {
+          "type": "constant",
+          "value": "1.1.9_1"
+        },
+        "mirrorMeteorToolRelease": {
+          "type": "constant",
+          "value": "velocity:meteor-tool@1.1.9_1"
+        },
+        "reusableMirrors": {
+          "type": "array"
+        },
+        "startup": {
+          "type": "function"
+        },
+        "getAppPath": {
+          "type": "function"
+        },
+        "getTestsPath": {
+          "type": "function"
+        },
+        "getPackagesPath": {
+          "type": "function"
+        },
+        "getPackagePath": {
+          "type": "function"
+        },
+        "postProcessors": {
+          "type": "array"
+        },
+        "addPostProcessor": {
+          "type": "function"
+        },
+        "getReportGithubIssueMessage": {
+          "type": "function"
+        },
+        "registerTestingFramework": {
+          "type": "function"
+        },
+        "unregisterTestingFramework": {
+          "type": "function"
+        },
+        "onTest": {
+          "type": "function"
+        },
+        "setOption": {
+          "type": "function"
+        },
+        "setOptions": {
+          "type": "function"
+        },
+        "getOption": {
+          "type": "function"
+        }
+      }
+    },
+    "VelocityTestFiles": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    },
+    "VelocityFixtureFiles": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    },
+    "VelocityTestReports": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    },
+    "VelocityAggregateReports": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    },
+    "VelocityLogs": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    },
+    "VelocityMirrors": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    },
+    "VelocityOptions": {
+      "type": "object",
+      "members": {
+        "constructor": {
+          "type": "function",
+          "refID": 1,
+          "members": {
+            "Cursor": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "rewind": {
+                      "type": "function"
+                    },
+                    "forEach": {
+                      "type": "function"
+                    },
+                    "getTransform": {
+                      "type": "function"
+                    },
+                    "map": {
+                      "type": "function"
+                    },
+                    "fetch": {
+                      "type": "function"
+                    },
+                    "count": {
+                      "type": "function"
+                    },
+                    "observe": {
+                      "type": "function"
+                    },
+                    "observeChanges": {
+                      "type": "function"
+                    }
+                  }
+                }
+              }
+            },
+            "ObjectID": {
+              "type": "function",
+              "members": {
+                "prototype": {
+                  "type": "object",
+                  "members": {
+                    "toString": {
+                      "type": "function"
+                    },
+                    "equals": {
+                      "type": "function"
+                    },
+                    "clone": {
+                      "type": "function"
+                    },
+                    "typeName": {
+                      "type": "function"
+                    },
+                    "getTimestamp": {
+                      "type": "function"
+                    },
+                    "toHexString": {
+                      "type": "function",
+                      "refID": 32
+                    },
+                    "toJSONValue": {
+                      "ref": 32
+                    },
+                    "valueOf": {
+                      "ref": 32
+                    }
+                  }
+                }
+              }
+            },
+            "get": {
+              "type": "function"
+            },
+            "getAll": {
+              "type": "function"
+            },
+            "prototype": {
+              "type": "object",
+              "members": {
+                "constructor": {
+                  "ref": 1
+                },
+                "find": {
+                  "type": "function",
+                  "refID": 39
+                },
+                "findOne": {
+                  "type": "function",
+                  "refID": 41
+                },
+                "insert": {
+                  "type": "function",
+                  "refID": 43
+                },
+                "update": {
+                  "type": "function",
+                  "refID": 45
+                },
+                "remove": {
+                  "type": "function",
+                  "refID": 47
+                },
+                "upsert": {
+                  "type": "function",
+                  "refID": 49
+                },
+                "rawCollection": {
+                  "type": "function",
+                  "refID": 51
+                },
+                "rawDatabase": {
+                  "type": "function",
+                  "refID": 53
+                },
+                "allow": {
+                  "type": "function",
+                  "refID": 55
+                },
+                "deny": {
+                  "type": "function",
+                  "refID": 57
+                }
+              }
+            }
+          }
+        },
+        "find": {
+          "ref": 39
+        },
+        "findOne": {
+          "ref": 41
+        },
+        "insert": {
+          "ref": 43
+        },
+        "update": {
+          "ref": 45
+        },
+        "remove": {
+          "ref": 47
+        },
+        "upsert": {
+          "ref": 49
+        },
+        "rawCollection": {
+          "ref": 51
+        },
+        "rawDatabase": {
+          "ref": 53
+        },
+        "allow": {
+          "ref": 55
+        },
+        "deny": {
+          "ref": 57
+        }
+      }
+    }
+  },
+  "velocity:shim": {},
+  "velocity:meteor-stubs": {
+    "MeteorStubs": {
+      "type": "object",
+      "members": {
+        "install": {
+          "type": "function"
+        },
+        "uninstall": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "sanjo:karma": {
+    "Karma": {
+      "type": "object",
+      "members": {
+        "start": {
+          "type": "function"
+        },
+        "setConfig": {
+          "type": "function"
+        }
+      }
+    },
+    "KarmaInternals": {
+      "type": "object",
+      "members": {
+        "karmaChilds": {
+          "type": "object"
+        },
+        "getKarmaChild": {
+          "type": "function"
+        },
+        "setKarmaChild": {
+          "type": "function"
+        },
+        "startKarmaServer": {
+          "type": "function"
+        },
+        "writeKarmaConfig": {
+          "type": "function"
+        },
+        "generateKarmaConfig": {
+          "type": "function"
+        },
+        "readKarmaConfig": {
+          "type": "function"
+        },
+        "getConfigPath": {
+          "type": "function"
+        },
+        "getKarmaPath": {
+          "type": "function"
+        }
+      }
+    }
+  },
+  "sanjo:jasmine": {
+    "Jasmine": {
+      "type": "object",
+      "members": {
+        "onTest": {
+          "type": "function"
+        },
+        "setKarmaConfig": {
+          "type": "function"
+        }
+      }
+    }
+  },
   "livedata": {
     "DDP": {
       "type": "object",
@@ -13247,7 +14287,7 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "12f440d7f7276ad57e725dbacbf6988c5f5a6388"
+          "value": "dc37e34fae2fb53db57bb4d058e2957e1f48a0e7"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",

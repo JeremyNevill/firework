@@ -27,5 +27,5 @@ meteorhacks:npm
 npm-container
 less
 velocity:html-reporter
-sanjo:jasmine
 meteortoys:allthings
+sanjo:jasmine

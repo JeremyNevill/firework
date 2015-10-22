@@ -40,6 +40,11 @@ Prerequisites:
 npm install -g phantomjs
 ```
 
+```
+/home/ubuntu//.nvm/v0.10.35/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
+```
+
+
 #### webdriver
 
 ```
@@ -47,7 +52,7 @@ meteor add xolvio:webdriver
 ```
 
 #### Running with PhantomJs
-
+CUCUMBER_BROWSER=PhantomJS JASMINE_BROWSER=PhantomJS SELENIUM_BROWSER=phantomjs meteor --port $IP:$PORT
 
 
 #### Various Properties
