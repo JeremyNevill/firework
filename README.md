@@ -71,8 +71,10 @@ To run Firework navigate to the directory you have cloned and run Meteor, e.g.
 
 ```
 cd firework
-nmeteor
+meteor
 ```
+
+Note: If you are running Firework on c9.io then the command is: ```meteor --port $IP:$PORT```
 
 Once the server has started point your browser at [http://localhost:3000/](http://localhost:3000/) to visit the real-time dashboard.
  
