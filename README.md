@@ -31,11 +31,15 @@ There are two main steps:
 
 Firework uses [Meteor](https://www.meteor.com/) so the first task is to install the latest version of Meteor.  
 
+
 ## Linux and Mac
 
 To install Meteor on Linux and the Mac:
 
-```curl https://install.meteor.com/ | sh```
+```
+curl https://install.meteor.com/ | sh
+```
+
 
 ## Windows
 
@@ -44,7 +48,7 @@ Download the installer from the [Meteor Installation Page](https://www.meteor.co
 **Note:** For further information go to the [Meteor Installation Page](https://www.meteor.com/install) and follow the instructions for your operating system.
 
 
-## Install Firework
+# Install Firework
 
 To install Firework clone the latest version from Github or fork and clone your own version.
 
@@ -59,6 +63,17 @@ To fork then clone:
 * Go to the [github Firework page](https://github.com/JeremyNevill/firework) 
 * Click on the Fork button (top right)
 * When the fork has completed, clone from your newly created fork as above
+
+
+# Running Firework
+
+To run Firework navigate to the directory you have cloned and run Meteor, e.g. 
+
+```
+cd firework\nmeteor
+```
+
+Once the server has started point your browser at [http://localhost:3000/](http://localhost:3000/) to visit the real-time dashboard.
  
 
 ---
