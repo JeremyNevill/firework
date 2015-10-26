@@ -70,7 +70,8 @@ To fork then clone:
 To run Firework navigate to the directory you have cloned and run Meteor, e.g. 
 
 ```
-cd firework\nmeteor
+cd firework
+nmeteor
 ```
 
 Once the server has started point your browser at [http://localhost:3000/](http://localhost:3000/) to visit the real-time dashboard.
