@@ -1,19 +1,69 @@
 Firework
 ========
 
-Firework is a Real-time Logging App for IOT devices, websites and online services.
+Firework is a Real-time Logging App for IOT and websites.
 
 Firework is [open source](https://github.com/JeremyNevill/firework) and can be installed on Linux, OS X and Windows.
 
-Try out the latest version at [Firework.com](http://firework.com) or [download and install your own server](http://docs.firework.com/v1.0/docs).
+Try out the latest hosted version at [Firework.com](http://firework.com) or install your own Firework server.
 
 
-## Getting Started
+# Getting Started
 
-* [Get Started with Firework](http://docs.firework.com/v1.0/docs)
+For full documentation including installation visit the official documentation at:
+
+* [Firework Official Documentation](http://docs.firework.com/v1.0/docs)
+
+Alternatively, follow the instructions below:
 
 
-## Quick Links
+# Installation
+
+Installation is straightforward and should only take a couple of minutes depending on your internet connection.  
+
+There are two main steps:
+
+* Install Meteor
+* Install Firework
+
+
+# Install Meteor
+
+Firework uses [Meteor](https://www.meteor.com/) so the first task is to install the latest version of Meteor.  
+
+## Linux and Mac
+
+To install Meteor on Linux and the Mac:
+
+```curl https://install.meteor.com/ | sh```
+
+## Windows
+
+Download the installer from the [Meteor Installation Page](https://www.meteor.com/install).
+
+**Note:** For further information go to the [Meteor Installation Page](https://www.meteor.com/install) and follow the instructions for your operating system.
+
+
+## Install Firework
+
+To install Firework clone the latest version from Github or fork and clone your own version.
+
+To clone from github:
+
+```
+git clone git@github.com:JeremyNevill/firework.git
+```
+      
+To fork then clone:
+
+* Go to the [github Firework page](https://github.com/JeremyNevill/firework) 
+* Click on the Fork button (top right)
+* When the fork has completed, clone from your newly created fork as above
+ 
+
+---
+
+# Quick Links
 
 * [Documentation and Support](http://docs.firework.com)
 * [Github Repo](https://github.com/JeremyNevill/firework)
@@ -21,14 +71,14 @@ Try out the latest version at [Firework.com](http://firework.com) or [download a
 * [Hosted Version](http://firework.com)
 
 
-## Build Status
+# Build Status
 
 [ ![Codeship Status for JeremyNevill/firework](https://codeship.com/projects/97a5df70-7d9d-0132-709d-2e32b970dd46/status?branch=master)](https://codeship.com/projects/56753)
 
 Passing builds are continuously deployed to the [test server](http://fwktest.firework.com). 
 
 
-## Description
+# Description
 
 Firework provides:
 
@@ -52,31 +102,15 @@ Integration to online services such as [Zapier](https://zapier.com) enable realt
 For comprehensive instructions visit the [documentation and support](http://docs.firework.com) website.
 
 
-## Requirements
+# Requirements
 
 Firework can be deployed on Linux, OS X, and Windows operating systems.
 
 Firework requires [Meteor v1.2](https://www.meteor.com) which in turn uses [MongoDb](http://www.mongodb.com) and [Node JS](https://nodejs.org).
 
 
-## Get in Contact
+# Get in Contact
 
 We'd love to hear what you think of Firework, get in contact via twitter [JeremyNevill](https://twitter.com/JeremyNevill) or
 email [jeremy@nevill.net](mailto:jeremy@nevill.net).
 
-
-
-ian:accounts-ui-bootstrap-3
-mrt:moment
-chrismbeckett:toastr
-nemo64:bootstrap
-less
-meteorhacks:npm
-momentjs:moment
-npm-container
-logging
-reload
-random
-ejson
-spacebars
-check
