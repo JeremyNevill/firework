@@ -1,15 +1,19 @@
 {
   "name": "tests",
   "version": "1.0.0",
-  "description": "Node tests",
+  "description": "Test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/cucumber.js ./cucumber/features/sample.feature"
   },
-  "author": "",
+  "author": "Jeremy Nevill",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.4.0",
+    "cucumber": "^0.8.1",
     "ghost-inspector": "^1.2.0",
-    "request": "^2.61.0"
+    "phantomjs": "^1.9.18",
+    "request": "^2.65.0",
+    "webdriverio": "^3.2.5"
   }
 }

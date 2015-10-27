@@ -8,7 +8,7 @@
 * Tests are gathered into suites, and the start url of the test can be set to enable a suite to run against multiple environments.
 * Tests are run using the ghost-inspector npm package.
 
-To run tests, from the ```/tests``` directory:
+To run tests, from the ```/tests/ghost``` directory:
 
 Set the environment variables:
 
@@ -25,41 +25,52 @@ node ghost/main.js
 ```
 
 
-### Jasmine PhantomJs
+### Cucumber, Wedriver, Selenium Standalone and Chai
 
-Prerequisites:
+#### Install
 
-* Jasmine
-* WebdriverIO - http://webdriver.io/guide/usage/selectors.html
-* PhantomJs
+Note: This is not using the Meteor cucumber setup as I couldn't get it working on Mac and C9 Ubuntu.
+      So the following is the old skool node way using Cucumber, Wedriver, Selenium Standalone and Chai
 
-
-#### PhantomJs
+From the /tests directory, install the npm packages you need locally:
 
 ```
-npm install -g phantomjs
+npm install
 ```
 
+Which is the same as:
+
 ```
-/home/ubuntu//.nvm/v0.10.35/lib/node_modules/phantomjs/lib/phantom/bin/phantomjs
+npm install chai --save-dev
+npm install cucumber --save-dev
+npm install webdriverio --save-dev
+```
+
+For the command line tools:
+
+```
+npm install cucumber -g
+npm install phantomjs -g
+npm install selenium-standalone -g
+selenium-standalone install
+```
+
+Make sure to note down the location that phantomjs is installed to, e.g.
+```
+/home/ubuntu/workspace/tests/node_modules/phantomjs/lib/phantom/bin/phantomjs
+```
+
+#### Run Tests
+
+Terminal window 1:
+```
+selenium-standalone start
+```
+
+Terminal window 2: 
+```
+npm test
 ```
 
 
-#### webdriver
-
-```
-meteor add xolvio:webdriver
-```
-
-#### Running with PhantomJs
-CUCUMBER_BROWSER=PhantomJS JASMINE_BROWSER=PhantomJS SELENIUM_BROWSER=phantomjs meteor --port $IP:$PORT
-
-
-#### Various Properties
-```
-JASMINE_SERVER_UNIT=0
-JASMINE_SERVER_INTEGRATION=0
-JASMINE_CLIENT_UNIT=0
-JASMINE_CLIENT_INTEGRATION=0
-```
 

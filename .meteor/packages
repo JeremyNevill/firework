@@ -26,6 +26,4 @@ twbs:bootstrap
 meteorhacks:npm
 npm-container
 less
-velocity:html-reporter
 meteortoys:allthings
-sanjo:jasmine
