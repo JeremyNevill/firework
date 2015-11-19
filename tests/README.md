@@ -13,9 +13,9 @@ To run tests, from the ```/tests/ghost``` directory:
 Set the environment variables:
 
 ```
-export GHOST_API_KEY="YourApiKey"
-export GHOST_TEST_URL="YourTestUrl"
-export GHOST_SUITE="YourTestSuite"
+export GHOST_API_KEY="a6314087234ece6f94d1ae91543f47faefedc73a"
+export GHOST_TEST_URL="https://firework-jeremynevill-7.c9.io"
+export GHOST_SUITE="54ceb629e2f4f6677ef70f52"
 ```
 
 Run the tests:
