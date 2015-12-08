@@ -1,7 +1,7 @@
 Meteor.methods({
 
     // Create Secret Key and API Token
-    createToken: function() {
+    createToken: function () {
 
         // Create new secret
         var newSecret = "";
@@ -21,22 +21,22 @@ Meteor.methods({
         Meteor.users.update({
             _id: Meteor.user()._id
         }, {
-            $set: {
-                "profile.apiSecret": newSecret
-            }
-        })
+                $set: {
+                    "profile.apiSecret": newSecret
+                }
+            })
         Meteor.users.update({
             _id: Meteor.user()._id
         }, {
-            $set: {
-                "profile.apiToken": newToken
-            }
-        })
+                $set: {
+                    "profile.apiToken": newToken
+                }
+            })
     },
 
 
     // Reset Stats
-    statsReset: function() {
+    statsReset: function () {
         console.log("Stats Reset");
 
         if (!Meteor.userId()) {
@@ -56,14 +56,16 @@ Meteor.methods({
             }).fetch();
             var itemCount = actorItems.length;
 
+            console.log(actor.actor + ' - ' + itemCount);
+
             Actors.update({
                 "actor": actor.actor,
                 "owner": Meteor.userId
             }, {
-                $set: {
-                    "itemCount": itemCount
-                }
-            });
+                    $set: {
+                        "itemCount": itemCount
+                    }
+                });
         }
 
         // Reset Action Counts
@@ -79,14 +81,16 @@ Meteor.methods({
             }).fetch();
             var actionItemCount = actionItems.length;
 
+            console.log(action.action + ' - ' + itemCount);
+
             Actions.update({
                 "action": action.action,
                 "owner": Meteor.userId
             }, {
-                $set: {
-                    "itemCount": actionItemCount
-                }
-            });
+                    $set: {
+                        "itemCount": actionItemCount
+                    }
+                });
         }
 
         // Reset UNITS Counts
@@ -102,20 +106,24 @@ Meteor.methods({
             }).fetch();
             var unitsItemCount = unitsItems.length;
 
+            console.log(units.unit + ' - ' + itemCount);
+
             Units.update({
                 "unit": units.unit,
                 "owner": Meteor.userId
             }, {
-                $set: {
-                    "itemCount": unitsItemCount
-                }
-            });
+                    $set: {
+                        "itemCount": unitsItemCount
+                    }
+                });
         }
+
+        console.log('Stats Update Complete');
     },
 
 
     // Add Item Via the API
-    addApiItem: function(token, userid, actor, action, amount, units, date) {
+    addApiItem: function (token, userid, actor, action, amount, units, date) {
 
         var user = Meteor.users.findOne(userid);
         var secretKey = user.profile.apiSecret;
@@ -156,7 +164,7 @@ Meteor.methods({
 
 
     // Add Item
-    addItem: function(actor, action, amount, units, date) {
+    addItem: function (actor, action, amount, units, date) {
         // Make sure the user is logged in before inserting
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
@@ -191,7 +199,7 @@ Meteor.methods({
 
 
     // Update Item
-    updateItem: function(id, actor, action, amount, units, date) {
+    updateItem: function (id, actor, action, amount, units, date) {
 
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
@@ -217,14 +225,14 @@ Meteor.methods({
         Items.update({
             "_id": id
         }, {
-            $set: {
-                "actor": actor,
-                "action": action,
-                "amount": amount,
-                "units": units,
-                "date": date
-            }
-        });
+                $set: {
+                    "actor": actor,
+                    "action": action,
+                    "amount": amount,
+                    "units": units,
+                    "date": date
+                }
+            });
 
         // Decrement item counts
         Meteor.call("decrementItemCounts", oldActor, oldAction, oldUnits, Meteor.userId());
@@ -234,7 +242,7 @@ Meteor.methods({
 
 
     // Delete Item
-    deleteItem: function(itemId) {
+    deleteItem: function (itemId) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
@@ -257,7 +265,7 @@ Meteor.methods({
 
 
     // Add actor if not existing already
-    upsertActor: function(actor, userId) {
+    upsertActor: function (actor, userId) {
         var existingActor = Actors.findOne({
             "actor": actor,
             "owner": userId
@@ -276,7 +284,7 @@ Meteor.methods({
 
 
     // Add action if not existing already
-    upsertAction: function(action, userId) {
+    upsertAction: function (action, userId) {
         var existingAction = Actions.findOne({
             "action": action,
             "owner": userId
@@ -293,7 +301,7 @@ Meteor.methods({
 
 
     // Add unit if not existing already
-    upsertUnits: function(units, userId) {
+    upsertUnits: function (units, userId) {
         var existingUnit = Units.findOne({
             "unit": units,
             "owner": userId
@@ -308,67 +316,67 @@ Meteor.methods({
     },
 
     // Increment the item counts
-    incrementItemCounts: function(actor, action, units, userId) {
+    incrementItemCounts: function (actor, action, units, userId) {
         Actors.update({
             "actor": actor,
             "owner": userId
         }, {
-            $inc: {
-                "itemCount": 1
-            }
-        });
+                $inc: {
+                    "itemCount": 1
+                }
+            });
 
         Actions.update({
             "action": action,
             "owner": userId
         }, {
-            $inc: {
-                "itemCount": 1
-            }
-        });
+                $inc: {
+                    "itemCount": 1
+                }
+            });
 
         Units.update({
             "unit": units,
             "owner": userId
         }, {
-            $inc: {
-                "itemCount": 1
-            }
-        });
+                $inc: {
+                    "itemCount": 1
+                }
+            });
     },
 
     // Decrement the item counts
-    decrementItemCounts: function(actor, action, units, userId) {
+    decrementItemCounts: function (actor, action, units, userId) {
         Actors.update({
             "actor": actor,
             "owner": userId
         }, {
-            $inc: {
-                "itemCount": -1
-            }
-        });
+                $inc: {
+                    "itemCount": -1
+                }
+            });
 
         Actions.update({
             "action": action,
             "owner": userId
         }, {
-            $inc: {
-                "itemCount": -1
-            }
-        });
+                $inc: {
+                    "itemCount": -1
+                }
+            });
 
         Units.update({
             "unit": units,
             "owner": userId
         }, {
-            $inc: {
-                "itemCount": -1
-            }
-        });
+                $inc: {
+                    "itemCount": -1
+                }
+            });
     },
 
     // Delete Actor
-    deleteActor: function(actorId) {
+    deleteActor: function (actorId) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
@@ -383,7 +391,7 @@ Meteor.methods({
     },
 
     // Delete Action
-    deleteAction: function(actionId) {
+    deleteAction: function (actionId) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
@@ -398,7 +406,7 @@ Meteor.methods({
     },
 
     // Delete Units
-    deleteUnits: function(unitId) {
+    deleteUnits: function (unitId) {
         if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }

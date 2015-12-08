@@ -2,15 +2,12 @@
     <h2><span class="glyphicon glyphicon-info-sign"></span> Stats</h2>
 
     <div class="row">
-
         <div class="col-md-12">
             {{#each dailyStats }}
             <div class="col-md-12">
-                {{ actor }} : {{ itemCount }}
+                {{ actor }} {{ action }} {{ units }} : {{ itemCount }}
             </div>
             {{/each}}
         </div>
-
     </div>
-
 </template>

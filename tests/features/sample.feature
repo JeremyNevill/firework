@@ -3,10 +3,8 @@ Feature: Homepage
        As a registered user
        I want to check stuff out
 
-Scenario: Login Successfully
-       Given I am on the ''
+Scenario: Login and Logout
+       Given I am on the "" page
        And I login
-       Then I see the ''
+       And I logout
        Then All is well
-
-
