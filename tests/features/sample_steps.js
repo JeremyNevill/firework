@@ -1,12 +1,21 @@
+var assert = require('assert');
+
 module.exports = function () {
 
     var webdriverio = require("webdriverio");
-    var client = webdriverio.remote({desiredCapabilities: {browserName: "chrome"}});
+    var client = webdriverio.remote({desiredCapabilities: {browserName: "firefox"}}).init();
 
-    this.Given(/^I am on the "(.*)" page$/, {timeout: 30000}, function (page, callback) {
+    this.Given(/^I go directly to the "(.*)" page$/, {timeout: 30000}, function (page, callback) {
+
+        var url = "http://localhost:3000/";
+        if (typeof (page) === 'undefined') {
+        }
+        else {
+            url = url + page;
+        }
+
         client
-            .init()
-            .url("http://localhost:3000/")
+            .url(url)
             .call(callback);
     });
 
@@ -21,16 +30,20 @@ module.exports = function () {
             .call(callback);
     });
 
-    this.Then(/^I see the "(.*)" text$/, {timeout: 30000}, function (word, callback) {
-        console.log(word);
-
+    this.Given(/^I click the "([^"]*)" link$/, {timeout: 30000}, function (link, callback) {
+        var link = "=" + link;
         client
-            .click("=Firework")
+            .click(link)
             .call(callback);
     });
 
-    this.Then(/^All is well$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback.pending();
+    this.Then(/^I am on the "([^"]*)" page$/, {timeout: 30000}, function (expectedTitle, callback) {
+        client.getTitle(function (err, actualTitle) {
+            assert.equal(actualTitle, expectedTitle);
+        }).call(callback);
     });
+
 };
+
+
+
