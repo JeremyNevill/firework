@@ -68,6 +68,7 @@ Router.route('/items/:id/edit', function() {
 Actor Routes
 */
 Router.route('/actors', function() {
+    document.title = "Actors";
     this.render('actors');
 });
 
@@ -97,6 +98,7 @@ Router.route('/actors/:actor', function() {
 Action Routes
 */
 Router.route('/actions', function() {
+    document.title = "Actions";
     this.render('actions');
 });
 
@@ -126,6 +128,7 @@ Router.route('/actions/:action', function() {
 Units Routes
 */
 Router.route('/units', function() {
+    document.title = "Units";
     this.render('units');
 });
 
