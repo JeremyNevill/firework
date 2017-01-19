@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "jwt-simple": {
-      "version": "0.2.0"
+      "version": "0.2.0",
+      "resolved": "https://registry.npmjs.org/jwt-simple/-/jwt-simple-0.2.0.tgz",
+      "from": "jwt-simple@0.2.0"
     }
   }
 }
