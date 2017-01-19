@@ -9,11 +9,9 @@ Feature: Homepage
       And I see no Units
   
   Scenario: Existing User
-    Given I create some Actors
-      And I create some Actions
-      And I create some Units
+    Given I create a logging item
     When I login
-    Then I see the Timeline
-      And I see my Actors
-      And I see my Actions
-      And I see my Units
+    Then I see it in the Timeline
+      And I see its actor
+      And I see its action
+      And I see its unit
