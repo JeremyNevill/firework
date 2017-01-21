@@ -4,3 +4,5 @@
 .c9
 tests/node_modules
 zzz.ts-compiler.ts
+deployment_token.json
+settings.json
